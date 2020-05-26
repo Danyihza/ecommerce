@@ -41,7 +41,7 @@
                                                     <ul name="kategori" class="custom_list clc">
                                                         <li><a class="clc">All Categories</a></li>
                                                         <?php foreach ($kategori as $k) : ?>
-                                                        <li><a class="clc" value="<?= $k['id_kategori']; ?>"><?= $k['nama_kategori'] ?></a></li>
+                                                            <li><a class="clc" value="<?= $k['id_kategori']; ?>"><?= $k['nama_kategori'] ?></a></li>
                                                         <?php endforeach; ?>
                                                         <!-- <li><a class="clc" href="#">Laptops</a></li>
                                                         <li><a class="clc" href="#">Cameras</a></li>
@@ -71,7 +71,7 @@
                                             <div class="cart_count"><span>10</span></div>
                                         </div>
                                         <div class="cart_content">
-                                            <div class="cart_text"><a href="#">Cart</a></div>
+                                            <div class="cart_text"><a href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop">Cart</a></div>
                                             <div class="cart_price">$85</div>
                                         </div>
                                     </div>
@@ -292,3 +292,25 @@
             </div>
 
         </header>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
