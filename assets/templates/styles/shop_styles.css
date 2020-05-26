@@ -138,6 +138,10 @@ h6::selection
 {
 	
 }
+.active-product
+{
+	color: #0e8ce4 !important;
+}
 .form-control
 {
 	color: #db5246;
@@ -1259,7 +1263,7 @@ select option
 .shop
 {
 	background: #FFFFFF;
-	padding-top: 80px;
+	padding-top: 50px;
 	padding-bottom: 139px;
 }
 .shop_content
