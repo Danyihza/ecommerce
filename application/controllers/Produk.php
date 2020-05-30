@@ -211,11 +211,12 @@ class Produk extends CI_Controller
     public function lihatulasan($id_produk)
     {
         if ($this->produk_model->logged_id()) {
+            $data['countproduk'] = $this->produk_model->countAllProduct();
             $data['ulas'] = $this->produk_model->data_ulasan($id_produk);
             $data['rating']= $this->produk_model->rating($id_produk);
             $this->load->view('admin/header');
             $this->load->view('admin/navbar');
-            $this->load->view('admin/sidebar');
+            $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/lihatulasan', $data);
             $this->load->view('admin/footer');
         } else {
