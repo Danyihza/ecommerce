@@ -39,6 +39,7 @@
                     <th>Stok</th>
                     <th>Kategori</th>
                     <th>Diskon</th>
+                    <th>Harga Final</th>
                     <th>Deskripsi</th>
                   </tr>
                   </thead>
@@ -51,10 +52,11 @@
                     </td>
                     <td align="center"><img src="<?= base_url('assets/'); ?>images/<?= $a->gambar_produk; ?>" width="32" /></td>
                     <td><?= $a->nama_produk ?></td>
-                    <td><?= "Rp " . $a->harga_produk ?></td>
+                    <td><?= "Rp " . number_format($a->harga_produk,0,',','.') ?></td>
                     <td><?= $a->stok_produk ?></td>
                     <td><?= $a->nama_kategori ?></td>
                     <td><?= $a->diskon_produk ?></td>
+                    <td><?= "Rp " . number_format(($a->harga_produk - ($a->harga_produk * ($a->diskon_produk/100))),0,',','.') ?></td>
                     <td><?= $a->desk_produk ?></td>
                   </tr>
                   <?php } ?>

@@ -38,7 +38,7 @@
                           <i class="nav-icon fas fa-table"></i>
                           <p>
                               Data Produk
-                              <span class="badge badge-info right">5</span>
+                              <span class="badge badge-info right"><?= $countproduk; ?></span>
                           </p>
                       </a>
                   </li>

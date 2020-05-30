@@ -69,7 +69,7 @@
 								<div class="product_content">
 									<div class="product_price">Rp <?= number_format($pro['harga_produk'], '0', ',', '.'); ?></div>
 									<div class="product_name">
-										<div><a href="#" tabindex="0"><?= $pro['nama_produk']; ?></a></div>
+										<div><a href="<?= base_url('main/produk/') . $pro['link'] ?>" tabindex="0"><?= $pro['nama_produk']; ?></a></div>
 									</div>
 								</div>
 								<div class="product_fav"><i class="fas fa-heart"></i></div>
