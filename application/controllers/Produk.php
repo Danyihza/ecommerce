@@ -15,11 +15,12 @@ class Produk extends CI_Controller
     public function index()
     {
         if ($this->produk_model->logged_id()) {
+            $data['countproduk'] = $this->produk_model->countAllProduct();
             $data['produk'] = $this->produk_model->allProduct();
             $data['kategori'] = $this->produk_model->getKategori();
             $this->load->view('admin/header');
             $this->load->view('admin/navbar');
-            $this->load->view('admin/sidebar');
+            $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/dataproduk', $data);
             $this->load->view('admin/footer');
         } else {
@@ -35,21 +36,23 @@ class Produk extends CI_Controller
 
     public function ubahview($id_produk)
     {
+        $data['countproduk'] = $this->produk_model->countAllProduct();
         $data['produk'] = $this->produk_model->getProductById($id_produk);
         $data['kategori'] = $this->produk_model->getKategori();
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');
-        $this->load->view('admin/sidebar');
+        $this->load->view('admin/sidebar', $data);
         $this->load->view('admin/ubahproduk', $data);
         $this->load->view('admin/footer');
     }
 
     public function tambahproduk()
     {
+        $data['countproduk'] = $this->produk_model->countAllProduct();
         $data['kategori'] = $this->produk_model->getKategori();
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');
-        $this->load->view('admin/sidebar');
+        $this->load->view('admin/sidebar', $data);
         $this->load->view('admin/tambahproduk', $data);
         $this->load->view('admin/footer');
     }
@@ -165,9 +168,10 @@ class Produk extends CI_Controller
     public function excelview()
     {
         if ($this->produk_model->logged_id()) {
+            $data['countproduk'] = $this->produk_model->countAllProduct();
             $this->load->view('admin/header');
             $this->load->view('admin/navbar');
-            $this->load->view('admin/sidebar');
+            $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/tambahexcel');
             $this->load->view('admin/footer');
         } else {
@@ -178,9 +182,10 @@ class Produk extends CI_Controller
     public function gambarview()
     {
         if ($this->produk_model->logged_id()) {
+            $data['countproduk'] = $this->produk_model->countAllProduct();
             $this->load->view('admin/header');
             $this->load->view('admin/navbar');
-            $this->load->view('admin/sidebar');
+            $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/tambahgambar');
             $this->load->view('admin/footer');
         } else {
@@ -191,10 +196,11 @@ class Produk extends CI_Controller
     public function ulasanview()
     {
         if ($this->produk_model->logged_id()) {
+            $data['countproduk'] = $this->produk_model->countAllProduct();
             $data['ulasan']= $this->produk_model->jmlUlasan();
             $this->load->view('admin/header');
             $this->load->view('admin/navbar');
-            $this->load->view('admin/sidebar');
+            $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/dataulasan', $data);
             $this->load->view('admin/footer');
         } else {
@@ -205,11 +211,12 @@ class Produk extends CI_Controller
     public function lihatulasan($id_produk)
     {
         if ($this->produk_model->logged_id()) {
+            $data['countproduk'] = $this->produk_model->countAllProduct();
             $data['ulas'] = $this->produk_model->data_ulasan($id_produk);
             $data['rating']= $this->produk_model->rating($id_produk);
             $this->load->view('admin/header');
             $this->load->view('admin/navbar');
-            $this->load->view('admin/sidebar');
+            $this->load->view('admin/sidebar', $data);
             $this->load->view('admin/lihatulasan', $data);
             $this->load->view('admin/footer');
         } else {

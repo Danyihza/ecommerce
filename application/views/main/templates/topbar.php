@@ -1,4 +1,22 @@
 </head>
+<style>
+    .button_kategori_sidebar:hover {
+        background: none;
+        color: #0e8ce4;
+        border: none;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .button_kategori_sidebar {
+        background: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+</style>
 
 <body>
 
@@ -27,30 +45,20 @@
                         </div>
 
                         <!-- Search -->
-                        <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+                        <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right">
                             <div class="header_search">
                                 <div class="header_search_content">
                                     <div class="header_search_form_container">
                                         <form action="<?= base_url('main/search') ?>" method="POST" class="header_search_form">
                                             <input type="text" autocomplete="off" class="header_search_input" name="keyword" placeholder="Search for products...">
 
-                                            <div class="custom_dropdown">
+                                            <div class="">
                                                 <div class="custom_dropdown_list">
-                                                    <span class="custom_dropdown_placeholder clc">All Categories</span>
-                                                    <i class="fas fa-chevron-down"></i>
+                                                    <span class="custom_dropdown_placeholder clc"></span>
                                                     <ul name="kategori" class="custom_list clc">
-                                                        <li><a class="clc">All Categories</a></li>
-                                                        <?php foreach ($kategori as $k) : ?>
-                                                            <li><a class="clc" value="<?= $k['id_kategori']; ?>"><?= $k['nama_kategori'] ?></a></li>
-                                                        <?php endforeach; ?>
-                                                        <!-- <li><a class="clc" href="#">Laptops</a></li>
-                                                        <li><a class="clc" href="#">Cameras</a></li>
-                                                        <li><a class="clc" href="#">Hardware</a></li>
-                                                        <li><a class="clc" href="#">Smartphones</a></li> -->
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <span><i class="fas fa-search"></i></span>
                                             <input type="submit" style="color:white;" class="header_search_button trans_300" value='Cari' name="search">
                                         </form>
                                     </div>
@@ -64,15 +72,16 @@
 
 
                                 <!-- Cart -->
-                                <div class="cart">
+                                <div class="cart" id="keranjangku">
                                     <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                         <div class="cart_icon">
-                                            <img src="<?= base_url('assets/templates/'); ?>images/cart.png" alt="">
-                                            <div class="cart_count"><span>10</span></div>
+                                            <a href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop"><img src="<?= base_url('assets/templates/'); ?>images/cart.png" alt="">
+                                                <div class="cart_count"><span><?= count($this->cart->contents()) ?></span></div>
+                                            </a>
                                         </div>
                                         <div class="cart_content">
-                                            <div class="cart_text"><a href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop">Cart</a></div>
-                                            <div class="cart_price">$85</div>
+                                            <div class="cart_text"><a href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop">Keranjang</a></div>
+                                            <div class="cart_price">Rp. <?= number_format($this->cart->total(), 0, '.', '.') ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +92,6 @@
             </div>
 
             <!-- Main Navigation -->
-
             <nav class="main_nav">
                 <div class="container">
                     <div class="row">
@@ -96,37 +104,18 @@
                                 <div class="cat_menu_container">
                                     <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
                                         <div class="cat_burger"><span></span><span></span><span></span></div>
-                                        <div class="cat_menu_text">categories</div>
+                                        <div class="cat_menu_text">Kategori</div>
                                     </div>
 
                                     <ul class="cat_menu">
-                                        <?php foreach ($kategori as $k) : ?>
-                                            <li><a href="#"><?= $k['nama_kategori'] ?><i class="fas fa-chevron-right ml-auto"></i></a></li>
+                                        <?php foreach ($kategori as $kat) : ?>
+                                            <li>
+                                                <form action="<?= base_url('main/search') ?>" method="post">
+                                                    <input type="hidden" name="form_sidebar" value="<?= $kat['id_kategori'] ?>">
+                                                    <a><input class="button_kategori_sidebar" name="button_kategori" value="<?= $kat['nama_kategori']; ?>" type="submit"></a>
+                                                </form>
+                                            </li>
                                         <?php endforeach; ?>
-                                        <!-- <li><a href="#">Cameras & Photos<i class="fas fa-chevron-right"></i></a></li>
-                                        <li class="hassubs">
-                                            <a href="#">Hardware<i class="fas fa-chevron-right"></i></a>
-                                            <ul>
-                                                <li class="hassubs">
-                                                    <a href="#">Menu Item<i class="fas fa-chevron-right"></i></a>
-                                                    <ul>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Smartphones & Tablets<i class="fas fa-chevron-right"></i></a></li>
-                                        <li><a href="#">TV & Audio<i class="fas fa-chevron-right"></i></a></li>
-                                        <li><a href="#">Gadgets<i class="fas fa-chevron-right"></i></a></li>
-                                        <li><a href="#">Car Electronics<i class="fas fa-chevron-right"></i></a></li>
-                                        <li><a href="#">Video Games & Consoles<i class="fas fa-chevron-right"></i></a></li>
-                                        <li><a href="#">Accessories<i class="fas fa-chevron-right"></i></a></li> -->
                                     </ul>
                                 </div>
 
@@ -134,40 +123,8 @@
 
                                 <div class="main_nav_menu ml-auto">
                                     <ul class="standard_dropdown main_nav_dropdown">
-                                        <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
-                                        <li class="hassubs">
-                                            <a href="#">Super Deals<i class="fas fa-chevron-down"></i></a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                    <ul>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hassubs">
-                                            <a href="#">Featured Brands<i class="fas fa-chevron-down"></i></a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                    <ul>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hassubs">
+                                        <li><a href="#">Beranda<i class="fas fa-chevron-down"></i></a></li>
+                                        <!-- <li class="hassubs">
                                             <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
                                             <ul>
                                                 <li><a href="shop.html">Shop<i class="fas fa-chevron-down"></i></a></li>
@@ -178,9 +135,9 @@
                                                 <li><a href="cart.html">Cart<i class="fas fa-chevron-down"></i></a></li>
                                                 <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
                                             </ul>
-                                        </li>
-                                        <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                        <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                        </li> -->
+                                        <li><a href="<?= base_url('blog'); ?>">Blog<i class="fas fa-chevron-down"></i></a></li>
+                                        <li><a href="contact.html">Kontak<i class="fas fa-chevron-down"></i></a></li>
                                     </ul>
                                 </div>
 
@@ -211,8 +168,8 @@
                             <div class="page_menu_content">
 
                                 <div class="page_menu_search">
-                                    <form action="#">
-                                        <input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
+                                    <form action="<?= base_url('main/search') ?>" method="post">
+                                        <input type="search" required="required" name="search2" class="page_menu_search_input" placeholder="Search for products...">
                                     </form>
                                 </div>
                                 <ul class="page_menu_nav">
@@ -296,20 +253,40 @@
 
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <h3 class="modal-title" id="staticBackdropLabel">Keranjang</h3>
+                        <a href="javascript:void(0)" type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button>
+                        </a>
                     </div>
                     <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
+                        <div style="overflow-y: auto;">
+                            <table id="table-cart" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Cover Buku</th>
+                                        <th scope="col">Judul Buku</th>
+                                        <th scope="col">Harga Satuan</th>
+                                        <th scope="col">Kuantitas</th>
+                                        <th scope="col">Subtotal</th>
+                                        <th scope="col">Hapus</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="detail_cart">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr>
+                        <?php if ($this->cart->contents()) : ?>
+                            <button class="btn btn-primary col-12" id="tmbllanjut">Lanjutkan</button>
+                        <?php endif; ?>
+                        <div class="col-12" id="pemesanan">
+
+                        </div>
                     </div>
                 </div>
             </div>

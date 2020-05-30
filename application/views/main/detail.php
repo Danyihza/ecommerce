@@ -37,9 +37,9 @@
                                 <br>
                                 <p>Tersisa 20</p>
                                 
-								<div class="product_price">Rp. <?= $produk['harga_produk']; ?></div>
+								<div class="product_price">Rp. <?= number_format($produk['harga_produk'],'0',',','.'); ?></div>
 								<div class="button_container">
-									<button type="button" class="button cart_button">Add to Cart</button>
+									<button type="button" onclick="toast()" class="button cart_button add_cart">Add to Cart</button>
 								</div>
 								
 							</form>
