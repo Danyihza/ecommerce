@@ -49,7 +49,7 @@
                         <a title="Edit" href="<?= base_url('produk/ubahview/' . $a->id_produk); ?>" type="button" class="btn btn-primary fa fa-edit"></a>
                         <a title="Hapus" href="<?= base_url('produk/hapus/' . $a->id_produk); ?>" onclick="return confirm('Anda yakin ingin menghapus data ini?')" type="button" class="btn btn-danger fa fa-trash"></a>
                     </td>
-                    <td align="center"><img src="<?= base_url('assets/'); ?>images/<?= $a->gambar_produk; ?>" width="32" /></td>
+                    <td align="center"><img src="<?= base_url('assets/'); ?>images/produk/<?= $a->gambar_produk; ?>" width="32" /></td>
                     <td><?= $a->nama_produk ?></td>
                     <td><?= "Rp " . $a->harga_produk ?></td>
                     <td><?= $a->stok_produk ?></td>

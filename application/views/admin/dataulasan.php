@@ -41,7 +41,7 @@
                   <tbody>
                     <?php foreach ($ulasan as $j) { ?>
                       <tr>
-                        <td align="center"><img src="<?= base_url('assets/'); ?>images/<?= $j->gambar_produk; ?>" width="32" /></td>
+                        <td align="center"><img src="<?= base_url('assets/'); ?>images/produk/<?= $j->gambar_produk; ?>" width="32" /></td>
                         <td><?= $j->nama_produk ?></td>
                         <td><li class="fas fa-star text-yellow"></li> <?= $j->rerata ?> (<?= $j->jml ?> Ulasan)</td>
                         <td>
