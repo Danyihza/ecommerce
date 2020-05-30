@@ -41,26 +41,171 @@
 <script src="<?= base_url('assets/templates/'); ?>js/product_custom.js"></script>
 
 
-<script>
-	const Toast = Swal.mixin({
-		toast: true,
-		position: 'top-end',
-		showConfirmButton: false,
-		timer: 3000,
-		timerProgressBar: false,
-		onOpen: (toast) => {
-			toast.addEventListener('mouseenter', Swal.stopTimer)
-			toast.addEventListener('mouseleave', Swal.resumeTimer)
-		}
-	})
+<?php if ($this->session->flashdata('toast')) : ?>
+    <script>
+        $(document).ready(function() {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: false,
+                onOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
 
-	$(document).ready(function() {
-		Toast.fire({
-			icon: 'success',
-			title: 'Ditambahkan ke Keranjang'
-		})
-	});
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Ditambahkan ke Keranjang'
+            })
+        });
+    </script>
+<?php endif; ?>
+
+<script>
+    $(document).ready(function() {
+        $('.add_cart').click(function() {
+            var produk_id = $(this).data("id_produk");
+            var produk_nama = $(this).data("nama_produk");
+            var produk_harga = $(this).data("harga_produk");
+            var produk_gambar = $(this).data("gambar_produk");
+            $.ajax({
+                url: "<?php echo base_url(); ?>main/add_to_cart",
+                method: "POST",
+                data: {
+                    produk_id: produk_id,
+                    produk_nama: produk_nama,
+                    produk_harga: produk_harga,
+                    produk_gambar: produk_gambar,
+                    quantity: 1
+                },
+                success: function(data) {
+                    $('#detail_cart').html(data);
+                    location.reload();
+                }
+            });
+        });
+
+        // Load shopping cart
+        $('#detail_cart').load("<?php echo base_url(); ?>main/load_cart");
+
+        //Hapus Item Cart
+        $(document).on('click', '.hapus_cart', function() {
+            var row_id = $(this).attr("id"); //mengambil row_id dari artibut id
+            $.ajax({
+                url: "<?php echo base_url(); ?>main/hapus_cart",
+                method: "POST",
+                data: {
+                    row_id: row_id
+                },
+                success: function(data) {
+                    $('#detail_cart').html(data);
+                    location.reload();
+                }
+            });
+        });
+
+        //Update Item Cart
+        $(document).on('change', '.kuantitas', function() {
+            var row_id = $(this).attr('id');
+            var qty = $(this).val();
+            $.ajax({
+                url: "<?php echo base_url(); ?>main/update_cart",
+                method: "POST",
+                data: {
+                    row_id: row_id,
+                    qty: qty
+                },
+                success: function(data) {
+                    $('#detail_cart').html(data);
+                }
+            })
+        })
+
+    });
 </script>
+
+<?php if ($this->session->flashdata('modal')) : ?>
+    <script>
+        $(document).ready(function() {
+            $('#staticBackdrop').modal('show');
+        })
+    </script>
+<?php endif ?>
+
+<script>
+    $(document).ready(function() {
+        $('#tmbllanjut').on('click', function() {
+            $('#tmbllanjut').attr('disabled', 'disabled');
+            $('#tmbllanjut').attr('class', 'btn btn-grey col-12');
+            $('#pemesanan').html(`
+                        <hr>
+                        <form>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="exampleFormControlSelect1">Provinsi</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option selected>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="exampleFormControlSelect1">Kab/Kota</label>
+                                    <select style="color:black;" disabled class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="exampleFormControlSelect1">Kecamatan</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="exampleInputEmail1">No. Whatsapp</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                                <a href="<?= base_url('main/checkout') ?>" type="submit" id="checkout" class="btn btn-primary col-md-12">Checkout</a>
+                        </form>
+                        `)
+        })
+
+    })
+</script>
+
 </body>
 
 </html>

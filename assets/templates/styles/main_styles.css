@@ -275,6 +275,23 @@ section
 3.1 Top Bar
 *********************************/
 
+.button_kategori_sidebar
+{
+	background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}
+.button_kategori_sidebar:hover
+{
+	background:none;
+	color:#0e8ce4;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}
 .top_bar
 {
 	width: 100%;
