@@ -72,7 +72,7 @@ class Produk extends CI_Controller
             # code...
             $config['allowed_types'] = 'jpg|jpeg|png|gif|jfif';
             $config['max_size'] = '5000';
-            $config['upload_path'] = './assets/images/';
+            $config['upload_path'] = './assets/images/produk/';
 
             $this->load->library('upload', $config);
             if ($this->upload->do_upload('gambar_produk')) {
@@ -122,7 +122,7 @@ class Produk extends CI_Controller
             # code...
             $config['allowed_types'] = 'jpg|jpeg|png|gif|jfif';
             $config['max_size'] = '5000';
-            $config['upload_path'] = './assets/images/';
+            $config['upload_path'] = './assets/images/produk/';
 
             $this->load->library('upload', $config);
             if ($this->upload->do_upload('gambar_produk')) {
@@ -231,7 +231,7 @@ class Produk extends CI_Controller
         // Load plugin PHPExcel nya
         include APPPATH . 'third_party/PHPExcel/PHPExcel.php';
 
-        $config['upload_path'] = realpath('excel');
+        $config['upload_path'] = realpath('assets/filexcel');
         $config['allowed_types'] = 'xlsx|xls|csv';
         $config['max_size'] = '10000';
         $config['encrypt_name'] = true;
@@ -249,14 +249,14 @@ class Produk extends CI_Controller
             $data_upload = $this->upload->data();
 
             $excelreader     = new PHPExcel_Reader_Excel2007();
-            $loadexcel         = $excelreader->load('excel/' . $data_upload['file_name']); // Load file yang telah diupload ke folder excel
+            $loadexcel         = $excelreader->load('assets/filexcel/' . $data_upload['file_name']); // Load file yang telah diupload ke folder excel
             $sheet             = $loadexcel->getActiveSheet()->toArray(null, true, true, true);
 
             $data = array();
 
-            $numrow = 2;
+            $numrow = 1;
             foreach ($sheet as $row) {
-                if ($numrow > 2) {
+                if ($numrow > 10) {
                     array_push($data, array(
                         'nama_produk' => $row['A'],
                         'harga_produk' => $row['B'],
@@ -270,7 +270,7 @@ class Produk extends CI_Controller
             }
             $this->db->insert_batch('produk', $data);
             //delete file from server
-            unlink(realpath('excel/' . $data_upload['file_name']));
+            unlink(realpath('assets/filexcel/' . $data_upload['file_name']));
 
             //upload success
             $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES IMPORT BERHASIL!</b> Data berhasil diimport!</div>');
