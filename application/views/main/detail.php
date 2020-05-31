@@ -16,7 +16,7 @@
 					<div class="product_description">
 						<div class="product_category"><?= $produk['nama_kategori']; ?></div>
 						<div class="product_name"><?= $produk['nama_produk']; ?></div>
-						<div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>
+						<div class="rating_r rating_r_4 product_rating"><i></i><p>4.5</p></div>
 						<div class="product_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum. laoreet turpis, nec sollicitudin dolor cursus at. Maecenas aliquet, dolor a faucibus efficitur, nisi tellus cursus urna, eget dictum lacus turpis.</p></div>
 						<div class="order_info d-flex flex-row">
 							<form action="#">
@@ -36,10 +36,18 @@
                                 </div>
                                 <br>
                                 <p>Tersisa 20</p>
-                                
-								<div class="product_price">Rp. <?= number_format($produk['harga_produk'],'0',',','.'); ?></div>
+								
+								<?php if($produk['diskon_produk']) :?>
+									<div class="product_price" style="color:red;">Rp. <?= number_format(($produk['harga_produk']-($produk['harga_produk']*($produk['diskon_produk']/100))), '0', ',', '.'); ?><br><span style="font-size:16px;color:black;"><s>Rp. 525.000</s></span></div>
+									<?php else : ?>
+									<div class="product_price" style="color:red;">Rp. <?= number_format($produk['harga_produk'],'0',',','.'); ?></div>
+								<?php endif; ?>
 								<div class="button_container">
-									<button type="button" onclick="toast()" class="button cart_button add_cart">Add to Cart</button>
+									<button type="button" onclick="toast()" class="button cart_button add_cart" data-id_produk="<?= $produk['id_produk']; ?>" data-nama_produk="<?= $produk['nama_produk'] ?>" data-harga_produk="<?php if ($produk['diskon_produk'] == null) {
+                                                            echo $produk['harga_produk'];
+                                                        } else {
+                                                            echo ($produk['harga_produk']-($produk['harga_produk']*($produk['diskon_produk']/100)));
+                                                        } ?>" data-gambar_produk="<?= $produk['gambar_produk'] ?>">Add to Cart</button>
 								</div>
 								
 							</form>

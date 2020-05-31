@@ -8,7 +8,11 @@
             <div class="col-lg-5 offset-lg-4 fill_height">
                 <div class="banner_content">
                     <h1 class="banner_text" style="color:#000000;">Buku Terbaru</h1>
-                    <div class="banner_price">Rp <?= number_format($newproduk['harga_produk'], 0, '.', '.'); ?></div>
+                    <?php if ($newproduk['diskon_produk']) :?>
+                        <div class="banner_price">Rp <?= number_format(($newproduk['harga_produk']-($newproduk['harga_produk']*($newproduk['diskon_produk']/100))), '0', ',', '.'); ?><span style="color:black;"><s>Rp 525.000</s></span></div>
+                    <?php else : ?>
+                        <div class="banner_price">Rp <?= number_format($newproduk['harga_produk'], 0, '.', '.'); ?></div>
+                    <?php endif; ?>
                     <div class="banner_product_name"><?= $newproduk['nama_produk']; ?></div>
                     <div class="button banner_button"><a href="<?= base_url('main/produk/') . $newproduk['link']; ?>">Beli Sekarang</a></div>
                 </div>
@@ -95,12 +99,16 @@
                                             <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
                                                 <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/new_1.jpg" alt=""></div>
                                                 <div class="product_content">
-                                                    <div class="product_price">Rp. <?= number_format($product['harga_produk'], '0', ',', '.'); ?></div>
+                                                    <?php if($product['diskon_produk']>0) : ?>
+                                                        <div class="product_price">Rp. <?= number_format(($product['harga_produk']-($product['harga_produk']*($product['diskon_produk']/100))), '0', ',', '.'); ?><span><s>Rp <?= number_format($product['harga_produk'], '0', ',', '.'); ?></s></span></div>
+                                                    <?php else : ?>
+                                                        <div class="product_price">Rp. <?= number_format($product['harga_produk'], '0', ',', '.'); ?></div>
+                                                    <?php endif; ?>
                                                     <div class="product_name">
                                                         <div><a href="<?= base_url('main/produk/') . $product['link'] ?>"><?= $product['nama_produk']; ?></a></div>
                                                     </div>
                                                     <div class="product_extras">
-                                                        <button class="add_cart product_cart_button" data-id_produk="<?= $product['id_produk']; ?>" data-nama_produk="<?= $product['nama_produk'] ?>" data-harga_produk="<?php if ($product['diskon_produk'] == null) {
+                                                        <button class="add_cart product_cart_button" data-id_produk="<?= $product['id_produk']; ?>" data-nama_produk="<?= $product['nama_produk'] ?>" data-harga_produk="<?php if ($product['diskon_produk'] == 0) {
                                                             echo $product['harga_produk'];
                                                         } else {
                                                             echo ($product['harga_produk']-($product['harga_produk']*($product['diskon_produk']/100)));
@@ -108,8 +116,11 @@
                                                     </div>
                                                 </div>
                                                 <ul class="product_marks">
-                                                    <li class="product_mark product_discount">-25%</li>
-                                                    <li class="product_mark product_new">baru</li>
+                                                    <?php if($product['diskon_produk']>0) : ?>
+                                                        <li class="product_mark product_new" style="background: #df3b3b">-<?= $product['diskon_produk'] ?>%</li>
+                                                    <?php else : ?>
+                                                        <li class="product_mark product_new">baru</li>
+                                                    <?php endif; ?>
                                                 </ul>
                                             </div>
                                         </div>
@@ -131,7 +142,11 @@
                                             <!-- <div class="arrivals_single_price text-left"></div> -->
                                         </div>
                                         <div class="bestsellers_price discount">Rp. <?= number_format(($diskon['harga_produk']-($diskon['harga_produk']*($diskon['diskon_produk']/100))), 0, '.', '.') ?><span>Rp <?= number_format($diskon['harga_produk'], 0, '.', '.') ?></span></div>
-                                        <form action="#"><button class="arrivals_single_button">Add to Cart</button></form>
+                                        <button class="add_cart arrivals_single_button" data-id_produk="<?= $diskon['id_produk']; ?>" data-nama_produk="<?= $diskon['nama_produk'] ?>" data-harga_produk="<?php if ($diskon['diskon_produk'] == null) {
+                                                            echo $diskon['harga_produk'];
+                                                        } else {
+                                                            echo ($diskon['harga_produk']-($diskon['harga_produk']*($diskon['diskon_produk']/100)));
+                                                        } ?>" data-gambar_produk="<?= $diskon['gambar_produk'] ?>">Add to Cart</button>
                                     </div>
                                     <ul class="arrivals_single_marks product_marks">
                                         <li class="arrivals_single_mark product_mark product_discount">-<?= $diskon['diskon_produk'] ?>%</li>
@@ -139,14 +154,16 @@
                                 </div>
                             </div>
                         </div>
-
+                        
                     </div>
-
+                    
                 </div>
             </div>
         </div>
     </div>
+    <button class="btn btn-primary col-12">Semua Produk</button>
 </div>
+
 
 <!-- Best Sellers -->
 
@@ -846,65 +863,10 @@
     </div>
 </div>
 
-<!-- Adverts -->
-
-<div class="adverts">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-4 advert_col">
-
-                <!-- Advert Item -->
-
-                <div class="advert d-flex flex-row align-items-center justify-content-start">
-                    <div class="advert_content">
-                        <div class="advert_title"><a href="#">Trends 2018</a></div>
-                        <div class="advert_text">Lorem ipsum dolor sit amet, consectetur adipiscing Donec et.</div>
-                    </div>
-                    <div class="ml-auto">
-                        <div class="advert_image"><img src="images/adv_1.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 advert_col">
-
-                <!-- Advert Item -->
-
-                <div class="advert d-flex flex-row align-items-center justify-content-start">
-                    <div class="advert_content">
-                        <div class="advert_subtitle">Trends 2018</div>
-                        <div class="advert_title_2"><a href="#">Sale -45%</a></div>
-                        <div class="advert_text">Lorem ipsum dolor sit amet, consectetur.</div>
-                    </div>
-                    <div class="ml-auto">
-                        <div class="advert_image"><img src="images/adv_2.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 advert_col">
-
-                <!-- Advert Item -->
-
-                <div class="advert d-flex flex-row align-items-center justify-content-start">
-                    <div class="advert_content">
-                        <div class="advert_title"><a href="#">Trends 2018</a></div>
-                        <div class="advert_text">Lorem ipsum dolor sit amet, consectetur.</div>
-                    </div>
-                    <div class="ml-auto">
-                        <div class="advert_image"><img src="images/adv_3.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 <!-- Reviews -->
-
+<?php if($ulasan) :?>
 <div class="reviews">
     <div class="container">
         <div class="row">
@@ -920,119 +882,26 @@
                     <!-- Reviews Slider -->
                     <div class="owl-carousel owl-theme reviews_slider">
 
+                    <?php foreach($ulasan as $ulas) : ?>
                         <!-- Reviews Slider Item -->
                         <div class="owl-item">
                             <div class="review d-flex flex-row align-items-start justify-content-start">
                                 <div>
-                                    <div class="review_image"><img src="images/review_1.jpg" alt=""></div>
+                                    <div class="review_image"><img src="<?= base_url('assets/images/') . $ulas['gambar_produk'] ?>" alt=""></div>
                                 </div>
                                 <div class="review_content">
-                                    <div class="review_name">Roberto Sanchez</div>
+                                    <div class="review_name"><?= $ulas['nama_ulasan']; ?></div>
                                     <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
+                                        <div class="rating_r rating_r_4 review_rating"><i></i><?= $ulas['rating_ulasan']; ?></div><br>
+                                        <div class="review_time"><?= time_elapsed_string($ulas['timestamp']); ?></div>
                                     </div>
                                     <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
+                                        <p><?= $ulas['isi_ulasan'] ?></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Reviews Slider Item -->
-                        <div class="owl-item">
-                            <div class="review d-flex flex-row align-items-start justify-content-start">
-                                <div>
-                                    <div class="review_image"><img src="images/review_2.jpg" alt=""></div>
-                                </div>
-                                <div class="review_content">
-                                    <div class="review_name">Brandon Flowers</div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
-                                    </div>
-                                    <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Reviews Slider Item -->
-                        <div class="owl-item">
-                            <div class="review d-flex flex-row align-items-start justify-content-start">
-                                <div>
-                                    <div class="review_image"><img src="images/review_3.jpg" alt=""></div>
-                                </div>
-                                <div class="review_content">
-                                    <div class="review_name">Emilia Clarke</div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
-                                    </div>
-                                    <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Reviews Slider Item -->
-                        <div class="owl-item">
-                            <div class="review d-flex flex-row align-items-start justify-content-start">
-                                <div>
-                                    <div class="review_image"><img src="images/review_1.jpg" alt=""></div>
-                                </div>
-                                <div class="review_content">
-                                    <div class="review_name">Roberto Sanchez</div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
-                                    </div>
-                                    <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Reviews Slider Item -->
-                        <div class="owl-item">
-                            <div class="review d-flex flex-row align-items-start justify-content-start">
-                                <div>
-                                    <div class="review_image"><img src="images/review_2.jpg" alt=""></div>
-                                </div>
-                                <div class="review_content">
-                                    <div class="review_name">Brandon Flowers</div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
-                                    </div>
-                                    <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Reviews Slider Item -->
-                        <div class="owl-item">
-                            <div class="review d-flex flex-row align-items-start justify-content-start">
-                                <div>
-                                    <div class="review_image"><img src="images/review_3.jpg" alt=""></div>
-                                </div>
-                                <div class="review_content">
-                                    <div class="review_name">Emilia Clarke</div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
-                                    </div>
-                                    <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <?php endforeach; ?>
 
                     </div>
                     <div class="reviews_dots"></div>
@@ -1041,3 +910,4 @@
         </div>
     </div>
 </div>
+                    <?php endif; ?>

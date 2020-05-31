@@ -8,16 +8,18 @@ class Main extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Produk_model', 'produk');
+		$this->load->model('Ulasan_model', 'ulasan');
 	}
 
 	public function index()
 	{
 		// var_dump($this->cart->contents()); die;
+		$data['ulasan'] = $this->ulasan->getUlasan();
 		$data['kategori'] = $this->produk->getKategori();
 		$data['newproduk'] = $this->produk->getNewestProduk();
 		$data['products'] = $this->produk->getNewProduct();
 		$data['diskon'] = $this->produk->getMostDiscountProduct();
-		// var_dump($data); die;
+		// var_dump($data['ulasan']); die;
 		$this->load->view('main/templates/header', $data);
 		$this->load->view('main/templates/topbar', $data);
 		$this->load->view('main/main', $data);
