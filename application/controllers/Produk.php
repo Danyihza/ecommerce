@@ -106,7 +106,7 @@ class Produk extends CI_Controller
         $this->produk_model->hapus_data($where, 'produk');
         // var_dump($this->db->error());die;
         $error = $this->db->error();
-        var_dump($error); die;
+        // var_dump($error); die;
 
         // if ($this->produk_model->hapus_data($where, 'produk')) {
         //     $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES HAPUS BERHASIL!</b> </div>');
