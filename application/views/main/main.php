@@ -8,8 +8,8 @@
             <div class="col-lg-5 offset-lg-4 fill_height">
                 <div class="banner_content">
                     <h1 class="banner_text" style="color:#000000;">Buku Terbaru</h1>
-                    <?php if ($newproduk['diskon_produk']) :?>
-                        <div class="banner_price">Rp <?= number_format(($newproduk['harga_produk']-($newproduk['harga_produk']*($newproduk['diskon_produk']/100))), '0', ',', '.'); ?><span style="color:black;"><s>Rp 525.000</s></span></div>
+                    <?php if ($newproduk['diskon_produk']) : ?>
+                        <div class="banner_price">Rp <?= number_format(($newproduk['harga_produk'] - ($newproduk['harga_produk'] * ($newproduk['diskon_produk'] / 100))), '0', ',', '.'); ?><span style="color:black;"><s>Rp 525.000</s></span></div>
                     <?php else : ?>
                         <div class="banner_price">Rp <?= number_format($newproduk['harga_produk'], 0, '.', '.'); ?></div>
                     <?php endif; ?>
@@ -99,8 +99,8 @@
                                             <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
                                                 <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/new_1.jpg" alt=""></div>
                                                 <div class="product_content">
-                                                    <?php if($product['diskon_produk']>0) : ?>
-                                                        <div class="product_price">Rp. <?= number_format(($product['harga_produk']-($product['harga_produk']*($product['diskon_produk']/100))), '0', ',', '.'); ?><span><s>Rp <?= number_format($product['harga_produk'], '0', ',', '.'); ?></s></span></div>
+                                                    <?php if ($product['diskon_produk'] > 0) : ?>
+                                                        <div class="product_price">Rp. <?= number_format(($product['harga_produk'] - ($product['harga_produk'] * ($product['diskon_produk'] / 100))), '0', ',', '.'); ?><span><s>Rp <?= number_format($product['harga_produk'], '0', ',', '.'); ?></s></span></div>
                                                     <?php else : ?>
                                                         <div class="product_price">Rp. <?= number_format($product['harga_produk'], '0', ',', '.'); ?></div>
                                                     <?php endif; ?>
@@ -109,14 +109,14 @@
                                                     </div>
                                                     <div class="product_extras">
                                                         <button class="add_cart product_cart_button" data-id_produk="<?= $product['id_produk']; ?>" data-nama_produk="<?= $product['nama_produk'] ?>" data-harga_produk="<?php if ($product['diskon_produk'] == 0) {
-                                                            echo $product['harga_produk'];
-                                                        } else {
-                                                            echo ($product['harga_produk']-($product['harga_produk']*($product['diskon_produk']/100)));
-                                                        } ?>" data-gambar_produk="<?= $product['gambar_produk'] ?>">Add to Cart</button>
+                                                                                                                                                                                                                                echo $product['harga_produk'];
+                                                                                                                                                                                                                            } else {
+                                                                                                                                                                                                                                echo ($product['harga_produk'] - ($product['harga_produk'] * ($product['diskon_produk'] / 100)));
+                                                                                                                                                                                                                            } ?>" data-gambar_produk="<?= $product['gambar_produk'] ?>">Add to Cart</button>
                                                     </div>
                                                 </div>
                                                 <ul class="product_marks">
-                                                    <?php if($product['diskon_produk']>0) : ?>
+                                                    <?php if ($product['diskon_produk'] > 0) : ?>
                                                         <li class="product_mark product_new" style="background: #df3b3b">-<?= $product['diskon_produk'] ?>%</li>
                                                     <?php else : ?>
                                                         <li class="product_mark product_new">baru</li>
@@ -141,12 +141,12 @@
                                             <div class="arrivals_single_name"><a href="#"><?= $diskon['nama_produk']; ?></a></div>
                                             <!-- <div class="arrivals_single_price text-left"></div> -->
                                         </div>
-                                        <div class="bestsellers_price discount">Rp. <?= number_format(($diskon['harga_produk']-($diskon['harga_produk']*($diskon['diskon_produk']/100))), 0, '.', '.') ?><span>Rp <?= number_format($diskon['harga_produk'], 0, '.', '.') ?></span></div>
+                                        <div class="bestsellers_price discount">Rp. <?= number_format(($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100))), 0, '.', '.') ?><span>Rp <?= number_format($diskon['harga_produk'], 0, '.', '.') ?></span></div>
                                         <button class="add_cart arrivals_single_button" data-id_produk="<?= $diskon['id_produk']; ?>" data-nama_produk="<?= $diskon['nama_produk'] ?>" data-harga_produk="<?php if ($diskon['diskon_produk'] == null) {
-                                                            echo $diskon['harga_produk'];
-                                                        } else {
-                                                            echo ($diskon['harga_produk']-($diskon['harga_produk']*($diskon['diskon_produk']/100)));
-                                                        } ?>" data-gambar_produk="<?= $diskon['gambar_produk'] ?>">Add to Cart</button>
+                                                                                                                                                                                                                echo $diskon['harga_produk'];
+                                                                                                                                                                                                            } else {
+                                                                                                                                                                                                                echo ($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100)));
+                                                                                                                                                                                                            } ?>" data-gambar_produk="<?= $diskon['gambar_produk'] ?>">Add to Cart</button>
                                     </div>
                                     <ul class="arrivals_single_marks product_marks">
                                         <li class="arrivals_single_mark product_mark product_discount">-<?= $diskon['diskon_produk'] ?>%</li>
@@ -154,14 +154,16 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
             </div>
         </div>
+        <form action="<?= base_url('main/search'); ?>" method="POST">
+            <input name="search" type="submit" class="btn btn-primary col-12" style="color: white;height: 48px;background: #0e8ce4;" value="Semua Produk">
+        </form>
     </div>
-    <button class="btn btn-primary col-12">Semua Produk</button>
 </div>
 
 
@@ -866,48 +868,48 @@
 
 
 <!-- Reviews -->
-<?php if($ulasan) :?>
-<div class="reviews">
-    <div class="container">
-        <div class="row">
-            <div class="col">
+<?php if ($ulasan) : ?>
+    <div class="reviews">
+        <div class="container">
+            <div class="row">
+                <div class="col">
 
-                <div class="reviews_title_container">
-                    <h3 class="reviews_title">Latest Reviews</h3>
-                    <div class="reviews_all ml-auto"><a href="#">view all <span>reviews</span></a></div>
-                </div>
-
-                <div class="reviews_slider_container">
-
-                    <!-- Reviews Slider -->
-                    <div class="owl-carousel owl-theme reviews_slider">
-
-                    <?php foreach($ulasan as $ulas) : ?>
-                        <!-- Reviews Slider Item -->
-                        <div class="owl-item">
-                            <div class="review d-flex flex-row align-items-start justify-content-start">
-                                <div>
-                                    <div class="review_image"><img src="<?= base_url('assets/images/') . $ulas['gambar_produk'] ?>" alt=""></div>
-                                </div>
-                                <div class="review_content">
-                                    <div class="review_name"><?= $ulas['nama_ulasan']; ?></div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><?= $ulas['rating_ulasan']; ?></div><br>
-                                        <div class="review_time"><?= time_elapsed_string($ulas['timestamp']); ?></div>
-                                    </div>
-                                    <div class="review_text">
-                                        <p><?= $ulas['isi_ulasan'] ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-
+                    <div class="reviews_title_container">
+                        <h3 class="reviews_title">Ulasan Terbaru</h3>
+                        <div class="reviews_all ml-auto"><a href="#">Lihat Semua <span>Ulasan</span></a></div>
                     </div>
-                    <div class="reviews_dots"></div>
+
+                    <div class="reviews_slider_container">
+
+                        <!-- Reviews Slider -->
+                        <div class="owl-carousel owl-theme reviews_slider">
+
+                            <?php foreach ($ulasan as $ulas) : ?>
+                                <!-- Reviews Slider Item -->
+                                <div class="owl-item">
+                                    <div class="review d-flex flex-row align-items-start justify-content-start">
+                                        <div>
+                                            <div class="review_image"><img src="<?= base_url('assets/images/') . $ulas['gambar_produk'] ?>" alt=""></div>
+                                        </div>
+                                        <div class="review_content">
+                                            <div class="review_name"><?= $ulas['nama_ulasan']; ?></div>
+                                            <div class="review_rating_container">
+                                                <div class="rating_r rating_r_4 review_rating"><i></i><?= $ulas['rating_ulasan']; ?></div><br>
+                                                <div class="review_time"><?= time_elapsed_string($ulas['timestamp']); ?></div>
+                                            </div>
+                                            <div class="review_text">
+                                                <p><?= $ulas['isi_ulasan'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+
+                        </div>
+                        <div class="reviews_dots"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-                    <?php endif; ?>
+<?php endif; ?>

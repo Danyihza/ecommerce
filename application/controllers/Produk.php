@@ -91,7 +91,7 @@ class Produk extends CI_Controller
             'diskon_produk' => $diskon_produk,
             'desk_produk' => $desk_produk,
             'kategori' => $kategori,
-            'link' => strtolower(str_replace(' ','-',$nama_produk))
+            'link' => strtolower(str_replace(' ', '-', $nama_produk))
         );
 
         $this->produk_model->input_data($data, 'produk');
@@ -100,10 +100,27 @@ class Produk extends CI_Controller
 
     public function hapus($id_produk)
     {
-
+        $db_debug = $this->db->db_debug; //save setting
+        $this->db->db_debug = FALSE; //disable debugging for queries
         $where = array('id_produk' => $id_produk);
         $this->produk_model->hapus_data($where, 'produk');
-        redirect('produk');
+        // var_dump($this->db->error());die;
+        $error = $this->db->error();
+        var_dump($error); die;
+
+        // if ($this->produk_model->hapus_data($where, 'produk')) {
+        //     $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES HAPUS BERHASIL!</b> </div>');
+        //     redirect('produk/');
+        // } echo $this->db->error();die;
+        if ($error['code'] != 0) {
+            $this->session->set_flashdata('notif', '<div class="alert alert-danger"><b>PROSES HAPUS GAGAL!</b> </div>');
+            $this->db->db_debug = $db_debug;
+            redirect('produk/');
+        } else {
+            $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES HAPUS BERHASIL!</b> </div>');
+            $this->db->db_debug = $db_debug;
+            redirect('produk/');
+        }
     }
 
     public function update()
@@ -141,7 +158,7 @@ class Produk extends CI_Controller
             'diskon_produk' => $diskon_produk,
             'desk_produk' => $desk_produk,
             'kategori' => $kategori,
-            'link' => strtolower(str_replace(' ','-',$nama_produk))
+            'link' => strtolower(str_replace(' ', '-', $nama_produk))
         );
 
         $where = array(
@@ -199,7 +216,7 @@ class Produk extends CI_Controller
     {
         if ($this->produk_model->logged_id()) {
             $data['countproduk'] = $this->produk_model->countAllProduct();
-            $data['ulasan']= $this->produk_model->jmlUlasan();
+            $data['ulasan'] = $this->produk_model->jmlUlasan();
             $this->load->view('admin/header');
             $this->load->view('admin/navbar');
             $this->load->view('admin/sidebar', $data);
@@ -215,7 +232,7 @@ class Produk extends CI_Controller
         if ($this->produk_model->logged_id()) {
             $data['countproduk'] = $this->produk_model->countAllProduct();
             $data['ulas'] = $this->produk_model->data_ulasan($id_produk);
-            $data['rating']= $this->produk_model->rating($id_produk);
+            $data['rating'] = $this->produk_model->rating($id_produk);
             $this->load->view('admin/header');
             $this->load->view('admin/navbar');
             $this->load->view('admin/sidebar', $data);
