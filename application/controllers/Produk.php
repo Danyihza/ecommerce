@@ -104,14 +104,7 @@ class Produk extends CI_Controller
         $this->db->db_debug = FALSE; //disable debugging for queries
         $where = array('id_produk' => $id_produk);
         $this->produk_model->hapus_data($where, 'produk');
-        // var_dump($this->db->error());die;
         $error = $this->db->error();
-        // var_dump($error); die;
-
-        // if ($this->produk_model->hapus_data($where, 'produk')) {
-        //     $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES HAPUS BERHASIL!</b> </div>');
-        //     redirect('produk/');
-        // } echo $this->db->error();die;
         if ($error['code'] != 0) {
             $this->session->set_flashdata('notif', '<div class="alert alert-danger"><b>PROSES HAPUS GAGAL!</b> </div>');
             $this->db->db_debug = $db_debug;
@@ -159,6 +152,36 @@ class Produk extends CI_Controller
             'desk_produk' => $desk_produk,
             'kategori' => $kategori,
             'link' => strtolower(str_replace(' ', '-', $nama_produk))
+        );
+
+        $where = array(
+            'id_produk' => $id_produk
+        );
+        $this->produk_model->update_data($where, $data, 'produk');
+        redirect('produk');
+    }
+
+    public function updatestok($id_produk)
+    {
+        $stok_produk = $this->input->post('stok_produk');
+
+        $data = array(
+            'stok_produk' => $stok_produk
+        );
+
+        $where = array(
+            'id_produk' => $id_produk
+        );
+        $this->produk_model->update_data($where, $data, 'produk');
+        redirect('produk');
+    }
+
+    public function updatediskon($id_produk)
+    {
+        $diskon_produk = $this->input->post('diskon_produk');
+
+        $data = array(
+            'diskon_produk' => $diskon_produk
         );
 
         $where = array(

@@ -54,9 +54,15 @@
                         <td align="center"><img src="<?= base_url('assets/'); ?>images/produk/<?= $a->gambar_produk; ?>" width="32" /></td>
                         <td><?= $a->nama_produk ?></td>
                         <td><?= "Rp " . number_format($a->harga_produk, 0, ',', '.') ?></td>
-                        <td><?= $a->stok_produk ?></td>
+                        <td>
+                          <?= $a->stok_produk ?>
+                          <a title="Update Stok" href="#" type="button" class="fa fa-edit text-warning" data-toggle="modal" data-target="#stok<?= $a->id_produk ?>"></a>
+                        </td>
                         <td><?= $a->nama_kategori ?></td>
-                        <td><?= $a->diskon_produk ?></td>
+                        <td>
+                          <?= $a->diskon_produk ?>% 
+                          <a title="Ubah Diskon" href="#" type="button" class="fa fa-edit text-warning" data-toggle="modal" data-target="#diskon<?= $a->id_produk ?>"></a>
+                        </td>
                         <td><?= "Rp " . number_format(($a->harga_produk - ($a->harga_produk * ($a->diskon_produk / 100))), 0, ',', '.') ?></td>
                         <td><?= $a->desk_produk ?></td>
                       </tr>
@@ -90,7 +96,66 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <!-- modal tambah data -->
+
+  <!-- modal stok data -->
+  <?php foreach ($produk as $a) { ?>
+    <div class="modal fade" id="stok<?= $a->id_produk ?>" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg-3" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="mediumModalLabel"><strong>Stok <?= $a->nama_produk ?></strong></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <?= form_open_multipart('produk/updatestok/'.$a->id_produk); ?>
+            <div class="form-group">
+              <label for="exampleInputDiskon">Stok Buku</label>
+              <input class="form-control" type="number" name="stok_produk" placeholder="Masukkan Stok" value="<?= $a->stok_produk ?>" required>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <input type="submit" class="btn btn-primary" value="Tambah">
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php } ?>
+  <!-- modal stok data -->
+
+    <!-- modal diskon data -->
+    <?php foreach ($produk as $a) { ?>
+    <div class="modal fade" id="diskon<?= $a->id_produk ?>" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg-3" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="mediumModalLabel"><strong>Diskon <?= $a->nama_produk ?></strong></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <?= form_open_multipart('produk/updatediskon/'.$a->id_produk); ?>
+            <div class="form-group">
+              <label for="exampleInputDiskon">Diskon Buku</label>
+              <input class="form-control" type="number" name="diskon_produk" placeholder="Masukkan Diskon" value="<?= $a->diskon_produk ?>" required>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <input type="submit" class="btn btn-primary" value="Tambah">
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php } ?>
+  <!-- modal diskon data -->
+
+  <!-- modal kategori data -->
   <div class="modal fade" id="kategori" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg-8" role="document">
       <div class="modal-content">
@@ -136,4 +201,4 @@
       </div>
     </div>
   </div>
-  <!-- modal tambah data -->
+  <!-- modal kategori data -->
