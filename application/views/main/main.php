@@ -8,7 +8,11 @@
             <div class="col-lg-5 offset-lg-4 fill_height">
                 <div class="banner_content">
                     <h1 class="banner_text" style="color:#000000;">Buku Terbaru</h1>
-                    <div class="banner_price">Rp <?= number_format($newproduk['harga_produk'], 0, '.', '.'); ?></div>
+                    <?php if ($newproduk['diskon_produk']) :?>
+                        <div class="banner_price">Rp <?= number_format(($newproduk['harga_produk']-($newproduk['harga_produk']*($newproduk['diskon_produk']/100))), '0', ',', '.'); ?><span style="color:black;"><s>Rp 525.000</s></span></div>
+                    <?php else : ?>
+                        <div class="banner_price">Rp <?= number_format($newproduk['harga_produk'], 0, '.', '.'); ?></div>
+                    <?php endif; ?>
                     <div class="banner_product_name"><?= $newproduk['nama_produk']; ?></div>
                     <div class="button banner_button"><a href="<?= base_url('main/produk/') . $newproduk['link']; ?>">Beli Sekarang</a></div>
                 </div>
@@ -95,7 +99,11 @@
                                             <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
                                                 <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/new_1.jpg" alt=""></div>
                                                 <div class="product_content">
-                                                    <div class="product_price">Rp. <?= number_format($product['harga_produk'], '0', ',', '.'); ?></div>
+                                                    <?php if($product['diskon_produk']!=null) : ?>
+                                                        <div class="product_price">Rp. <?= number_format(($product['harga_produk']-($product['harga_produk']*($product['diskon_produk']/100))), '0', ',', '.'); ?><span><s>Rp <?= number_format($product['harga_produk'], '0', ',', '.'); ?></s></span></div>
+                                                    <?php else : ?>
+                                                        <div class="product_price">Rp. <?= number_format($product['harga_produk'], '0', ',', '.'); ?></div>
+                                                    <?php endif; ?>
                                                     <div class="product_name">
                                                         <div><a href="<?= base_url('main/produk/') . $product['link'] ?>"><?= $product['nama_produk']; ?></a></div>
                                                     </div>
@@ -108,8 +116,11 @@
                                                     </div>
                                                 </div>
                                                 <ul class="product_marks">
-                                                    <li class="product_mark product_discount">-25%</li>
-                                                    <li class="product_mark product_new">baru</li>
+                                                    <?php if($product['diskon_produk']!=null) : ?>
+                                                        <li class="product_mark product_new" style="background: #df3b3b">-<?= $product['diskon_produk'] ?>%</li>
+                                                    <?php else : ?>
+                                                        <li class="product_mark product_new">baru</li>
+                                                    <?php endif; ?>
                                                 </ul>
                                             </div>
                                         </div>
@@ -131,7 +142,11 @@
                                             <!-- <div class="arrivals_single_price text-left"></div> -->
                                         </div>
                                         <div class="bestsellers_price discount">Rp. <?= number_format(($diskon['harga_produk']-($diskon['harga_produk']*($diskon['diskon_produk']/100))), 0, '.', '.') ?><span>Rp <?= number_format($diskon['harga_produk'], 0, '.', '.') ?></span></div>
-                                        <form action="#"><button class="arrivals_single_button">Add to Cart</button></form>
+                                        <button class="add_cart arrivals_single_button" data-id_produk="<?= $diskon['id_produk']; ?>" data-nama_produk="<?= $diskon['nama_produk'] ?>" data-harga_produk="<?php if ($diskon['diskon_produk'] == null) {
+                                                            echo $diskon['harga_produk'];
+                                                        } else {
+                                                            echo ($diskon['harga_produk']-($diskon['harga_produk']*($diskon['diskon_produk']/100)));
+                                                        } ?>" data-gambar_produk="<?= $diskon['gambar_produk'] ?>">Add to Cart</button>
                                     </div>
                                     <ul class="arrivals_single_marks product_marks">
                                         <li class="arrivals_single_mark product_mark product_discount">-<?= $diskon['diskon_produk'] ?>%</li>

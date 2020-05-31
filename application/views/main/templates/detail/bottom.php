@@ -143,67 +143,119 @@
             $('#tmbllanjut').attr('class', 'btn btn-grey col-12');
             $('#pemesanan').html(`
                         <hr>
-                        <form>
+                        <form action="<?= base_url('main/checkout') ?>" method="post">
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <label for="exampleInputEmail1">Nama Lengkap</label>
+                                    <input type="text" name="nama" class="form-control" id="nama_lengkap" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <label for="exampleInputPassword1">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label for="exampleFormControlSelect1">Provinsi</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>1</option>
-                                        <option selected>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select style="color:black;" class="form-control" id="input_provinsi" onchange="document.getElementById('provinsi1').value=this.options[this.selectedIndex].text">
+                                        <option disabled selected>Silahkan Pilih Provinsi</option>
                                     </select>
+                                    <input type="hidden" name="provinsi" id="provinsi1" value="">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="exampleFormControlSelect1">Kab/Kota</label>
-                                    <select style="color:black;" disabled class="form-control" id="exampleFormControlSelect1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select disabled="true" style="color:black;" class="form-control" id="input_kabkota" onchange="document.getElementById('kabkota1').value=this.options[this.selectedIndex].text">
+                                        <option disabled selected>Silahkan Pilih Kota</option>
                                     </select>
+                                    <input type="hidden" name="kabkota" id="kabkota1" value="">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="exampleFormControlSelect1">Kecamatan</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select disabled="true" style="color:black;" class="form-control" name="kecamatan" id="input_kecamatan" onchange="document.getElementById('kecamatan1').value=this.options[this.selectedIndex].text">
+                                        <option disabled selected>Silahkan Pilih Kecamatan</option>
                                     </select>
+                                    <input type="hidden" name="kecamatan" id="kecamatan1" value="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="exampleFormControlTextarea1">Alamat Lengkap</label>
+                                        <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="exampleInputEmail1">No. Whatsapp</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="text" name="no_hp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                 </div>
                             </div>
-                                <a href="<?= base_url('main/checkout') ?>" type="submit" id="checkout" class="btn btn-primary col-md-12">Checkout</a>
+                            <div class="alert alert-warning" role="alert">
+                                <h4 class="alert-heading">Catatan</h4>
+                                <p>Total harga + ongkir yang harus dibayar akan diinformasikan oleh admin Media Al-Faruq, setelah mengirim data pesanan.</p>
+                            </div>
+                                <button type="submit" onclick="return confirm('Data yang anda isi sudah benar ?')" id="checkout" class="btn btn-primary col-md-12"><img src="<?= base_url('assets/images/icon/'); ?>icons8-whatsapp-24.png" width="20px" alt=""> Pesan Sekarang</button>
                         </form>
                         `)
         })
 
     })
+</script>
+
+<script>
+    $('#tmbllanjut').on('click', function() {
+        $.ajax({
+            url: '<?= base_url('API/getProvinsiAPI') ?>',
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                const result = data.provinsi;
+                console.log(result);
+                $('#input_provinsi').attr('disabled', false);
+                $.each(result, function(i, value) {
+                    $('#input_provinsi').append('<option value="' + value.id + '">' + value.nama + '</option>')
+                });
+                $('#input_provinsi').change(function() {
+                    $('#input_kabkota').attr('disabled', false);
+                    $('#input_kecamatan').attr('disabled', true);
+                    $('#input_kabkota').html('<option disabled selected>Silahkan Pilih Kota</option>');
+                    $('#input_kecamatan').html('<option disabled selected>Silahkan Pilih Kecamatan</option>');
+                    var provinsi = $(this).val();
+                    console.log(provinsi);
+                    $.ajax({
+                        url: '<?= base_url('API/getKabKotaAPI/') ?>' + provinsi,
+                        method: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            const result = data.kota_kabupaten;
+                            console.log(result);
+                            $.each(result, function(i, value) {
+                                $('#input_kabkota').append('<option value="' + value.id + '">' + value.nama + '</option>')
+                            });
+                            $('#input_kabkota').change(function() {
+                                $('#input_kecamatan').attr('disabled', false);
+                                $('#input_kecamatan').html('<option disabled selected>Silahkan Pilih Kecamatan</option>');
+                                const kab_kota = $(this).val();
+                                console.log(kab_kota);
+                                $.ajax({
+                                    url: '<?= base_url('API/getKecamatanAPI/') ?>' + kab_kota,
+                                    method: 'GET',
+                                    dataType: 'json',
+                                    success: function(data) {
+                                        const result = data.kecamatan;
+                                        console.log(result);
+                                        $.each(result, function(i, value) {
+                                            $('#input_kecamatan').append('<option value="' + value.id + '">' + value.nama + '</option>')
+                                        });
+                                    }
+                                })
+                            })
+
+                        }
+                    })
+                })
+            }
+        })
+    });
 </script>
 
 </body>

@@ -90,7 +90,8 @@ class Produk extends CI_Controller
             'stok_produk' => $stok_produk,
             'diskon_produk' => $diskon_produk,
             'desk_produk' => $desk_produk,
-            'kategori' => $kategori
+            'kategori' => $kategori,
+            'link' => strtolower(str_replace(' ','-',$nama_produk))
         );
 
         $this->produk_model->input_data($data, 'produk');
@@ -139,7 +140,8 @@ class Produk extends CI_Controller
             'stok_produk' => $stok_produk,
             'diskon_produk' => $diskon_produk,
             'desk_produk' => $desk_produk,
-            'kategori' => $kategori
+            'kategori' => $kategori,
+            'link' => strtolower(str_replace(' ','-',$nama_produk))
         );
 
         $where = array(
