@@ -273,7 +273,7 @@ class Produk extends CI_Controller
 
             $numrow = 1;
             foreach ($sheet as $row) {
-                if ($numrow > 10) {
+                if ($numrow > 7) {
                     array_push($data, array(
                         'nama_produk' => $row['A'],
                         'harga_produk' => $row['B'],
@@ -293,6 +293,60 @@ class Produk extends CI_Controller
             $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES IMPORT BERHASIL!</b> Data berhasil diimport!</div>');
             //redirect halaman
             redirect('produk/excelview/');
+        }
+    }
+
+    // Upload and Extract zip file
+    public function extract()
+    {
+
+        // Check form submit or not 
+        if ($this->input->post('submit') != NULL) {
+
+            if (!empty($_FILES['file']['name'])) {
+                // Set preference 
+                $config['upload_path'] = 'assets/images/uploads/';
+                $config['allowed_types'] = 'zip';
+                $config['max_size'] = '5120'; // max_size in kb (5 MB) 
+                $config['file_name'] = $_FILES['file']['name'];
+
+                // Load upload library 
+                $this->load->library('upload', $config);
+
+                // File upload
+                if ($this->upload->do_upload('file')) {
+                    // Get data about the file
+                    $uploadData = $this->upload->data();
+                    $filename = $uploadData['file_name'];
+
+                    ## Extract the zip file ---- start
+                    $zip = new ZipArchive;
+                    $res = $zip->open("assets/images/uploads/" . $filename);
+                    if ($res === TRUE) {
+
+                        // Unzip path
+                        $extractpath = "assets/images/produk/";
+
+                        // Extract file
+                        $zip->extractTo($extractpath);
+                        $zip->close();
+
+                        $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES UPLOAD BERHASIL!</b> Data berhasil diimport!</div>');
+                        redirect('produk/gambarview/');
+                    } else {
+                        $this->session->set_flashdata('notif', '<div class="alert alert-danger"><b>PROSES UPLOAD GAGAL!</b> ' . $this->upload->display_errors() . '</div>');
+                        redirect('produk/gambarview/');
+                    }
+                    ## ---- end
+
+                } else {
+                    $this->session->set_flashdata('notif', '<div class="alert alert-danger"><b>PROSES UPLOAD GAGAL!</b> ' . $this->upload->display_errors() . '</div>');
+                    redirect('produk/gambarview/');
+                }
+            } else {
+                $this->session->set_flashdata('notif', '<div class="alert alert-danger"><b>PROSES UPLOAD GAGAL!</b> ' . $this->upload->display_errors() . '</div>');
+                redirect('produk/gambarview/');
+            }
         }
     }
 }

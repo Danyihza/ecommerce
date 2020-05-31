@@ -27,19 +27,20 @@
           </div>
           <!-- /.card-header -->
           <?= $this->session->flashdata('notif') ?>
-          <?= form_open_multipart('produk/uploadexcel'); ?>
+          <?= form_open_multipart('produk/extract/'); ?>
           <div class="card-body">
             <div class="row">
               <div class="form-group">
                 <label for="exampleInputEmail1">UNGGAH GAMBAR BUKU</label>
-                <input type="file" name="userfile" class="form-control">
+                <label for="exampleInputEmail1">File .zip</label>
+                <input type="file" name="file" class="form-control">
                 <!-- <label class="custom-file-label" for="exampleInputFile">UNGGAH FILE EXCEL</label> -->
               </div>
             </div>
             <!-- /.row -->
           </div>
           <div class="card-footer">
-            <button type="submit" class="btn btn-success">UPLOAD</button>
+            <input type="submit" name="submit" class="btn btn-success" value="UPLOAD">
           </div>
           </form>
           <!-- /.col (right) -->
@@ -50,27 +51,3 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-            <?php foreach ($ulas as $u) { ?>
-            <!-- /.col -->
-            <div class="col-md-3">
-              <div class="box box-warning box-solid">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Collapsable</h3>
-
-                  <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </button>
-                  </div>
-                  <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                  <?= $u->isi_ulasan; ?>
-                </div>
-                <!-- /.box-body -->
-              </div>
-              <!-- /.box -->
-            </div>
-            <!-- /.col -->
-          <?php } ?>
