@@ -15,3 +15,4 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/product_styles.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/product_responsive.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/mystyle.css">

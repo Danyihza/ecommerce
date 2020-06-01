@@ -876,7 +876,7 @@
 
                     <div class="reviews_title_container">
                         <h3 class="reviews_title">Ulasan Terbaru</h3>
-                        <div class="reviews_all ml-auto"><a href="#">Lihat Semua <span>Ulasan</span></a></div>
+                        <div class="reviews_all ml-auto"><a href="<?= base_url('ulasan'); ?>">Lihat Semua <span>Ulasan</span></a></div>
                     </div>
 
                     <div class="reviews_slider_container">
@@ -892,9 +892,9 @@
                                             <div class="review_image"><img src="<?= base_url('assets/images/') . $ulas['gambar_produk'] ?>" alt=""></div>
                                         </div>
                                         <div class="review_content">
-                                            <div class="review_name"><?= $ulas['nama_ulasan']; ?></div>
+                                            <div class="review_name"><a href="<?= base_url('main/produk/') . $ulas['link'] ?>"><?= $ulas['nama_ulasan']; ?></a></div>
                                             <div class="review_rating_container">
-                                                <div class="rating_r rating_r_4 review_rating"><i></i><?= $ulas['rating_ulasan']; ?></div><br>
+                                                <div class="rating_r rating_r_<?= $ulas['rating_ulasan']; ?> review_rating"><i></i><i></i><i></i><i></i><i></i>     </div><br>
                                                 <div class="review_time"><?= time_elapsed_string($ulas['timestamp']); ?></div>
                                             </div>
                                             <div class="review_text">

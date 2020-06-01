@@ -122,7 +122,7 @@
 
                                 <div class="main_nav_menu ml-auto">
                                     <ul class="standard_dropdown main_nav_dropdown">
-                                        <li><a href="#">Beranda<i class="fas fa-chevron-down"></i></a></li>
+                                        <li><a href="<?= base_url(); ?>">Beranda<i class="fas fa-chevron-down"></i></a></li>
                                         <!-- <li class="hassubs">
                                             <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
                                             <ul>
