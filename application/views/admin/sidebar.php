@@ -68,7 +68,7 @@
                   </li>
                   <li class="nav-header">TRANSAKSI</li>
                   <li class="nav-item">
-                      <a href="<?= base_url('admin') ?>" class="nav-link">
+                      <a href="<?= base_url('order') ?>" class="nav-link">
                           <i class="fas fa-shopping-cart nav-icon"></i>
                           <p>Data Transaksi</p>
                       </a>

@@ -165,6 +165,7 @@ class Produk extends CI_Controller
     {
         $stok_produk = $this->input->post('stok_produk');
 
+
         $data = array(
             'stok_produk' => $stok_produk
         );
