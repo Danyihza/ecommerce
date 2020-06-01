@@ -1,6 +1,6 @@
- <!-- Copyright -->
+<!-- Copyright -->
 
- <div class="copyright">
+<div class="copyright">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -10,8 +10,16 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;<script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved - Media Ar-Raihan
+                        </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                    <div class="logos ml-sm-auto">
+                        <ul class="logos_list">
+                            <li><a href="#"><img src="<?= base_url('assets/templates/'); ?>images/logos_1.png" alt=""></a></li>
+                            <li><a href="#"><img src="<?= base_url('assets/templates/'); ?>images/logos_2.png" alt=""></a></li>
+                            <li><a href="#"><img src="<?= base_url('assets/templates/'); ?>images/logos_3.png" alt=""></a></li>
+                            <li><a href="#"><img src="<?= base_url('assets/templates/'); ?>images/logos_4.png" alt=""></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -20,8 +28,7 @@
 </div>
 </div>
 
-<script src="<?= base_url('assets/ckeditor/'); ?>ckeditor.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="<?= base_url('assets/templates/'); ?>js/jquery-3.3.1.min.js"></script>
 <script src="<?= base_url('assets/templates/'); ?>styles/bootstrap4/popper.js"></script>
 <script src="<?= base_url('assets/templates/'); ?>styles/bootstrap4/bootstrap.min.js"></script>
 <script src="<?= base_url('assets/templates/'); ?>plugins/greensock/TweenMax.min.js"></script>
@@ -30,9 +37,9 @@
 <script src="<?= base_url('assets/templates/'); ?>plugins/greensock/animation.gsap.min.js"></script>
 <script src="<?= base_url('assets/templates/'); ?>plugins/greensock/ScrollToPlugin.min.js"></script>
 <script src="<?= base_url('assets/templates/'); ?>plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>plugins/slick-1.8.0/slick.js"></script>
+<script src="<?= base_url('assets/templates/'); ?>plugins/parallax-js-master/parallax.min.js"></script>
 <script src="<?= base_url('assets/templates/'); ?>plugins/easing/easing.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>js/custom.js"></script>
+<script src="<?= base_url('assets/templates/'); ?>js/blog_custom.js"></script>
 
 <?php if ($this->session->flashdata('toast')) : ?>
     <script>
@@ -140,118 +147,61 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="exampleInputEmail1">Nama Lengkap</label>
-                                    <input type="text" name="nama" class="form-control" id="nama_lengkap" autofocus required>
+                                    <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="exampleInputPassword1">Email</label>
-                                    <input type="email" name="email" class="form-control" id="email" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-4">
-                                    <label for="exampleFormControlSelect1">Provinsi</label>
-                                    <select style="color:black;" class="form-control" id="input_provinsi" onchange="document.getElementById('provinsi1').value=this.options[this.selectedIndex].text">
-                                        <option disabled selected>Silahkan Pilih Provinsi</option>
-                                    </select>
-                                    <input type="hidden" name="provinsi" id="provinsi1" value="">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="exampleFormControlSelect1">Kab/Kota</label>
-                                    <select disabled="true" style="color:black;" class="form-control" id="input_kabkota" onchange="document.getElementById('kabkota1').value=this.options[this.selectedIndex].text">
-                                        <option disabled selected>Silahkan Pilih Kota</option>
-                                    </select>
-                                    <input type="hidden" name="kabkota" id="kabkota1" value="">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="exampleFormControlSelect1">Kecamatan</label>
-                                    <select disabled="true" style="color:black;" class="form-control" name="kecamatan" id="input_kecamatan" onchange="document.getElementById('kecamatan1').value=this.options[this.selectedIndex].text">
-                                        <option disabled selected>Silahkan Pilih Kecamatan</option>
-                                    </select>
-                                    <input type="hidden" name="kecamatan" id="kecamatan1" value="">
+                                    <input type="email" name="email" class="form-control" id="exampleInputPassword1">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="exampleFormControlTextarea1">Alamat Lengkap</label>
-                                        <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                                        <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="exampleFormControlSelect1">Provinsi</label>
+                                    <select class="form-control" name="provinsi" id="exampleFormControlSelect1">
+                                        <option>Jawa Timur</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="exampleFormControlSelect1">Kab/Kota</label>
+                                    <select style="color:black;" name="kota" class="form-control" id="exampleFormControlSelect1">
+                                        <option>Kab. Probolinggo</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="exampleFormControlSelect1">Kecamatan</label>
+                                    <select class="form-control" name="kecamatan" id="exampleFormControlSelect1">
+                                        <option>Kraksaan</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="exampleInputEmail1">No. Whatsapp</label>
-                                    <input type="text" name="no_hp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                    <input type="text" name="no_hp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 </div>
                             </div>
-                            <div class="alert alert-warning" role="alert">
-                                <h4 class="alert-heading">Catatan</h4>
-                                <p>Total harga + ongkir yang harus dibayar akan diinformasikan oleh admin Media Al-Faruq, setelah mengirim data pesanan.</p>
-                            </div>
-                                <button type="submit" onclick="return confirm('Data yang anda isi sudah benar ?')" id="checkout" class="btn btn-primary col-md-12"><img src="<?= base_url('assets/images/icon/'); ?>icons8-whatsapp-24.png" width="20px" alt=""> Pesan Sekarang</button>
+                                <button type="submit" id="checkout" class="btn btn-primary col-md-12">Checkout</button>
                         </form>
                         `)
         })
 
     })
 </script>
-
-<script>
-    $('#tmbllanjut').on('click', function() {
-        $.ajax({
-            url: '<?= base_url('API/getProvinsiAPI') ?>',
-            method: 'GET',
-            dataType: 'json',
-            success: function(data) {
-                const result = data.provinsi;
-                console.log(result);
-                $('#input_provinsi').attr('disabled', false);
-                $.each(result, function(i, value) {
-                    $('#input_provinsi').append('<option value="' + value.id + '">' + value.nama + '</option>')
-                });
-                $('#input_provinsi').change(function() {
-                    $('#input_kabkota').attr('disabled', false);
-                    $('#input_kecamatan').attr('disabled', true);
-                    $('#input_kabkota').html('<option disabled selected>Silahkan Pilih Kota</option>');
-                    $('#input_kecamatan').html('<option disabled selected>Silahkan Pilih Kecamatan</option>');
-                    var provinsi = $(this).val();
-                    console.log(provinsi);
-                    $.ajax({
-                        url: '<?= base_url('API/getKabKotaAPI/') ?>' + provinsi,
-                        method: 'GET',
-                        dataType: 'json',
-                        success: function(data) {
-                            const result = data.kota_kabupaten;
-                            console.log(result);
-                            $.each(result, function(i, value) {
-                                $('#input_kabkota').append('<option value="' + value.id + '">' + value.nama + '</option>')
-                            });
-                            $('#input_kabkota').change(function() {
-                                $('#input_kecamatan').attr('disabled', false);
-                                $('#input_kecamatan').html('<option disabled selected>Silahkan Pilih Kecamatan</option>');
-                                const kab_kota = $(this).val();
-                                console.log(kab_kota);
-                                $.ajax({
-                                    url: '<?= base_url('API/getKecamatanAPI/') ?>' + kab_kota,
-                                    method: 'GET',
-                                    dataType: 'json',
-                                    success: function(data) {
-                                        const result = data.kecamatan;
-                                        console.log(result);
-                                        $.each(result, function(i, value) {
-                                            $('#input_kecamatan').append('<option value="' + value.id + '">' + value.nama + '</option>')
-                                        });
-                                    }
-                                })
-                            })
-
-                        }
-                    })
-                })
-            }
-        })
-    });
-</script>
-
-
-</body>
-
-</html>

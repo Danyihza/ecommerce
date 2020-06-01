@@ -244,7 +244,7 @@
 	}
 	.arrivals_single
 	{
-		display: none;
+		display: inline-block;
 	}
 	.advert_col
 	{
@@ -324,7 +324,6 @@
 	}
 	.banner_product_image
 	{
-		opacity: 0.5;
 		width: 60vw;
 	    top: 50%;
 	    -webkit-transform: translateY(-50%);
@@ -335,7 +334,7 @@
 	}
 	.banner_product_image img
 	{
-		width: 100%;
+		width: 50%;
 	}
 	.char_col:nth-child(3)
 	{
@@ -523,7 +522,6 @@
 	}
 	.banner_product_image
 	{
-	    right: 15px;
 	}
 	.button
 	{
@@ -553,6 +551,7 @@
 	.banner_text
 	{
 		font-size: 24px;
+		width: 24px;
 	}
 	.banner_price
 	{
@@ -569,7 +568,7 @@
 	}
 	.banner_button
 	{
-		margin-top: 35px;
+		margin-top: 20px;
 	}
 	.deals
 	{
@@ -777,6 +776,10 @@
 		display: none;
 	}
 	.reviews_dots
+	{
+		display: inline-block;
+	}
+	.characteristics
 	{
 		display: none;
 	}

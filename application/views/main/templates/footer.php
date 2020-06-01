@@ -6,7 +6,7 @@
                     <div class="col">
                         <div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
                             <div class="newsletter_title_container">
-                                <div class="newsletter_icon"><img src="images/send.png" alt=""></div>
+                                <div class="newsletter_icon"><img src="<?= base_url('assets/templates/') ?>images/send.png" alt=""></div>
                                 <div class="newsletter_title">Berlangganan Produk Terbaru</div>
                                 <div class="newsletter_text">
                                     <p>dapatkan kabar produk terbaru dari kami</p>

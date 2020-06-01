@@ -6,6 +6,6 @@ class Ulasan_model extends CI_Model
         $this->db->select('*');
         $this->db->from('ulasan');
         $this->db->join('produk', 'produk.id_produk = ulasan.id_produk');
-        return $this->db->get('')->result_array();
+        return $this->db->get('',5)->result_array();
     }
 }
