@@ -39,8 +39,7 @@
                         <!-- Logo -->
                         <div class="col-lg-2 col-sm-3 col-3 order-1">
                             <div class="logo_container">
-                                <div class="logo"><a href="<?= base_url(); ?>" style="font-size: 12;">Ar-Raihan</a></div>
-                                <div class="logo"><img src="" alt=""></div>
+                                <div class="logo"><a href="<?= base_url(); ?>"><img src="<?= base_url('assets/templates/images/'); ?>logo.png" width="120px" alt=""></a></div>
                             </div>
                         </div>
 

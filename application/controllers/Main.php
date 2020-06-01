@@ -9,6 +9,7 @@ class Main extends CI_Controller
 		parent::__construct();
 		$this->load->model('Produk_model', 'produk');
 		$this->load->model('Ulasan_model', 'ulasan');
+		$this->load->model('Transaksi_model', 'transaksi');
 	}
 
 	public function index()
@@ -107,6 +108,7 @@ class Main extends CI_Controller
 
 	public function produk($link)
 	{
+
 		$data['produk'] = $this->produk->getProductByLink($link);
 		$data['kategori'] = $this->produk->getKategori();
 		$this->load->view('main/templates/detail/header');
@@ -199,7 +201,7 @@ class Main extends CI_Controller
 	}
 
 	function checkout()
-	{ //fungsi untuk destroy item cart
+	{
 		$nama = $this->input->post('nama');
 		$email = $this->input->post('email');
 		$alamat = $this->input->post('alamat');
@@ -230,9 +232,39 @@ List Pembelian
 Total Harga = *Rp ' . number_format($this->cart->total(), 0, '.', '.') . '*';
 		$message = urlencode($message);
 
+		// //INSERT INTO transaksi
+		$idtransaksi = $this->transaksi->getId();
+		$dataku = [
+			'id_transaksi' => $idtransaksi,
+			'status_transaksi' => 0,
+			'tanggal_transaksi' => date('Ymd'),
+			'nama_pembeli' => $nama,
+			'email_pembeli' => $email,
+			'alamat_pembeli' => $alamat,
+			'kab_pembeli' => $kota,
+			'kec_pembeli' => $kecamatan,
+			'no_pembeli' => $no_hp
+		];
+		$this->transaksi->addTransaksi($dataku);
+		$data2 = [];
+
+		foreach ($this->cart->contents() as $items) {
+			$mydata = [
+				'id_transaksi' => $idtransaksi,
+				'id_produk' => $items['id'],
+				'jumlah_produk'	=> $items['qty'],
+				'subtotal' => $items['price'] * $items['qty']
+			];
+			array_push($data2, $mydata);
+		};
+		$this->db->insert_batch('dtransaksi', $data2);
+
 		$this->cart->destroy();
 		redirect("https://wa.me/6282331147549?text=$message");
 	}
 
-	
+	function destroy(){
+		$this->cart->destroy();
+		redirect('main');
+	}
 }

@@ -4,7 +4,7 @@
     <div class="banner_background" style="background-image:url(http://localhost/ecommerce/assets/templates/images/924.jpg)"></div>
     <div class="container fill_height">
         <div class="row fill_height">
-            <div class="banner_product_image"><img src="<?= base_url('assets/'); ?>images/<?= $newproduk['gambar_produk']; ?>" width="300"></div>
+            <div class="banner_product_image"><img class="produk_banner" src="<?= base_url('assets/'); ?>images/<?= $newproduk['gambar_produk']; ?>" width="300"></div>
             <div class="col-lg-5 offset-lg-4 fill_height">
                 <div class="banner_content">
                     <h1 class="banner_text" style="color:#000000;">Buku Terbaru</h1>
@@ -30,7 +30,7 @@
             <!-- Char. Item -->
             <div class="col-lg-3 col-md-6 char_col">
 
-                <div class="char_item d-flex flex-row align-items-center justify-content-start">
+                <div class="char_item d-flex  align-items-center justify-content-start">
                     <div class="char_icon"><img src="<?= base_url('assets/images/'); ?>icon/icons8-whatsapp-96.png" width="40"></div>
                     <div class="char_content">
                         <div class="char_title">Tanpa Login</div>
@@ -42,7 +42,7 @@
             <!-- Char. Item -->
             <div class="col-lg-3 col-md-6 char_col">
 
-                <div class="char_item d-flex flex-row align-items-center justify-content-start">
+                <div class="char_item d-flex  align-items-center justify-content-start">
                     <div class="char_icon"><img src="images/char_2.png" alt=""></div>
                     <div class="char_content">
                         <div class="char_title">Free Delivery</div>
@@ -54,7 +54,7 @@
             <!-- Char. Item -->
             <div class="col-lg-3 col-md-6 char_col">
 
-                <div class="char_item d-flex flex-row align-items-center justify-content-start">
+                <div class="char_item d-flex  align-items-center justify-content-start">
                     <div class="char_icon"><img src="images/char_3.png" alt=""></div>
                     <div class="char_content">
                         <div class="char_title">Free Delivery</div>
@@ -70,7 +70,7 @@
 </div>
 
 
-<hr>
+<hr class="batas">
 
 <!-- Hot New Arrivals -->
 
@@ -97,7 +97,7 @@
                                         <div class="arrivals_slider_item">
                                             <div class="border_active"></div>
                                             <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
-                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/new_1.jpg" alt=""></div>
+                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?= base_url('assets/images/produk/') . $product['gambar_produk'] ?>" width="90px" alt="cover buku"></div>
                                                 <div class="product_content">
                                                     <?php if ($product['diskon_produk'] > 0) : ?>
                                                         <div class="product_price">Rp. <?= number_format(($product['harga_produk'] - ($product['harga_produk'] * ($product['diskon_produk'] / 100))), '0', ',', '.'); ?><span><s>Rp <?= number_format($product['harga_produk'], '0', ',', '.'); ?></s></span></div>
@@ -134,7 +134,7 @@
                         <div class="col-lg-3">
                             <div class="arrivals_single clearfix">
                                 <div class="d-flex flex-column align-items-center justify-content-center">
-                                    <div class="arrivals_single_image"><img src="images/new_single.png" alt=""></div>
+                                    <div class="arrivals_single_image text-center"><img src="<?= base_url('assets/images/produk/') . $diskon['gambar_produk'] ?>" width="120px" alt=""></div>
                                     <div class="arrivals_single_content">
                                         <div class="arrivals_single_category"><a href="#"><?= $diskon['nama_kategori']; ?></a></div>
                                         <div class="arrivals_single_name_container clearfix">

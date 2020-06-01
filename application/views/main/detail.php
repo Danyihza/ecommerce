@@ -17,25 +17,25 @@
 						<div class="product_category"><?= $produk['nama_kategori']; ?></div>
 						<div class="product_name"><?= $produk['nama_produk']; ?></div>
 						<div class="rating_r rating_r_4 product_rating"><i></i><p>4.5</p></div>
-						<div class="product_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum. laoreet turpis, nec sollicitudin dolor cursus at. Maecenas aliquet, dolor a faucibus efficitur, nisi tellus cursus urna, eget dictum lacus turpis.</p></div>
+						<?php if($produk['desk_produk']) : ?>
+						<div class="product_text"><?= $produk['desk_produk']; ?></div>
+						<?php else : ?>
+							<div class="product_text"><p>-</p></div>
+						<?php endif; ?>
 						<div class="order_info d-flex flex-row">
 							<form action="#">
 								<div class="clearfix" style="z-index: 1000;">
 
 									<!-- Product Quantity -->
 									<div class="product_quantity clearfix">
-										<span>Quantity: </span>
-										<input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-										<div class="quantity_buttons">
-											<div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fas fa-chevron-up"></i></div>
-											<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fas fa-chevron-down"></i></div>
-										</div>
+										<span>Kuantitas: </span>
+										<input id="quantity_input" type="number" min="1" max="<?= $produk['stok_produk']; ?>" value="1">
                                     </div>
                                     
                                     
                                 </div>
                                 <br>
-                                <p>Tersisa 20</p>
+                                <p>Tersisa <?= $produk['stok_produk']; ?></p>
 								
 								<?php if($produk['diskon_produk']) :?>
 									<div class="product_price" style="color:red;">Rp. <?= number_format(($produk['harga_produk']-($produk['harga_produk']*($produk['diskon_produk']/100))), '0', ',', '.'); ?><br><span style="font-size:16px;color:black;"><s>Rp. 525.000</s></span></div>

@@ -1,6 +1,6 @@
 <?php
 //config
-$config['base_url'] = 'http://localhost/ecommerce/main/search';
+$config['base_url'] = base_url() . 'main/search';
 
 //style
 $config['first_link'] = false;
