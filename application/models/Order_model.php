@@ -27,6 +27,21 @@ class Order_model extends CI_Model
       ->get_where('', ['transaksi.id_transaksi' => $id_transaksi])->result();
   }
 
+  public function updateStatus($id_transaksi)
+  {
+    $this->db->where('id_transaksi', $id_transaksi);
+    $this->db->update('transaksi', ['status_transaksi' => 1]);
+  }
+
+  public function updateStok($id_transaksi)
+  {
+    $this->db->from('transaksi')
+      ->join('dtransaksi', 'transaksi.id_transaksi = dtransaksi.id_transaksi')
+      ->join('produk', 'dtransaksi.id_produk = produk.id_produk');
+    $this->db->where('id_transaksi', $id_transaksi);
+
+  }
+
   public function rating($id_produk)
   {
     return $this->db->select('*, count(id_ulasan) as jml, round(avg(rating_ulasan),1) as rerata')->from('ulasan')->get_where('', ['ulasan.id_produk' => $id_produk])->result();
