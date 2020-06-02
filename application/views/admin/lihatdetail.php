@@ -47,6 +47,16 @@
               <label for="exampleInputDiskon">Alamat Lengkap: </label>
               <a><?= $t->alamat_pembeli; ?>, <?= $t->kec_pembeli; ?>, <?= $t->kab_pembeli; ?>, <?= $t->prov_pembeli; ?></a>
             </div>
+            <div class="form-group">
+              <label for="exampleInputDiskon">Status: &nbsp;</label>
+              <?php if($t->status_transaksi == 1) :?>
+              <a class="badge badge-success">Valid</a>
+              <?php elseif($t->status_transaksi == 2) :?>
+              <a class="badge badge-danger">Tidak Valid</a>
+              <?php else:?>
+              <a class="badge badge-warning">Belum di Validasi</a>
+              <?php endif; ?>
+            </div>
           <?php } ?>
           <hr>
           <table id="example1" class="table table-bordered table-striped">

@@ -13,7 +13,7 @@ class Order_model extends CI_Model
   public function getOrderId($id_transaksi)
   {
     return $this->db->select('*, sum(subtotal) as total')
-    ->from('transaksi')
+      ->from('transaksi')
       ->join('dtransaksi', 'transaksi.id_transaksi = dtransaksi.id_transaksi')
       ->group_by('transaksi.id_transaksi')
       ->get_where('', ['transaksi.id_transaksi' => $id_transaksi])->result();
@@ -25,6 +25,12 @@ class Order_model extends CI_Model
       ->join('dtransaksi', 'transaksi.id_transaksi = dtransaksi.id_transaksi')
       ->join('produk', 'dtransaksi.id_produk = produk.id_produk')
       ->get_where('', ['transaksi.id_transaksi' => $id_transaksi])->result();
+  }
+
+  public function cancelTransaksi($id_transaksi)
+  {
+    $this->db->where('id_transaksi', $id_transaksi);
+    $this->db->update('transaksi', ['status_transaksi' => 2]);
   }
 
   public function updateStatus($id_transaksi)
@@ -39,7 +45,6 @@ class Order_model extends CI_Model
       ->join('dtransaksi', 'transaksi.id_transaksi = dtransaksi.id_transaksi')
       ->join('produk', 'dtransaksi.id_produk = produk.id_produk');
     $this->db->where('id_transaksi', $id_transaksi);
-
   }
 
   public function rating($id_produk)

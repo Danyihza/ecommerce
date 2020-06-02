@@ -61,7 +61,7 @@
                         <td align="center">
                           <?php if ($a->status_transaksi == 0) { ?>
                             Proses<br>
-                            <a title="Tidak Valid" href="#" type="button" class="fa fa-2x fa-window-close text-danger"></a>
+                            <a title="Tidak Valid" href="<?= base_url('order/cancelTransaksi/') . $a->id_transaksi ?>" type="button" class="fa fa-2x fa-window-close text-danger"></a>
                             <a title="Valid" href="<?= base_url('order/updateStatus/') . $a->id_transaksi ?>" type="button" class="fa fa-2x fa-check-square text-success"></a>
                           <?php } else if ($a->status_transaksi == 1) { ?>
                             <a title="Selesai" href="#" type="button" class="btn btn-sm btn-success">Valid</a>
