@@ -778,6 +778,7 @@
 	.reviews_dots
 	{
 		display: inline-block;
+		z-index: 1;
 	}
 	.characteristics
 	{

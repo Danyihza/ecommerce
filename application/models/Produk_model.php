@@ -26,10 +26,10 @@ class Produk_model extends CI_Model
         return $this->db->get('produk')->result_array();
     }
 
-    public function getNewProduct()
+    public function getNewProduct($limit)
     {
         $this->db->order_by('id_produk', 'DESC');
-        return $this->db->get('produk', 20)->result_array();
+        return $this->db->get('produk', $limit)->result_array();
     }
 
     public function getMostDiscountProduct()

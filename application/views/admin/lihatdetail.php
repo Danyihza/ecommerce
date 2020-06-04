@@ -65,7 +65,7 @@
                 <th>No</th>
                 <th>Nama Buku</th>
                 <th>Harga</th>
-                <th>Jumlah Buku</th>
+                <th>Jumlah Pembelian</th>
                 <th>Subtotal</th>
               </tr>
             </thead>
@@ -77,7 +77,7 @@
                   <td><?= $no++; ?></td>
                   <td><?= $a->nama_produk ?></td>
                   <td>Rp <?= $a->harga_produk ?></td>
-                  <td><?= $a->jumlah_produk ?></td>
+                  <td><?= $a->jumlah_produk ?> buah</td>
                   <td>Rp <?= $a->subtotal ?></td>
                 </tr>
               <?php } ?>

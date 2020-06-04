@@ -18,7 +18,8 @@ class Main extends CI_Controller
 		$data['ulasan'] = $this->ulasan->getUlasan();
 		$data['kategori'] = $this->produk->getKategori();
 		$data['newproduk'] = $this->produk->getNewestProduk();
-		$data['products'] = $this->produk->getNewProduct();
+		$data['products'] = $this->produk->getNewProduct(20);
+		$data['produk'] = $this->produk->getNewProduct(8);
 		$data['diskon'] = $this->produk->getMostDiscountProduct();
 		// var_dump($data['ulasan']); die;
 		$this->load->view('main/templates/header', $data);

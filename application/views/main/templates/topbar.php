@@ -58,7 +58,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <input type="submit" style="color:white;" class="header_search_button trans_300" value='Cari' name="search">
+                                            <input type="submit" style="color:white;" class="header_search_button trans_300 coklat" value='Cari' name="search">
                                         </form>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                     <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                         <div class="cart_icon">
                                             <a href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop"><img src="<?= base_url('assets/templates/'); ?>images/cart.png" alt="">
-                                                <div class="cart_count"><span><?= count($this->cart->contents()) ?></span></div>
+                                                <div class="cart_count coklat"><span><?= count($this->cart->contents()) ?></span></div>
                                             </a>
                                         </div>
                                         <div class="cart_content">
@@ -117,6 +117,27 @@
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
+
+                                <!-- <div class="col-lg-5 col-12 text-lg-left text-right">
+                                    <div class="header_search">
+                                        <div class="header_search_content">
+                                            <div class="header_search_form_container">
+                                                <form action="<?= base_url('main/search') ?>" method="POST" class="header_search_form">
+                                                    <input type="text" autocomplete="off" class="header_search_input" name="keyword" placeholder="Search for products...">
+
+                                                    <div class="">
+                                                        <div class="custom_dropdown_list">
+                                                            <span class="custom_dropdown_placeholder clc"></span>
+                                                            <ul name="kategori" class="custom_list clc">
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <input type="submit" style="color:white;" class="header_search_button trans_300 coklat" value='Cari' name="search">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
 
                                 <!-- Main Nav Menu -->
 
@@ -169,68 +190,23 @@
                                 <div class="page_menu_search">
                                     <form action="<?= base_url('main/search') ?>" method="post">
                                         <input type="search" required="required" name="search2" class="page_menu_search_input" placeholder="Search for products...">
+                                        <input type="submit" class="btn btn-primary col-12 kuning" style="margin-top: 10px" value="Search">
                                     </form>
                                 </div>
                                 <ul class="page_menu_nav">
                                     <li class="page_menu_item has-children">
-                                        <a href="#">Language<i class="fa fa-angle-down"></i></a>
+                                        <a href="#">Kategori<i class="fa fa-angle-down"></i></a>
                                         <ul class="page_menu_selection">
-                                            <li><a href="#">English<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Italian<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Spanish<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Japanese<i class="fa fa-angle-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Currency<i class="fa fa-angle-down"></i></a>
-                                        <ul class="page_menu_selection">
-                                            <li><a href="#">US Dollar<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">EUR Euro<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">GBP British Pound<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">JPY Japanese Yen<i class="fa fa-angle-down"></i></a></li>
+                                            <?php foreach ($kategori as $kat) : ?>
+                                                <li><a href="#"><?= $kat['nama_kategori']; ?><i class="fa fa-angle-down"></i></a></li>
+                                            <?php endforeach; ?>
                                         </ul>
                                     </li>
                                     <li class="page_menu_item">
-                                        <a href="#">Home<i class="fa fa-angle-down"></i></a>
+                                        <a href="<?= base_url(); ?>">Beranda<i class="fa fa-angle-down"></i></a>
                                     </li>
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Super Deals<i class="fa fa-angle-down"></i></a>
-                                        <ul class="page_menu_selection">
-                                            <li><a href="#">Super Deals<i class="fa fa-angle-down"></i></a></li>
-                                            <li class="page_menu_item has-children">
-                                                <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
-                                                <ul class="page_menu_selection">
-                                                    <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Featured Brands<i class="fa fa-angle-down"></i></a>
-                                        <ul class="page_menu_selection">
-                                            <li><a href="#">Featured Brands<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Trending Styles<i class="fa fa-angle-down"></i></a>
-                                        <ul class="page_menu_selection">
-                                            <li><a href="#">Trending Styles<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item"><a href="blog.html">blog<i class="fa fa-angle-down"></i></a></li>
-                                    <li class="page_menu_item"><a href="contact.html">contact<i class="fa fa-angle-down"></i></a></li>
+                                    <li class="page_menu_item"><a href="<?= base_url('blog'); ?>">blog<i class="fa fa-angle-down"></i></a></li>
+                                    <li class="page_menu_item"><a href="<?= base_url(); ?>">contact<i class="fa fa-angle-down"></i></a></li>
                                 </ul>
 
                                 <div class="menu_contact">
@@ -281,7 +257,7 @@
                         </div>
                         <hr>
                         <?php if ($this->cart->contents()) : ?>
-                            <button class="btn btn-primary col-12" id="tmbllanjut">Lanjutkan</button>
+                            <button class="btn btn-primary col-12 coklat" id="tmbllanjut">Lanjutkan</button>
                         <?php endif; ?>
                         <div class="col-12" id="pemesanan">
 

@@ -1,140 +1,167 @@
  <!-- Copyright -->
 
  <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col">
+     <div class="container">
+         <div class="row">
+             <div class="col">
 
-                <div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
-                    <div class="copyright_content">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>
-                            document.write(new Date().getFullYear());
-                        </script> All rights reserved - Media Ar-Raihan
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+                 <div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
+                     <div class="copyright_content">
+                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                         Copyright &copy;<script>
+                             document.write(new Date().getFullYear());
+                         </script> All rights reserved - Media Ar-Raihan
+                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ </div>
 
-<script src="<?= base_url('assets/ckeditor/'); ?>ckeditor.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>styles/bootstrap4/popper.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>styles/bootstrap4/bootstrap.min.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>plugins/greensock/TweenMax.min.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>plugins/greensock/TimelineMax.min.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>plugins/greensock/animation.gsap.min.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>plugins/slick-1.8.0/slick.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>plugins/easing/easing.js"></script>
-<script src="<?= base_url('assets/templates/'); ?>js/custom.js"></script>
+ <script src="<?= base_url('assets/ckeditor/'); ?>ckeditor.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>styles/bootstrap4/popper.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>styles/bootstrap4/bootstrap.min.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>plugins/greensock/TweenMax.min.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>plugins/greensock/TimelineMax.min.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>plugins/scrollmagic/ScrollMagic.min.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>plugins/greensock/animation.gsap.min.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>plugins/greensock/ScrollToPlugin.min.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>plugins/slick-1.8.0/slick.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>plugins/easing/easing.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>plugins/Isotope/isotope.pkgd.min.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>plugins/parallax-js-master/parallax.min.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>js/custom.js"></script>
+ <script src="<?= base_url('assets/templates/'); ?>js/shop_custom.js"></script>
 
-<?php if ($this->session->flashdata('toast')) : ?>
-    <script>
-        $(document).ready(function() {
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: false,
-                onOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                }
-            })
+ <script>
+     $('.carousel').carousel()
+ </script>
+
+ <script>
+     $('.my-banner').owlCarousel({
+         loop: true,
+         margin: 10,
+         nav: true,
+         responsive: {
+             0: {
+                 items: 1
+             },
+             600: {
+                 items: 3
+             },
+             1000: {
+                 items: 5
+             }
+         }
+     })
+ </script>
+
+ <?php if ($this->session->flashdata('toast')) : ?>
+     <script>
+         $(document).ready(function() {
+             const Toast = Swal.mixin({
+                 toast: true,
+                 position: 'top-end',
+                 showConfirmButton: false,
+                 timer: 3000,
+                 timerProgressBar: false,
+                 onOpen: (toast) => {
+                     toast.addEventListener('mouseenter', Swal.stopTimer)
+                     toast.addEventListener('mouseleave', Swal.resumeTimer)
+                 }
+             })
 
 
-            Toast.fire({
-                icon: 'success',
-                title: 'Ditambahkan ke Keranjang'
-            })
-        });
-    </script>
-<?php endif; ?>
+             Toast.fire({
+                 icon: 'success',
+                 title: 'Ditambahkan ke Keranjang'
+             })
+         });
+     </script>
+ <?php endif; ?>
 
-<script>
-    $(document).ready(function() {
-        $('.add_cart').click(function() {
-            var produk_id = $(this).data("id_produk");
-            var produk_nama = $(this).data("nama_produk");
-            var produk_harga = $(this).data("harga_produk");
-            var produk_gambar = $(this).data("gambar_produk");
-            $.ajax({
-                url: "<?php echo base_url(); ?>main/add_to_cart",
-                method: "POST",
-                data: {
-                    produk_id: produk_id,
-                    produk_nama: produk_nama,
-                    produk_harga: produk_harga,
-                    produk_gambar: produk_gambar,
-                    quantity: 1
-                },
-                success: function(data) {
-                    $('#detail_cart').html(data);
-                    location.reload();
-                }
-            });
-        });
+ <script>
+     $(document).ready(function() {
+         $('.add_cart').click(function() {
+             var produk_id = $(this).data("id_produk");
+             var produk_nama = $(this).data("nama_produk");
+             var produk_harga = $(this).data("harga_produk");
+             var produk_gambar = $(this).data("gambar_produk");
+             $.ajax({
+                 url: "<?php echo base_url(); ?>main/add_to_cart",
+                 method: "POST",
+                 data: {
+                     produk_id: produk_id,
+                     produk_nama: produk_nama,
+                     produk_harga: produk_harga,
+                     produk_gambar: produk_gambar,
+                     quantity: 1
+                 },
+                 success: function(data) {
+                     $('#detail_cart').html(data);
+                     location.reload();
+                 }
+             });
+         });
 
-        // Load shopping cart
-        $('#detail_cart').load("<?php echo base_url(); ?>main/load_cart");
+         // Load shopping cart
+         $('#detail_cart').load("<?php echo base_url(); ?>main/load_cart");
 
-        //Hapus Item Cart
-        $(document).on('click', '.hapus_cart', function() {
-            var row_id = $(this).attr("id"); //mengambil row_id dari artibut id
-            $.ajax({
-                url: "<?php echo base_url(); ?>main/hapus_cart",
-                method: "POST",
-                data: {
-                    row_id: row_id
-                },
-                success: function(data) {
-                    $('#detail_cart').html(data);
-                    location.reload();
-                }
-            });
-        });
+         //Hapus Item Cart
+         $(document).on('click', '.hapus_cart', function() {
+             var row_id = $(this).attr("id"); //mengambil row_id dari artibut id
+             $.ajax({
+                 url: "<?php echo base_url(); ?>main/hapus_cart",
+                 method: "POST",
+                 data: {
+                     row_id: row_id
+                 },
+                 success: function(data) {
+                     $('#detail_cart').html(data);
+                     location.reload();
+                 }
+             });
+         });
 
-        //Update Item Cart
-        $(document).on('change', '.kuantitas', function() {
-            var row_id = $(this).attr('id');
-            var qty = $(this).val();
-            $.ajax({
-                url: "<?php echo base_url(); ?>main/update_cart",
-                method: "POST",
-                data: {
-                    row_id: row_id,
-                    qty: qty
-                },
-                success: function(data) {
-                    $('#detail_cart').html(data);
-                }
-            })
-        })
+         //Update Item Cart
+         $(document).on('change', '.kuantitas', function() {
+             var row_id = $(this).attr('id');
+             var qty = $(this).val();
+             $.ajax({
+                 url: "<?php echo base_url(); ?>main/update_cart",
+                 method: "POST",
+                 data: {
+                     row_id: row_id,
+                     qty: qty
+                 },
+                 success: function(data) {
+                     $('#detail_cart').html(data);
+                 }
+             })
+         })
 
-    });
-</script>
+     });
+ </script>
 
-<?php if ($this->session->flashdata('modal')) : ?>
-    <script>
-        $(document).ready(function() {
-            $('#staticBackdrop').modal('show');
-        })
-    </script>
-<?php endif ?>
+ <?php if ($this->session->flashdata('modal')) : ?>
+     <script>
+         $(document).ready(function() {
+             $('#staticBackdrop').modal('show');
+         })
+     </script>
+ <?php endif ?>
 
-<script>
-    $(document).ready(function() {
-        $('#tmbllanjut').on('click', function() {
-            $('#tmbllanjut').attr('disabled', 'disabled');
-            $('#tmbllanjut').attr('class', 'btn btn-grey col-12');
-            $('#pemesanan').html(`
+ <script>
+     $(document).ready(function() {
+         $('#tmbllanjut').on('click', function() {
+             $('#tmbllanjut').attr('disabled', 'disabled');
+             $('#tmbllanjut').attr('class', 'btn btn-grey col-12');
+             $('#pemesanan').html(`
                         <hr>
                         <form action="<?= base_url('main/checkout') ?>" method="post">
                             <div class="row">
@@ -144,7 +171,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="exampleInputPassword1">Email</label>
-                                    <input type="email" name="email" class="form-control" id="email" required>
+                                    <input type="email" name="email" class="form-control" id="email">
                                 </div>
                             </div>
                             <div class="row">
@@ -189,69 +216,69 @@
                                 <button type="submit" onclick="return confirm('Data yang anda isi sudah benar ?')" id="checkout" class="btn btn-primary col-md-12"><img src="<?= base_url('assets/images/icon/'); ?>icons8-whatsapp-24.png" width="20px" alt=""> Pesan Sekarang</button>
                         </form>
                         `)
-        })
+         })
 
-    })
-</script>
+     })
+ </script>
 
-<script>
-    $('#tmbllanjut').on('click', function() {
-        $.ajax({
-            url: '<?= base_url('API/getProvinsiAPI') ?>',
-            method: 'GET',
-            dataType: 'json',
-            success: function(data) {
-                const result = data.provinsi;
-                console.log(result);
-                $('#input_provinsi').attr('disabled', false);
-                $.each(result, function(i, value) {
-                    $('#input_provinsi').append('<option value="' + value.id + '">' + value.nama + '</option>')
-                });
-                $('#input_provinsi').change(function() {
-                    $('#input_kabkota').attr('disabled', false);
-                    $('#input_kecamatan').attr('disabled', true);
-                    $('#input_kabkota').html('<option disabled selected>Silahkan Pilih Kota</option>');
-                    $('#input_kecamatan').html('<option disabled selected>Silahkan Pilih Kecamatan</option>');
-                    var provinsi = $(this).val();
-                    console.log(provinsi);
-                    $.ajax({
-                        url: '<?= base_url('API/getKabKotaAPI/') ?>' + provinsi,
-                        method: 'GET',
-                        dataType: 'json',
-                        success: function(data) {
-                            const result = data.kota_kabupaten;
-                            console.log(result);
-                            $.each(result, function(i, value) {
-                                $('#input_kabkota').append('<option value="' + value.id + '">' + value.nama + '</option>')
-                            });
-                            $('#input_kabkota').change(function() {
-                                $('#input_kecamatan').attr('disabled', false);
-                                $('#input_kecamatan').html('<option disabled selected>Silahkan Pilih Kecamatan</option>');
-                                const kab_kota = $(this).val();
-                                console.log(kab_kota);
-                                $.ajax({
-                                    url: '<?= base_url('API/getKecamatanAPI/') ?>' + kab_kota,
-                                    method: 'GET',
-                                    dataType: 'json',
-                                    success: function(data) {
-                                        const result = data.kecamatan;
-                                        console.log(result);
-                                        $.each(result, function(i, value) {
-                                            $('#input_kecamatan').append('<option value="' + value.id + '">' + value.nama + '</option>')
-                                        });
-                                    }
-                                })
-                            })
+ <script>
+     $('#tmbllanjut').on('click', function() {
+         $.ajax({
+             url: '<?= base_url('API/getProvinsiAPI') ?>',
+             method: 'GET',
+             dataType: 'json',
+             success: function(data) {
+                 const result = data.provinsi;
+                 console.log(result);
+                 $('#input_provinsi').attr('disabled', false);
+                 $.each(result, function(i, value) {
+                     $('#input_provinsi').append('<option value="' + value.id + '">' + value.nama + '</option>')
+                 });
+                 $('#input_provinsi').change(function() {
+                     $('#input_kabkota').attr('disabled', false);
+                     $('#input_kecamatan').attr('disabled', true);
+                     $('#input_kabkota').html('<option disabled selected>Silahkan Pilih Kota</option>');
+                     $('#input_kecamatan').html('<option disabled selected>Silahkan Pilih Kecamatan</option>');
+                     var provinsi = $(this).val();
+                     console.log(provinsi);
+                     $.ajax({
+                         url: '<?= base_url('API/getKabKotaAPI/') ?>' + provinsi,
+                         method: 'GET',
+                         dataType: 'json',
+                         success: function(data) {
+                             const result = data.kota_kabupaten;
+                             console.log(result);
+                             $.each(result, function(i, value) {
+                                 $('#input_kabkota').append('<option value="' + value.id + '">' + value.nama + '</option>')
+                             });
+                             $('#input_kabkota').change(function() {
+                                 $('#input_kecamatan').attr('disabled', false);
+                                 $('#input_kecamatan').html('<option disabled selected>Silahkan Pilih Kecamatan</option>');
+                                 const kab_kota = $(this).val();
+                                 console.log(kab_kota);
+                                 $.ajax({
+                                     url: '<?= base_url('API/getKecamatanAPI/') ?>' + kab_kota,
+                                     method: 'GET',
+                                     dataType: 'json',
+                                     success: function(data) {
+                                         const result = data.kecamatan;
+                                         console.log(result);
+                                         $.each(result, function(i, value) {
+                                             $('#input_kecamatan').append('<option value="' + value.id + '">' + value.nama + '</option>')
+                                         });
+                                     }
+                                 })
+                             })
 
-                        }
-                    })
-                })
-            }
-        })
-    });
-</script>
+                         }
+                     })
+                 })
+             }
+         })
+     });
+ </script>
 
 
-</body>
+ </body>
 
-</html>
+ </html>

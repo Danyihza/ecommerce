@@ -1,31 +1,226 @@
-@media only screen and (max-width: 991px){
-    .header{
-        position: fixed !important;
-        width: 100%;
-        z-index: 10;
-        background: white;
-    }
-
-    .banner {
-        /* height: calc(100vh - 125px); */
-        height: 310px;
-        padding-top: 0px;
-        margin-top: 100px;
-        padding-bottom: 0px;
-    }
-
-    .page_menu {
-        margin-top: 0px !important;
-    }
-
-    .logo_container img {
-        width: 120%;
-    }
-
-    .new_arrivals{
-        padding-top: 50px !important;
-    }
-    
-    
+.coklat {
+	border-color: #6F472D;
+	background: #6F472D;
 }
 
+.coklat:hover {
+	border-color: #6F472D;
+	background: rgb(75, 48, 30) !important;
+}
+
+.coklat:focus {
+	box-shadow: 0 0 0 0.2rem rgba(75, 48, 30, .5);
+}
+
+.kuning {
+	background: #F8BF00;
+	border-color: #F8BF00;
+}
+
+.kuning:hover {
+	border-color: #6F472D;
+	background: rgb(75, 48, 30);
+}
+
+.product_new {
+	background: #F8BF00;
+}
+
+.product_cart_button {
+	background: #F8BF00;
+}
+
+.product_cart_button:hover {
+	background: rgb(75, 48, 30);
+}
+
+.arrivals_single_button {
+	background: #F8BF00;
+}
+
+.arrivals_single_button:hover {
+	background: rgb(75, 48, 30);
+}
+
+.arrivals_slider .slick-dots li.slick-active {
+	background: #6F472D;
+}
+
+.arrivals_slider .slick-dots li:hover {
+	background: rgb(75, 48, 30) !important;
+
+}
+
+.button_kategori_sidebar:hover {
+	color: #6F472D !important;
+}
+
+/* .main_nav {
+    background: #F8BF00;
+    color: #FFFFFF;
+}*/
+
+.cat_menu_container {
+	background: #6F472D;
+}
+
+.standard_dropdown li a:hover {
+	color: #6F472D;
+}
+
+.cart_text a:hover {
+	color: #6F472D;
+}
+
+.page_menu_content {
+	background: #6F472D;
+}
+
+.reviews_dots .owl-dot.active {
+	background: #6F472D;
+}
+
+.newsletter_unsubscribe_link a {
+	color: #6F472D;
+}
+
+.newsletter_unsubscribe_link a:hover {
+	color: #6F472D;
+}
+
+.footer_phone {
+	color: #6F472D;
+}
+
+.produk-baru-mobile {
+	display: none !important;
+}
+
+@media only screen and (max-width: 991px) {
+
+	.main_nav_content {
+		background: #6F472D !important;
+    }
+    
+    .best_sellers {
+        margin-top: 10% !important;
+    }
+
+    .banner-gambar {
+        position: absolute;
+		top: 26%;
+		left: 63%;
+    }
+
+    .banner-judul {
+        position: absolute;
+        top: 35%;
+        left: 15%;
+        width: 108px;
+    }
+
+    .banner-button {
+        position: absolute;
+		top: 53%;
+        left: 14%;
+        color: #FFFFFF;
+    }
+
+    .banner-title {
+        position: absolute;
+        top: 26%;
+        left: 15%;
+    }
+
+	/* .carousel-control-next,
+	.carousel-control-prev {
+		margin-top: 108px !important;
+	} */
+
+	.bannerku {
+		margin-top: 108px !important;
+	}
+
+	.produk-baru-web {
+		display: none !important;
+	}
+
+	.product_item {
+		width: 150px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.produk-baru-mobile {
+		display: flex !important;
+	}
+
+	.header {
+		position: fixed !important;
+		width: 100%;
+		z-index: 10;
+		background: white;
+	}
+
+	.banner {
+		/* height: calc(100vh - 125px); */
+		height: 310px;
+		padding-top: 0px;
+		margin-top: 100px;
+		padding-bottom: 0px;
+	}
+
+	.page_menu {
+		margin-top: 0px !important;
+	}
+
+	.logo_container img {
+		width: 120%;
+	}
+
+	.new_arrivals {
+		padding-top: 30px !important;
+	}
+
+	.slick-dots {
+		display: inline-block;
+	}
+
+	.arrivals_single {
+		display: none !important;
+	}
+
+	.tabs ul {
+		display: none !important;
+	}
+
+	.tabs {
+		padding-top: 0px !important;
+	}
+
+	hr {
+		display: none !important;
+	}
+
+	.logo_footer {
+		width: 50%;
+		margin-right: 100px;
+		margin-left: auto;
+	}
+
+	.footer {
+		text-align: center;
+	}
+
+	a {
+		color: #6F472D;
+	}
+
+	a:hover {
+		color: rgb(88, 58, 38);
+	}
+
+	.reviews_all a {
+		color: #6F472D;
+	}
+}

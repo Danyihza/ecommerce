@@ -19,3 +19,4 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/shop_styles.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/shop_responsive.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/mystyle.css">

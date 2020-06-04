@@ -1,25 +1,77 @@
 <!-- Banner -->
 
-<div class="banner">
+<!-- <div class="banner">
     <div class="banner_background" style="background-image:url(http://localhost/ecommerce/assets/templates/images/924.jpg)"></div>
     <div class="container fill_height">
         <div class="row fill_height">
             <div class="banner_product_image"><img class="produk_banner" src="<?= base_url('assets/'); ?>images/<?= $newproduk['gambar_produk']; ?>" width="300"></div>
             <div class="col-lg-5 offset-lg-4 fill_height">
                 <div class="banner_content">
-                    <h1 class="banner_text" style="color:#000000;">Buku Terbaru</h1>
+                    <h1 class="banner_text" style="color:#000000;"></h1>
                     <?php if ($newproduk['diskon_produk']) : ?>
                         <div class="banner_price">Rp <?= number_format(($newproduk['harga_produk'] - ($newproduk['harga_produk'] * ($newproduk['diskon_produk'] / 100))), '0', ',', '.'); ?><span style="color:black;"><s>Rp 525.000</s></span></div>
                     <?php else : ?>
                         <div class="banner_price">Rp <?= number_format($newproduk['harga_produk'], 0, '.', '.'); ?></div>
                     <?php endif; ?>
                     <div class="banner_product_name"><?= $newproduk['nama_produk']; ?></div>
-                    <div class="button banner_button"><a href="<?= base_url('main/produk/') . $newproduk['link']; ?>">Beli Sekarang</a></div>
+                    <div class="button banner_button coklat"><a href="<?= base_url('main/produk/') . $newproduk['link']; ?>">Beli Sekarang</a></div>
                 </div>
             </div>
         </div>
     </div>
+</div> -->
+
+
+<!-- SLIDESHOW -->
+
+<div id="carouselExampleIndicators" class="carousel slide bannerku" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="http://localhost/ecommerce/assets/templates/images/924.jpg" width="100%" alt="Second slide">
+            <div class="button banner_button coklat banner-button"><a>Beli Sekarang</a></div>
+            <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/<?= $newproduk['gambar_produk'] ?>" width="80px">
+            <h5 class="banner-title"><b>New Arrival !</b></h5>
+            <p class="banner-judul" style="color: #6f472d;"><?= $newproduk['nama_produk']; ?></p>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="http://localhost/ecommerce/assets/templates/images/924.jpg" width="100%" alt="Second slide">
+            <div class="button banner_button coklat banner-button"><a>Beli Sekarang</a></div>
+            <img class="produk_banner banner-gambar" src="http://localhost/ecommerce/assets/images/foto_cover.jpg" width="80px">
+            <h5 class="banner-title"><b>New Arrival !</b></h5>
+            <p class="banner-judul" style="color: #6f472d;">Harry Potter</p>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="http://localhost/ecommerce/assets/templates/images/924.jpg" width="100%" alt="Second slide">
+            <div class="button banner_button coklat banner-button"><a>Beli Sekarang</a></div>
+            <img class="produk_banner banner-gambar" src="http://localhost/ecommerce/assets/images/foto_cover.jpg" width="80px">
+            <h5 class="banner-title"><b>New Arrival !</b></h5>
+            <p class="banner-judul" style="color: #6f472d;">Harry Potter</p>
+        </div>
+    </div>
+    <!-- <div class="carousel-item">
+            <img class="d-block w-100" src="http://localhost/ecommerce/assets/templates/images/924.jpg" width="90px" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="http://localhost/ecommerce/assets/templates/images/924.jpg" width="90px" alt="Third slide">
+        </div> -->
+    <!-- </div> -->
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
+
+<!-- END SLIDESHOW -->
+
 
 <!-- Characteristics -->
 
@@ -72,9 +124,36 @@
 
 <hr class="batas">
 
+<!-- List New Produk -->
+<!-- <div class="shop_content">
+    <div class="product_grid">
+        <div class="product_grid_border"></div> -->
+
+<?php foreach ($products as $pro) : ?>
+    <!-- Product Item
+            <div class="product_item is_new">
+                <div class="product_border"></div>
+                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?= base_url('assets/images/') . $pro['gambar_produk'] ?>" width="100px" alt="foto produk"></div>
+                <div class="product_content">
+                    <div class="product_price">Rp <?= number_format($pro['harga_produk'], '0', ',', '.'); ?></div>
+                    <div class="product_name">
+                        <div><a href="<?= base_url('main/produk/') . $pro['link'] ?>" tabindex="0"><?= $pro['nama_produk']; ?></a></div>
+                    </div>
+                </div>
+                <div class="product_fav"><i class="fas fa-heart"></i></div>
+                <ul class="product_marks">
+                    <li class="product_mark product_new">new</li>
+                </ul>
+            </div> -->
+<?php endforeach; ?>
+
+<!-- </div>
+</div> -->
+<!-- End List New Produk -->
+
 <!-- Hot New Arrivals -->
 
-<div class="new_arrivals">
+<div class="new_arrivals produk-baru-web">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -161,11 +240,52 @@
             </div>
         </div>
         <form action="<?= base_url('main/search'); ?>" method="POST">
-            <input name="search" type="submit" class="btn btn-primary col-12" style="color: white;height: 48px;background: #0e8ce4;" value="Semua Produk">
+            <input name="search" type="submit" class="btn btn-primary col-12 kuning" style="color: white;height: 48px;" value="Semua Produk">
         </form>
     </div>
 </div>
 
+
+<!-- Mobile New Product -->
+<p class="produk-baru-mobile" style="margin-top: 20px; margin-left: 25px;"><b>Produk</b> Terbaru</p>
+<div class="tabs_line produk-baru-mobile"><span></span></div>
+<div class="row produk-baru-mobile">
+    <?php foreach ($produk as $product) : ?>
+        <!-- Slider Item -->
+        <!-- <div class="arrivals_slider_item"> -->
+        <div class="border_active"></div>
+        <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
+            <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?= base_url('assets/images/produk/') . $product['gambar_produk'] ?>" width="90px" alt="cover buku"></div>
+            <div class="product_content">
+                <?php if ($product['diskon_produk'] > 0) : ?>
+                    <div class="product_price">Rp. <?= number_format(($product['harga_produk'] - ($product['harga_produk'] * ($product['diskon_produk'] / 100))), '0', ',', '.'); ?><span><s>Rp <?= number_format($product['harga_produk'], '0', ',', '.'); ?></s></span></div>
+                <?php else : ?>
+                    <div class="product_price">Rp. <?= number_format($product['harga_produk'], '0', ',', '.'); ?></div>
+                <?php endif; ?>
+                <div class="product_name">
+                    <div><a href="<?= base_url('main/produk/') . $product['link'] ?>"><?= $product['nama_produk']; ?></a></div>
+                </div>
+                <div class="product_extras">
+                    <button class="add_cart product_cart_button" data-id_produk="<?= $product['id_produk']; ?>" data-nama_produk="<?= $product['nama_produk'] ?>" data-harga_produk="<?php if ($product['diskon_produk'] == 0) {
+                                                                                                                                                                                            echo $product['harga_produk'];
+                                                                                                                                                                                        } else {
+                                                                                                                                                                                            echo ($product['harga_produk'] - ($product['harga_produk'] * ($product['diskon_produk'] / 100)));
+                                                                                                                                                                                        } ?>" data-gambar_produk="<?= $product['gambar_produk'] ?>">Add to Cart</button>
+                </div>
+            </div>
+            <ul class="product_marks">
+                <?php if ($product['diskon_produk'] > 0) : ?>
+                    <li class="product_mark product_new" style="background: #df3b3b">-<?= $product['diskon_produk'] ?>%</li>
+                <?php else : ?>
+                    <li class="product_mark product_new">baru</li>
+                <?php endif; ?>
+            </ul>
+        </div>
+        <!-- </div> -->
+    <?php endforeach; ?>
+</div>
+
+<!-- End Mobile New Product -->
 
 <!-- Best Sellers -->
 
@@ -894,7 +1014,7 @@
                                         <div class="review_content">
                                             <div class="review_name"><a href="<?= base_url('main/produk/') . $ulas['link'] ?>"><?= $ulas['nama_ulasan']; ?></a></div>
                                             <div class="review_rating_container">
-                                                <div class="rating_r rating_r_<?= $ulas['rating_ulasan']; ?> review_rating"><i></i><i></i><i></i><i></i><i></i>     </div><br>
+                                                <div class="rating_r rating_r_<?= $ulas['rating_ulasan']; ?> review_rating"><i></i><i></i><i></i><i></i><i></i> </div><br>
                                                 <div class="review_time"><?= time_elapsed_string($ulas['timestamp']); ?></div>
                                             </div>
                                             <div class="review_text">

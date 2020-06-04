@@ -15,7 +15,7 @@
                             <div class="newsletter_content clearfix">
                                 <form action="#" class="newsletter_form">
                                     <input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">
-                                    <button class="newsletter_button">Langganan</button>
+                                    <button class="newsletter_button coklat">Langganan</button>
                                 </form>
                                 <div class="newsletter_unsubscribe_link"><a href="#">berhenti</a></div>
                             </div>
@@ -33,8 +33,8 @@
 
                     <div class="col-lg-3 footer_col">
                         <div class="footer_column footer_contact">
-                            <div class="logo_container">
-                            <div class="logo"><a href="<?= base_url(); ?>"><img src="<?= base_url('assets/templates/images/'); ?>logo.png" width="200px" alt=""></a></div>
+                            <div class="logo_container justify-content-center">
+                            <div class="logo_footer justify-content-start"><a href="<?= base_url(); ?>"><img src="<?= base_url('assets/templates/images/'); ?>logo.png" width="200px" alt=""></a></div>
                                 <div class="logo"><a href="#">Ar-Raihan</a></div>
                             </div>
                             <div class="footer_title">Butuh Bantuan? Hubungi kami</div>
