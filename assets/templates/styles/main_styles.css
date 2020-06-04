@@ -3421,8 +3421,10 @@ select option
 }
 .newsletter_title
 {
-	font-size: 18px;
+	font-size: 20px;
+	text-align: right;
 	color: #000000;
+	font-style: bold;
 }
 .newsletter_text p:last-child
 {
@@ -3444,7 +3446,7 @@ select option
 }
 .newsletter_input
 {
-	width: 100%;
+	width: 42%;
 	height: 50px;
 	background: #FFFFFF;
 	border: solid 1px #e5e5e5;
@@ -3488,8 +3490,8 @@ select option
 {
 	position: absolute;
 	top: 0;
-	right: 0;
-	width: 153px;
+	right: auto;
+	width: 124px;
 	height: 50px;
 	background: #0e8ce4;
 	color: #FFFFFF;
@@ -3508,6 +3510,7 @@ select option
 .newsletter_unsubscribe_link
 {
 	float: right;
+	right: 17px;
 	text-align: right;
 	height: 50px;
 }
