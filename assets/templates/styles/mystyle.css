@@ -96,11 +96,54 @@
 	display: none !important;
 }
 
+.bannerku{
+	display: block;
+    height: 490px; /* height of container */
+	overflow: hidden;
+	margin-left: 495px;
+    margin-right: 10px;
+}
+
+.banner-gambar {
+	position: absolute;
+    top: 18%;
+    width: 20%;
+    left: 66%;
+}
+
+.banner-judul {
+	position: absolute;
+	top: 35%;
+	left: 15%;
+	width: 108px;
+}
+
+.banner-button {
+	position: absolute;
+	top: 53%;
+	left: 14%;
+	color: #FFFFFF;
+}
+
+.banner-title {
+	position: absolute;
+	top: 26%;
+	left: 15%;
+}
+
 @media only screen and (max-width: 991px) {
+
+	.bannerku {
+		display: block;
+	}
 
 	.main_nav_content {
 		background: #6F472D !important;
-    }
+	}
+	
+	.carousel-indicators{
+		z-index: 1;
+	}
     
     .best_sellers {
         margin-top: 10% !important;

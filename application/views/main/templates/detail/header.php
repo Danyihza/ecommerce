@@ -17,4 +17,4 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/product_responsive.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/shop_styles.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/shop_responsive.css">
-    <!-- <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/mystyle.css"> -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/mystyle.css">

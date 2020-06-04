@@ -36,7 +36,7 @@
  <script src="<?= base_url('assets/templates/'); ?>plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
  <script src="<?= base_url('assets/templates/'); ?>plugins/parallax-js-master/parallax.min.js"></script>
  <script src="<?= base_url('assets/templates/'); ?>js/custom.js"></script>
- <script src="<?= base_url('assets/templates/'); ?>js/shop_custom.js"></script>
+ <!-- <script src="<?= base_url('assets/templates/'); ?>js/shop_custom.js"></script> -->
 
  <script>
      $('.carousel').carousel()
