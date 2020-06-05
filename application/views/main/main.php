@@ -38,7 +38,7 @@
             <h5 class="banner-title"><b>New Arrival !</b></h5>
             <p class="banner-judul" style="color: #6f472d;"><?= $newproduk['nama_produk']; ?></p>
         </div>
-        <!-- <div class="carousel-item">
+        <div class="carousel-item">
             <img class="d-block w-100" src="http://localhost/ecommerce/assets/templates/images/924.jpg" width="100%" alt="Second slide">
             <div class="button banner_button coklat banner-button"><a>Beli Sekarang</a></div>
             <img class="produk_banner banner-gambar" src="http://localhost/ecommerce/assets/images/foto_cover.jpg" width="80px">
@@ -51,7 +51,7 @@
             <img class="produk_banner banner-gambar" src="http://localhost/ecommerce/assets/images/foto_cover.jpg" width="80px">
             <h5 class="banner-title"><b>New Arrival !</b></h5>
             <p class="banner-judul" style="color: #6f472d;">Harry Potter</p>
-        </div> -->
+        </div>
     </div>
     <!-- <div class="carousel-item">
             <img class="d-block w-100" src="http://localhost/ecommerce/assets/templates/images/924.jpg" width="90px" alt="Second slide">
@@ -72,6 +72,7 @@
 
 <!-- END SLIDESHOW -->
 
+<hr>
 
 <!-- Characteristics -->
 

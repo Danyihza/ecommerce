@@ -113,25 +113,31 @@
 
 .banner-judul {
 	position: absolute;
-	top: 35%;
-	left: 15%;
-	width: 108px;
+	top: 21%;
+    left: 12%;
+	font-size: 25px;
+    width: 318px;
 }
 
 .banner-button {
 	position: absolute;
-	top: 53%;
-	left: 14%;
+	top: 47%;
+    left: 12%;
 	color: #FFFFFF;
 }
 
 .banner-title {
 	position: absolute;
-	top: 26%;
-	left: 15%;
+	top: 13%;
+    left: 12%;
+	font-size: 48px;
 }
 
 @media only screen and (max-width: 991px) {
+
+	.menu-navigation{
+		display: none;
+	}
 
 	.bannerku {
 		display: block;

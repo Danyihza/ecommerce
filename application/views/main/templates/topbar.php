@@ -43,8 +43,16 @@
                             </div>
                         </div>
 
+                        <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right menu-navigation" style="margin-top: 60px;left: 111px;">
+                            <ul class="standard_dropdown main_nav_dropdown">
+                                <li><a href="<?= base_url(); ?>">Beranda<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a href="<?= base_url('blog'); ?>">Blog<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a href="contact.html">Kontak<i class="fas fa-chevron-down"></i></a></li>
+                            </ul>
+                        </div>
+
                         <!-- Search -->
-                        <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right">
+                        <!-- <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right">
                             <div class="header_search">
                                 <div class="header_search_content">
                                     <div class="header_search_form_container">
@@ -63,7 +71,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Wishlist -->
                         <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
@@ -118,8 +126,8 @@
                                     </ul>
                                 </div>
 
-                                <!-- <div class="col-lg-5 col-12 text-lg-left text-right">
-                                    <div class="header_search">
+                                <div class="col-lg-5 col-12 text-lg-left text-right">
+                                    <div class="header_search" style="height: 60px;left: 1px;">
                                         <div class="header_search_content">
                                             <div class="header_search_form_container">
                                                 <form action="<?= base_url('main/search') ?>" method="POST" class="header_search_form">
@@ -137,29 +145,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
 
                                 <!-- Main Nav Menu -->
 
-                                <div class="main_nav_menu ml-auto">
+                                <!-- <div class="main_nav_menu ml-auto">
                                     <ul class="standard_dropdown main_nav_dropdown">
                                         <li><a href="<?= base_url(); ?>">Beranda<i class="fas fa-chevron-down"></i></a></li>
-                                        <!-- <li class="hassubs">
-                                            <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
-                                            <ul>
-                                                <li><a href="shop.html">Shop<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="product.html">Product<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="blog_single.html">Blog Post<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="regular.html">Regular Post<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="cart.html">Cart<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
-                                            </ul>
-                                        </li> -->
                                         <li><a href="<?= base_url('blog'); ?>">Blog<i class="fas fa-chevron-down"></i></a></li>
                                         <li><a href="contact.html">Kontak<i class="fas fa-chevron-down"></i></a></li>
                                     </ul>
-                                </div>
+                                </div> -->
 
                                 <!-- Menu Trigger -->
 
