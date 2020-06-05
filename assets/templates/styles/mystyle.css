@@ -165,7 +165,8 @@
         position: absolute;
         top: 35%;
         left: 15%;
-        width: 108px;
+		width: 108px;
+		font-size:unset;
     }
 
     .banner-button {
@@ -178,7 +179,8 @@
     .banner-title {
         position: absolute;
         top: 26%;
-        left: 15%;
+		left: 15%;
+		font-size:unset;
     }
 
 	/* .carousel-control-next,
