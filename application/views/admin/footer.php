@@ -48,8 +48,6 @@
 <script src="<?= base_url('assets/adminlte/') ?>dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url('assets/adminlte/') ?>dist/js/demo.js"></script>
-<!-- AdminLTE App -->
-<script src="<?= base_url('assets/adminlte/') ?>dist/js/adminlte.min.js"></script>
 <!-- DataTables -->
 <script src="<?= base_url('assets/adminlte/') ?>plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url('assets/adminlte/') ?>plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
