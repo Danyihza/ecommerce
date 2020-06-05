@@ -658,7 +658,6 @@
 		text-align: center;
 		margin-top: 10px;
 		height: auto;
-		left: 90px;
 	}
 	.newsletter_unsubscribe_link a
 	{
@@ -667,8 +666,6 @@
 	.newsletter_title
 	{
 		font-size: 16px;
-		text-align: center;
-		padding-top: 30px;
 	}
 	.newsletter_icon
 	{
@@ -688,7 +685,7 @@
 		position: relative;
 	    top: auto;
 	    right: auto;
-	    left: 15%;
+	    left: 50%;
 	    -webkit-transform: translateX(-50%);
 	    -moz-transform: translateX(-50%);
 	    -ms-transform: translateX(-50%);
@@ -713,14 +710,8 @@
 	{
 		font-size: 13px;
 		padding-left: 15px;
-		width: 58%;
 		height: 40px;
 		line-height: 40px;
-	}
-	div .newsletter_text p
-	{
-		font-size: 16px;
-		text-align: center;
 	}
 	.newsletter_input::-webkit-input-placeholder
 	{
