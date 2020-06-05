@@ -18,3 +18,4 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/blog_styles.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/blog_responsive.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/mystyle.css">

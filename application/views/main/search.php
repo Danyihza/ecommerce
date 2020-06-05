@@ -17,7 +17,9 @@
 									<li>
 										<form action="<?= base_url('main/search') ?>" method="post">
 											<input type="hidden" name="form_sidebar" value="<?= $kat['id_kategori'] ?>">
-											<input class="button_kategori_sidebar" name="button_kategori" value="<?= $kat['nama_kategori']; ?>" type="submit"><span style="margin-left: 100px"> 12 </span>
+												<div class="row">
+													<input class="button_kategori_sidebar" name="button_kategori" value="<?= $kat['nama_kategori']; ?>" type="submit"><span> 12 </span>
+												</div>
 										</form>
 									</li>
 								<?php endforeach; ?>
@@ -47,9 +49,8 @@
 							<span>Sort by:</span>
 							<ul>
 								<li>
-									<span class="sorting_text">highest rated<i class="fas fa-chevron-down"></span></i>
+									<span class="sorting_text">price<i class="fas fa-chevron-down"></span></i>
 									<ul>
-										<li class="shop_sorting_button" data-isotope-option='{ "sortBy": "original-order" }'>default</li>
 										<li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>name</li>
 										<li class="shop_sorting_button" data-isotope-option='{ "sortBy": "price" }'>price</li>
 									</ul>
