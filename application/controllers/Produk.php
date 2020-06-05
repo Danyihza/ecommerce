@@ -36,25 +36,33 @@ class Produk extends CI_Controller
 
     public function ubahview($id_produk)
     {
-        $data['countproduk'] = $this->produk_model->countAllProduct();
-        $data['produk'] = $this->produk_model->getProductById($id_produk);
-        $data['kategori'] = $this->produk_model->getKategori();
-        $this->load->view('admin/header');
-        $this->load->view('admin/navbar');
-        $this->load->view('admin/sidebar', $data);
-        $this->load->view('admin/ubahproduk', $data);
-        $this->load->view('admin/footer');
+        if ($this->produk_model->logged_id()) {
+            $data['countproduk'] = $this->produk_model->countAllProduct();
+            $data['produk'] = $this->produk_model->getProductById($id_produk);
+            $data['kategori'] = $this->produk_model->getKategori();
+            $this->load->view('admin/header');
+            $this->load->view('admin/navbar');
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/ubahproduk', $data);
+            $this->load->view('admin/footer');
+        } else {
+            redirect("auth");
+        }
     }
 
     public function tambahproduk()
     {
-        $data['countproduk'] = $this->produk_model->countAllProduct();
-        $data['kategori'] = $this->produk_model->getKategori();
-        $this->load->view('admin/header');
-        $this->load->view('admin/navbar');
-        $this->load->view('admin/sidebar', $data);
-        $this->load->view('admin/tambahproduk', $data);
-        $this->load->view('admin/footer');
+        if ($this->produk_model->logged_id()) {
+            $data['countproduk'] = $this->produk_model->countAllProduct();
+            $data['kategori'] = $this->produk_model->getKategori();
+            $this->load->view('admin/header');
+            $this->load->view('admin/navbar');
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/tambahproduk', $data);
+            $this->load->view('admin/footer');
+        } else {
+            redirect("auth");
+        }
     }
 
     public function simpan()

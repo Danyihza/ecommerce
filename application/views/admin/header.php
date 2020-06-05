@@ -44,6 +44,7 @@
     <!-- Bootstrap4 Duallistbox -->
     <link rel="stylesheet" href="<?= base_url('assets/adminlte/') ?>plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
     <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminlte/') ?>dist/css/styleme.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 

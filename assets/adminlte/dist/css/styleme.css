@@ -1,0 +1,20 @@
+.card-comments .comment-parent {
+    color: #78838e;
+    margin-left: 5px;
+}
+.card-comments .comment-child {
+    color: #78838e;
+    margin-left: 70px;
+}
+.vertikal {
+    border-left: 1px black solid;
+    height: 100%;
+    width: 0px;
+}
+
+.btn-grey {
+    color: #fff;
+    background-color: #444444;
+    border-color: rgba(0,0,0,0.2);
+    margin-top: 10px;
+}
