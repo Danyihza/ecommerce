@@ -722,7 +722,7 @@ select
 	display: inline;
 	border: 0;
 	width: auto;
-	margin-left: 10px;
+	margin-left: 0px;
 	outline: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -3564,8 +3564,8 @@ select option
 }
 .footer_phone
 {
-	font-size: 18px;
-	font-weight: 500;
+	font-size: 17px;
+	font-weight: 100;
 	color: #0e8ce4;
 	margin-top: 13px;
 }

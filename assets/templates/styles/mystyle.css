@@ -12,14 +12,37 @@
 	box-shadow: 0 0 0 0.2rem rgba(75, 48, 30, .5);
 }
 
+.shop_product_count span {
+	color :rgb(75, 48, 30);
+}
+
+.active-product{
+	color : rgb(75, 48, 30) !important;
+}
+
+.page_nav li:hover a {
+	color : rgb(75, 48, 30) !important;
+}
+
 .kuning {
 	background: #F8BF00;
 	border-color: #F8BF00;
+	text-align: center;
 }
 
 .kuning:hover {
 	border-color: #6F472D;
 	background: rgb(75, 48, 30);
+}
+
+.kuning:focus {
+	box-shadow: 0 0 0 0.2rem rgba(75, 48, 30,.5);
+}
+
+.kuning:active  {
+	background-color: rgb(75, 48, 30) !important;
+    border-color: #6F472D !important;
+    box-shadow: 0 0 0 0.2rem rgba(75, 48, 30,.5) !important;
 }
 
 .product_new {
@@ -53,6 +76,14 @@
 
 .button_kategori_sidebar:hover {
 	color: #6F472D !important;
+}
+
+.form-control:focus {
+	color: rgb(75, 48, 30) !important;;
+    background-color: #fff;
+    border-color: #6F472D !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(75, 48, 30,.25) !important;
 }
 
 /* .main_nav {
@@ -96,6 +127,10 @@
 	display: none !important;
 }
 
+.all-produk-mobile {
+	display: none !important;
+}
+
 .bannerku {
 	display: block;
 	height: 490px;
@@ -115,22 +150,22 @@
 .banner-judul {
 	position: absolute;
 	top: 21%;
-    left: 12%;
+	left: 12%;
 	font-size: 25px;
-    width: 318px;
+	width: 318px;
 }
 
 .banner-button {
 	position: absolute;
 	top: 47%;
-    left: 12%;
+	left: 12%;
 	color: #FFFFFF;
 }
 
 .banner-title {
 	position: absolute;
 	top: 13%;
-    left: 12%;
+	left: 12%;
 	font-size: 48px;
 }
 
@@ -181,19 +216,57 @@ a:hover {
 	color: #0e8ce4;
 }
 
+.newsletter_text p {
+	font-size: 20px;
+    text-align: right;
+}
+
+.newsletter_input {
+	width: 42%;
+    height: 50px;
+    background: #FFFFFF;
+    border: solid 1px #e5e5e5;
+    border-radius: 5px;
+    padding-left: 25px;
+    font-size: 16px;
+    outline: none;
+    color: rgb(75, 48, 30);
+}
+
+.product_name div a:hover {
+	color: rgb(75, 48, 30);
+}
+
+.arrivals_single_name a:hover {
+	color: rgb(75, 48, 30);
+}
+
+.newsletter_input:focus{
+	border: solid 1px rgba(75, 48, 30, 0.3);
+    box-shadow: 0px 1px 5px rgba(75, 48, 30, 0.3);
+}
+
+.reviews_all a {
+	color : #6F472D;
+}
+
 @media only screen and (max-width: 575px) {
 	.footer_sociall ul {
 		margin-bottom: 100px;
 	}
+
 	div .font {
 		font-size: 15px;
 	}
+
 	div .footer_phone {
 		font-size: 15px;
 	}
+
 	div .footer_title {
 		font-size: 12px;
 	}
+
 	div ul.gridpay li {
 		padding-top: 10%;
 		width: 16%;
@@ -224,7 +297,7 @@ ul.gridpay li {
 		display: none;
 	}
 
-	.menu-navigation{
+	.menu-navigation {
 		display: none;
 	}
 
@@ -250,27 +323,27 @@ ul.gridpay li {
 		left: 63%;
 	}
 
-    .banner-judul {
-        position: absolute;
-        top: 35%;
-        left: 15%;
+	.banner-judul {
+		position: absolute;
+		top: 35%;
+		left: 15%;
 		width: 108px;
-		font-size:unset;
-    }
+		font-size: unset;
+	}
 
 	.banner-button {
 		position: absolute;
 		top: 53%;
-        left: 14%;
-        color: #FFFFFF;
-    }
+		left: 14%;
+		color: #FFFFFF;
+	}
 
-    .banner-title {
-        position: absolute;
-        top: 26%;
+	.banner-title {
+		position: absolute;
+		top: 26%;
 		left: 15%;
-		font-size:unset;
-    }
+		font-size: unset;
+	}
 
 	/* .carousel-control-next,
 	.carousel-control-prev {
@@ -298,6 +371,13 @@ ul.gridpay li {
 		display: flex !important;
 	}
 
+	.all-produk-mobile {
+		display: unset !important;
+		height: unset;
+		margin-top: 10%;
+	}
+
+
 	.header {
 		position: fixed !important;
 		width: 100%;
@@ -318,7 +398,7 @@ ul.gridpay li {
 	}
 
 	.logo_container img {
-		width: 120%;
+		width: 100%;
 	}
 
 	.new_arrivals {
@@ -347,7 +427,7 @@ ul.gridpay li {
 
 	.logo_footer {
 		width: 50%;
-		margin-right: 100px;
+		margin-right: auto;
 		margin-left: auto;
 	}
 

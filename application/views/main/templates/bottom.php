@@ -193,7 +193,7 @@
                                 <h4 class="alert-heading">Catatan</h4>
                                 <p>Total harga + ongkir yang harus dibayar akan diinformasikan oleh admin Media Al-Faruq, setelah mengirim data pesanan.</p>
                             </div>
-                                <button type="submit" onclick="return confirm('Data yang anda isi sudah benar ?')" id="checkout" class="btn btn-primary col-md-12"><img src="<?= base_url('assets/images/icon/'); ?>icons8-whatsapp-24.png" width="20px" alt=""> Pesan Sekarang</button>
+                                <button type="submit" onclick="return confirm('Data yang anda isi sudah benar ?')" id="checkout" class="btn btn-primary col-md-12 coklat"><img src="<?= base_url('assets/images/icon/'); ?>icons8-whatsapp-24.png" width="20px" alt=""> Pesan Sekarang</button>
                         </form>
                         `)
          })

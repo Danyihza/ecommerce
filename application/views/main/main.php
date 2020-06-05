@@ -285,6 +285,9 @@
         <!-- </div> -->
     <?php endforeach; ?>
 </div>
+<form action="<?= base_url('main/search'); ?>" method="POST">
+    <input name="search" type="submit" class="btn btn-primary col-md-10 all-produk-mobile kuning" style="color: white;" value="Semua Produk">
+</form>
 
 <!-- End Mobile New Product -->
 
