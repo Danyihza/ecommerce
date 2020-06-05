@@ -114,24 +114,22 @@
 
 .banner-judul {
 	position: absolute;
-	top: 21%;
-    left: 12%;
-	font-size: 25px;
-    width: 318px;
+	top: 35%;
+	left: 15%;
+	width: 108px;
 }
 
 .banner-button {
 	position: absolute;
-	top: 47%;
-    left: 12%;
+	top: 53%;
+	left: 14%;
 	color: #FFFFFF;
 }
 
 .banner-title {
 	position: absolute;
-	top: 13%;
-    left: 12%;
-	font-size: 48px;
+	top: 26%;
+	left: 15%;
 }
 
 a {
@@ -219,10 +217,6 @@ ul.gridpay li {
 }
 
 @media only screen and (max-width: 991px) {
-
-	.menu-navigation{
-		display: none;
-	}
 
 	.bannerku {
 		display: block;
