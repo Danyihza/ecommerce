@@ -126,7 +126,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-lg-5 col-12 text-lg-left text-right">
+                                <div class="col-lg-5 col-12 text-lg-left text-right search-bar">
                                     <div class="header_search" style="height: 60px;left: 1px;">
                                         <div class="header_search_content">
                                             <div class="header_search_form_container">
@@ -162,8 +162,9 @@
                                 <div class="menu_trigger_container ml-auto">
                                     <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
                                         <div class="menu_burger">
-                                            <div class="menu_trigger_text">menu</div>
-                                            <div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+                                            <div class="menu_trigger_text">search</div>
+                                            <i class="fa fa-search text-light"></i>
+                                            <!-- <div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -207,7 +208,7 @@
 
                                 <div class="menu_contact">
                                     <div class="menu_contact_item">
-                                        <div class="menu_contact_icon"><img src="images/phone_white.png" alt=""></div>+38 068 005 3570
+                                        <div class="menu_contact_icon"><img src="images/phone_white.png" alt=""></div><a href="tel:+6285245667810">0852 4566 7810</a>
                                     </div>
                                     <div class="menu_contact_item">
                                         <div class="menu_contact_icon"><img src="images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>

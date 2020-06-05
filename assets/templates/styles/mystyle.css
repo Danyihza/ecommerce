@@ -96,19 +96,20 @@
 	display: none !important;
 }
 
-.bannerku{
+.bannerku {
 	display: block;
-    height: 490px; /* height of container */
+	height: 490px;
+	/* height of container */
 	overflow: hidden;
 	margin-left: 495px;
-    margin-right: 10px;
+	margin-right: 10px;
 }
 
 .banner-gambar {
 	position: absolute;
-    top: 18%;
-    width: 20%;
-    left: 66%;
+	top: 18%;
+	width: 20%;
+	left: 66%;
 }
 
 .banner-judul {
@@ -133,7 +134,95 @@
 	font-size: 48px;
 }
 
+a {
+	color: rgb(75, 48, 30);
+}
+
+a:hover {
+	color: rgb(75, 48, 30);
+}
+
+.newsletter_text p {
+	font-size: 20px;
+	text-align: right;
+}
+
+.footer_sociall {
+	margin-top: 27px;
+}
+
+.footer_sociall ul {
+	margin-bottom: 210px;
+}
+
+.footer_sociall ul li {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: #fafafa;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+	margin-right: 16px;
+	text-align: center;
+}
+
+.footer_sociall ul li i {
+	color: #000000;
+	line-height: 30px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+
+.footer_sociall ul li:hover i {
+	color: #0e8ce4;
+}
+
+@media only screen and (max-width: 575px) {
+	.footer_sociall ul {
+		margin-bottom: 100px;
+	}
+	div .font {
+		font-size: 15px;
+	}
+	div .footer_phone {
+		font-size: 15px;
+	}
+	div .footer_title {
+		font-size: 12px;
+	}
+	div ul.gridpay li {
+		padding-top: 10%;
+		width: 16%;
+	}
+}
+
+.font {
+	font-size: 20px;
+	margin-bottom: 20px;
+	font-weight: 500;
+	color: #000000;
+}
+
+ul.gridpay li {
+	padding-top: 12%;
+	width: 19%;
+	border: 1px solid rgba(0, 0, 0, .06);
+	background-color: #FFFFFF;
+	border-radius: 2px;
+	background-position: center;
+	background-size: 70% auto;
+	background-repeat: no-repeat;
+}
+
 @media only screen and (max-width: 991px) {
+
+	.search-bar {
+		display: none;
+	}
 
 	.menu-navigation{
 		display: none;
@@ -146,20 +235,20 @@
 	.main_nav_content {
 		background: #6F472D !important;
 	}
-	
-	.carousel-indicators{
+
+	.carousel-indicators {
 		z-index: 1;
 	}
-    
-    .best_sellers {
-        margin-top: 10% !important;
-    }
 
-    .banner-gambar {
-        position: absolute;
+	.best_sellers {
+		margin-top: 10% !important;
+	}
+
+	.banner-gambar {
+		position: absolute;
 		top: 26%;
 		left: 63%;
-    }
+	}
 
     .banner-judul {
         position: absolute;
@@ -169,8 +258,8 @@
 		font-size:unset;
     }
 
-    .banner-button {
-        position: absolute;
+	.banner-button {
+		position: absolute;
 		top: 53%;
         left: 14%;
         color: #FFFFFF;
@@ -252,7 +341,7 @@
 		padding-top: 0px !important;
 	}
 
-	hr {
+	hr.batas {
 		display: none !important;
 	}
 
