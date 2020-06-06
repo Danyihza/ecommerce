@@ -72,7 +72,7 @@ class BlogAdmin extends CI_Controller
         );
 
         $this->blog_model->input_data($data, 'artikel');
-        redirect('blogadmin');
+        redirect('BlogAdmin');
     }
 
     public function updateview($id_artikel)
@@ -127,7 +127,7 @@ class BlogAdmin extends CI_Controller
             'id_artikel' => $id_artikel
         );
         $this->blog_model->update_data($where, $data, 'artikel');
-        redirect('blogadmin');
+        redirect('BlogAdmin');
     }
 
     public function hapus($id_artikel)
@@ -140,16 +140,17 @@ class BlogAdmin extends CI_Controller
         if ($error['code'] != 0) {
             $this->session->set_flashdata('notif', '<div class="alert alert-danger"><b>PROSES HAPUS GAGAL!</b> </div>');
             $this->db->db_debug = $db_debug;
-            redirect('blogadmin/');
+            redirect('BlogAdmin/');
         } else {
             $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES HAPUS BERHASIL!</b> </div>');
             $this->db->db_debug = $db_debug;
-            redirect('blogadmin/');
+            redirect('BlogAdmin/');
         }
     }
 
-    public function aktif($id_artikel){
-        $status=1;
+    public function aktif($id_artikel)
+    {
+        $status = 1;
         $data = array(
             'status_artikel' => $status
         );
@@ -157,10 +158,11 @@ class BlogAdmin extends CI_Controller
             'id_artikel' => $id_artikel
         );
         $this->blog_model->update_data($where, $data, 'artikel');
-        redirect('blogadmin');
+        redirect('BlogAdmin');
     }
-    public function nonaktif($id_artikel){
-        $status=0;
+    public function nonaktif($id_artikel)
+    {
+        $status = 0;
         $data = array(
             'status_artikel' => $status
         );
@@ -168,7 +170,7 @@ class BlogAdmin extends CI_Controller
             'id_artikel' => $id_artikel
         );
         $this->blog_model->update_data($where, $data, 'artikel');
-        redirect('blogadmin');
+        redirect('BlogAdmin');
     }
 
     public function lihatartikel($id_artikel)
@@ -189,7 +191,8 @@ class BlogAdmin extends CI_Controller
         }
     }
 
-    public function kirimkomen(){
+    public function kirimkomen()
+    {
         $id_artikel = $this->input->post('id_artikel');
         $nama_kmn = $this->input->post('nama_kmn');
         $email_kmn = $this->input->post('email_kmn');
@@ -207,10 +210,11 @@ class BlogAdmin extends CI_Controller
         );
 
         $this->blog_model->input_data($data, 'komentar');
-        redirect('blogadmin/lihatartikel/'.$id_artikel);
+        redirect('BlogAdmin/lihatartikel/' . $id_artikel);
     }
 
-    public function kirimbalas(){
+    public function kirimbalas()
+    {
         $id_artikel = $this->input->post('id_artikel');
         $nama_kmn = $this->input->post('nama_kmn');
         $email_kmn = $this->input->post('email_kmn');
@@ -228,6 +232,6 @@ class BlogAdmin extends CI_Controller
         );
 
         $this->blog_model->input_data($data, 'komentar');
-        redirect('blogadmin/lihatartikel/'.$id_artikel);
+        redirect('BlogAdmin/lihatartikel/' . $id_artikel);
     }
 }

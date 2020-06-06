@@ -75,7 +75,7 @@
                   </li>
                   <li class="nav-header">BLOG</li>
                   <li class="nav-item">
-                      <a href="<?= base_url('blogadmin') ?>" class="nav-link">
+                      <a href="<?= base_url('BlogAdmin') ?>" class="nav-link">
                           <i class="nav-icon fas fa-bold"></i>
                           <p>Data Artikel</p>
                       </a>

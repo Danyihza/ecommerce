@@ -10,7 +10,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Home</a></li>
-              <li class="breadcrumb-item"><a href="<?= base_url('blogadmin') ?>">Data Artikel</a></li>
+              <li class="breadcrumb-item"><a href="<?= base_url('BlogAdmin') ?>">Data Artikel</a></li>
               <li class="breadcrumb-item active">Lihat Artikel</li>
             </ol>
           </div>
@@ -83,7 +83,7 @@
               </div>
               <!-- /.card-footer -->
               <div class="card-footer">
-                <?= form_open_multipart('blogadmin/kirimkomen'); ?>
+                <?= form_open_multipart('BlogAdmin/kirimkomen'); ?>
                 <div class="img-push">
                   <input hidden type="text" name="nama_kmn" value="Media Ar-Raihan">
                   <input hidden type="text" name="email_kmn" value="Administrator">
@@ -124,7 +124,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <?= form_open_multipart('blogadmin/kirimbalas/'); ?>
+            <?= form_open_multipart('BlogAdmin/kirimbalas/'); ?>
             <input hidden type="text" name="nama_kmn" value="Media Ar-Raihan">
             <input hidden type="text" name="email_kmn" value="Administrator">
             <input hidden type="text" name="status_kmn" value="<?= $id_kmn; ?>">

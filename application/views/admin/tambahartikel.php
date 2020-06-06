@@ -10,7 +10,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Home</a></li>
-              <li class="breadcrumb-item"><a href="<?= base_url('blogadmin') ?>">Data Artikel</a></li>
+              <li class="breadcrumb-item"><a href="<?= base_url('BlogAdmin') ?>">Data Artikel</a></li>
               <li class="breadcrumb-item active">Tambah Artikel</li>
             </ol>
           </div>
@@ -28,7 +28,7 @@
           </div>
           <!-- /.card-header -->
           <?php $now = date('Y-m-d'); ?>
-          <?= form_open_multipart('blogadmin/simpan'); ?>
+          <?= form_open_multipart('BlogAdmin/simpan'); ?>
           <div class="card-body">
             <div class="form-group">
               <label for="exampleInputNama">Judul Artikel</label>
@@ -36,7 +36,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputHarga">Tanggal</label>
-              <input type="date" class="form-control" name="tanggal_artikel" value="<?= $now;?>" readonly>
+              <input type="date" class="form-control" name="tanggal_artikel" value="<?= $now; ?>" readonly>
             </div>
             <div class="form-group">
               <label for="exampleInputFile">Gambar Artikel</label>

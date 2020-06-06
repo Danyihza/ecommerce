@@ -24,18 +24,18 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <a href="<?= base_url('blogadmin/tambahview') ?>"><button align="right" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                <a href="<?= base_url('BlogAdmin/tambahview') ?>"><button align="right" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah Data</button></a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-              <?= $this->session->flashdata('notif') ?>
+                <?= $this->session->flashdata('notif') ?>
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr>
                       <th>Action</th>
                       <th>ID Artikel</th>
                       <th>Gambar Artikel</th>
-                      <th>Judul Artikel</th> 
+                      <th>Judul Artikel</th>
                       <th>Tanggal Terbit</th>
                       <th>Status Artikel</th>
                       <th>Jumlah Komentar</th>
@@ -45,9 +45,9 @@
                     <?php foreach ($artikel as $a) { ?>
                       <tr>
                         <td>
-                          <a title="Lihat" href="<?= base_url('blogadmin/lihatartikel/' . $a->id_artikel); ?>" type="button" class="btn btn-warning fa fa-eye"></a>
-                          <a title="Edit" href="<?= base_url('blogadmin/updateview/' . $a->id_artikel); ?>" type="button" class="btn btn-primary fa fa-edit"></a>
-                          <a title="Hapus" href="<?= base_url('blogadmin/hapus/' . $a->id_artikel); ?>" onclick="return confirm('Anda yakin ingin menghapus data ini?')" type="button" class="btn btn-danger fa fa-trash"></a>
+                          <a title="Lihat" href="<?= base_url('BlogAdmin/lihatartikel/' . $a->id_artikel); ?>" type="button" class="btn btn-warning fa fa-eye"></a>
+                          <a title="Edit" href="<?= base_url('BlogAdmin/updateview/' . $a->id_artikel); ?>" type="button" class="btn btn-primary fa fa-edit"></a>
+                          <a title="Hapus" href="<?= base_url('BlogAdmin/hapus/' . $a->id_artikel); ?>" onclick="return confirm('Anda yakin ingin menghapus data ini?')" type="button" class="btn btn-danger fa fa-trash"></a>
                         </td>
                         <td><?= $a->id_artikel ?></td>
                         <td align="center"><img src="<?= base_url('assets/'); ?>images/blog/<?= $a->foto_artikel; ?>" width="32" /></td>
@@ -55,9 +55,9 @@
                         <td><?= $a->tanggal_artikel ?></td>
                         <td>
                           <?php if ($a->status_artikel == 0) { ?>
-                            <a title="Aktifkan?" href="<?= base_url('blogadmin/aktif/' . $a->id_artikel); ?>" type="button" class="btn btn-sm btn-danger">Nonaktif</a>
+                            <a title="Aktifkan?" href="<?= base_url('BlogAdmin/aktif/' . $a->id_artikel); ?>" type="button" class="btn btn-sm btn-danger">Nonaktif</a>
                           <?php } else { ?>
-                            <a title="Nonaktifkan?" href="<?= base_url('blogadmin/nonaktif/' . $a->id_artikel); ?>" type="button" class="btn btn-sm btn-success">Aktif</a>
+                            <a title="Nonaktifkan?" href="<?= base_url('BlogAdmin/nonaktif/' . $a->id_artikel); ?>" type="button" class="btn btn-sm btn-success">Aktif</a>
                           <?php } ?>
                         </td>
                         <td class="text-danger"><strong><?= $a->jml ?> Komentar</strong></td>

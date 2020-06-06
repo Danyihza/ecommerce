@@ -13,15 +13,15 @@
 }
 
 .shop_product_count span {
-	color :rgb(75, 48, 30);
+	color: rgb(75, 48, 30);
 }
 
-.active-product{
-	color : rgb(75, 48, 30) !important;
+.active-product {
+	color: rgb(75, 48, 30) !important;
 }
 
 .page_nav li:hover a {
-	color : rgb(75, 48, 30) !important;
+	color: rgb(75, 48, 30) !important;
 }
 
 .kuning {
@@ -40,13 +40,13 @@
 }
 
 .kuning:focus {
-	box-shadow: 0 0 0 0.2rem rgba(75, 48, 30,.5);
+	box-shadow: 0 0 0 0.2rem rgba(75, 48, 30, .5);
 }
 
-.kuning:active  {
+.kuning:active {
 	background-color: rgb(75, 48, 30) !important;
-    border-color: #6F472D !important;
-    box-shadow: 0 0 0 0.2rem rgba(75, 48, 30,.5) !important;
+	border-color: #6F472D !important;
+	box-shadow: 0 0 0 0.2rem rgba(75, 48, 30, .5) !important;
 }
 
 .product_new {
@@ -83,11 +83,12 @@
 }
 
 .form-control:focus {
-	color: rgb(75, 48, 30) !important;;
-    background-color: #fff;
-    border-color: #6F472D !important;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(75, 48, 30,.25) !important;
+	color: rgb(75, 48, 30) !important;
+	;
+	background-color: #fff;
+	border-color: #6F472D !important;
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(75, 48, 30, .25) !important;
 }
 
 /* .main_nav {
@@ -226,19 +227,19 @@ a:hover {
 
 .newsletter_text p {
 	font-size: 20px;
-    text-align: right;
+	text-align: right;
 }
 
 .newsletter_input {
 	width: 42%;
-    height: 50px;
-    background: #FFFFFF;
-    border: solid 1px #e5e5e5;
-    border-radius: 5px;
-    padding-left: 25px;
-    font-size: 16px;
-    outline: none;
-    color: rgb(75, 48, 30);
+	height: 50px;
+	background: #FFFFFF;
+	border: solid 1px #e5e5e5;
+	border-radius: 5px;
+	padding-left: 25px;
+	font-size: 16px;
+	outline: none;
+	color: rgb(75, 48, 30);
 }
 
 .product_name div a:hover {
@@ -249,19 +250,19 @@ a:hover {
 	color: rgb(75, 48, 30);
 }
 
-.newsletter_input:focus{
+.newsletter_input:focus {
 	border: solid 1px rgba(75, 48, 30, 0.3);
-    box-shadow: 0px 1px 5px rgba(75, 48, 30, 0.3);
+	box-shadow: 0px 1px 5px rgba(75, 48, 30, 0.3);
 }
 
 .reviews_all a {
-	color : #6F472D;
+	color: #6F472D;
 }
 
 .footer_phone {
 	margin-top: 2px;
 	font-size: 17px;
-    font-weight: 100;
+	font-weight: 100;
 }
 
 .newsletter_title {
@@ -282,7 +283,7 @@ a:hover {
 }
 
 .blog_button a:hover {
-	color : #FFF;
+	color: #FFF;
 }
 
 table.fixed {
@@ -308,6 +309,69 @@ table.fixed td {
 .copyright_content {
 	color: rgba(255, 255, 255, 0.781);
 }
+
+.card-comments .card-comment img {
+	height: 1.875rem;
+	width: 1.875rem;
+	float: left;
+}
+
+.img-circle {
+	border-radius: 50%;
+}
+
+.card-comments {
+    background: #f8f9fa;
+}
+
+.card-footer {
+    padding: .75rem 1.25rem;
+    background-color: rgba(0,0,0,.03);
+    border-top: 0 solid rgba(0,0,0,.125);
+}
+
+.card-comments .card-comment:first-of-type {
+    padding-top: 0;
+}
+
+.card-comments .card-comment {
+    border-bottom: 1px solid #e9ecef;
+    padding: 8px 0;
+}
+
+.card-comments .comment-text {
+    color: #78838e;
+    margin-left: 40px;
+}
+
+.card-comments .username {
+    color: #495057;
+    display: block;
+    font-weight: 600;
+}
+
+.card-comments .text-muted {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.text-muted {
+    color: #6c757d!important;
+}
+
+.float-right {
+    float: right!important;
+}
+
+.form-control {
+	color: #6F472D;
+}
+
+.card-comment .comment-child {
+	margin-left: 36px;
+	margin-top: 5px;
+}
+
 /* ---------------------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 575px) {
