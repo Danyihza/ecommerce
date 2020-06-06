@@ -5,12 +5,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data Artikel</h1>
+            <h1>Lihat Artikel</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Home</a></li>
-              <li class="breadcrumb-item active">Data Artikel</li>
+              <li class="breadcrumb-item"><a href="<?= base_url('blogadmin') ?>">Data Artikel</a></li>
+              <li class="breadcrumb-item active">Lihat Artikel</li>
             </ol>
           </div>
         </div>
@@ -26,72 +27,72 @@
             <div class="card card-widget">
               <div class="card-header">
                 <div class="user-block">
-                  <!-- <img class="img-circle" src="../dist/img/user1-128x128.jpg" alt="User Image"> -->
-                  <span class="username"><a href="#">Jonathan Burke Jr.</a></span>
-                  <span class="description">Shared publicly - 7:30 PM Today</span>
+                  <img class="img-circle" src="<?= base_url('assets/'); ?>images/blog/<?= $artikel['foto_artikel']; ?>" alt="User Image">
+                  <span class="username"><a href="#"><?= $artikel['judul_artikel']; ?></a></span>
+                  <span class="description">Diperbaharui - <?= $artikel['tanggal_artikel']; ?></span>
                 </div>
                 <!-- /.user-block -->
                 <div class="card-tools">
-                  <span class="float-right text-muted">2 comments</span>
+                  <span class="float-right text-muted"><?= $count['jmlkmn']; ?> Komentar</span>
                 </div>
                 <!-- /.card-tools -->
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <!-- post text -->
-                <p>Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind
-                  texts. Separated they live in Bookmarksgrove right at</p>
-
-                <p>the coast of the Semantics, a large language ocean.
-                  A small river named Duden flows by their place and supplies
-                  it with the necessary regelialia. It is a paradisematic
-                  country, in which roasted parts of sentences fly into
-                  your mouth.</p>
+                <?= $artikel['isi_artikel']; ?>
 
               </div>
               <!-- /.card-body -->
               <div class="card-footer card-comments">
-                <div class="card-comment">
-                  <!-- User image -->
-                  <!-- <img class="img-circle img-sm" src="../dist/img/user3-128x128.jpg" alt="User Image"> -->
-
-                  <div class="comment-text">
-                    <span class="username">
-                      Maria Gonzales
-                      <span class="text-muted float-right">8:03 PM Today</span>
-                    </span><!-- /.username -->
-                    It is a long established fact that a reader will be distracted
-                    by the readable content of a page when looking at its layout.
+                <?php foreach ($komentar1 as $k) : ?>
+                  <div class="card-comment">
+                    <div class="comment-parent">
+                      <span class="username">
+                        <?= $k->nama_kmn; ?>
+                        <span class="text-muted"><i>(<?= $k->email_kmn; ?>)</i></span>
+                        <span class="text-muted float-right"><?= $k->waktu_kmn; ?></span>
+                      </span><!-- /.username -->
+                      <?= $k->isi_kmn; ?>
+                    </div>
+                    <?php
+                    $id_artikel = $k->id_artikel;
+                    $id_kmn = $k->id_kmn;
+                    ?>
+                    <button type="button" class="btn btn-sm btn-grey" data-toggle="modal" data-target="#komen<?= $id_kmn ?>">Balas</button>
+                    <!-- /.comment-text -->
                   </div>
-                  <!-- /.comment-text -->
-                </div>
-                <!-- /.card-comment -->
-                <div class="card-comment">
-                  <!-- User image -->
-                  <!-- <img class="img-circle img-sm" src="../dist/img/user5-128x128.jpg" alt="User Image"> -->
-
-                  <div class="comment-text">
-                    <span class="username">
-                      Nora Havisham
-                      <span class="text-muted float-right">8:03 PM Today</span>
-                    </span><!-- /.username -->
-                    The point of using Lorem Ipsum is that it hrs a morer-less
-                    normal distribution of letters, as opposed to using
-                    'Content here, content here', making it look like readable English.
-                  </div>
-                  <!-- /.comment-text -->
-                </div>
-                <!-- /.card-comment -->
+                  <!-- /.card-comment -->
+                  <?php
+                  $query = $this->db->query("select * from komentar where id_artikel=$id_artikel and status_kmn=$id_kmn");
+                  foreach ($query->result() as $km) : ?>
+                    <div class="card-comment">
+                      <div class="comment-child">
+                        <span class="username">
+                          <?= $km->nama_kmn; ?>
+                          <span class="text-muted"><i>(<?= $km->email_kmn; ?>)</i></span>
+                          <span class="text-muted float-right"><?= $km->waktu_kmn; ?></span>
+                        </span><!-- /.username -->
+                        <?= $km->isi_kmn; ?>
+                      </div>
+                      <!-- /.comment-text -->
+                    </div>
+                  <?php endforeach; ?>
+                  <!-- /.card-comment -->
+                <?php endforeach; ?>
               </div>
               <!-- /.card-footer -->
               <div class="card-footer">
-                <form action="#" method="post">
-                  <!-- <img class="img-fluid img-circle img-sm" src="../dist/img/user4-128x128.jpg" alt="Alt Text"> -->
-                  <!-- .img-push is used to add margin to elements next to floating images -->
-                  <div class="img-push">
-                    <input type="text" class="form-control form-control-sm" placeholder="Press enter to post comment">
-                  </div>
+                <?= form_open_multipart('blogadmin/kirimkomen'); ?>
+                <div class="img-push">
+                  <input hidden type="text" name="nama_kmn" value="Media Ar-Raihan">
+                  <input hidden type="text" name="email_kmn" value="Administrator">
+                  <input hidden type="text" name="status_kmn" value="0">
+                  <input hidden type="date" name="waktu_kmn" value="<?= date('Y-m-d'); ?>">
+                  <input hidden type="text" name="id_artikel" value="<?= $artikel['id_artikel']; ?>">
+                  <input type="text" name="isi_kmn" class="form-control form-control-sm" placeholder="Press enter to post comment">
+                  <input hidden type="submit" value="Kirim" class="form-control form-control-sm">
+                </div>
                 </form>
               </div>
               <!-- /.card-footer -->
@@ -106,3 +107,35 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+  <?php foreach ($komentar1 as $k) : ?>
+    <!-- modal balas data -->
+    <?php
+    $id_artikel = $k->id_artikel;
+    $id_kmn = $k->id_kmn;
+    ?>
+    <div class="modal fade" id="komen<?= $id_kmn ?>" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg-3" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="mediumModalLabel"><strong>Balas Komentar <?= $k->id_kmn ?></strong></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <?= form_open_multipart('blogadmin/kirimbalas/'); ?>
+            <input hidden type="text" name="nama_kmn" value="Media Ar-Raihan">
+            <input hidden type="text" name="email_kmn" value="Administrator">
+            <input hidden type="text" name="status_kmn" value="<?= $id_kmn; ?>">
+            <input hidden type="date" name="waktu_kmn" value="<?= date('Y-m-d'); ?>">
+            <input hidden type="text" name="id_artikel" value="<?= $artikel['id_artikel']; ?>">
+            <input type="text" name="isi_kmn" class="form-control form-control-sm" placeholder="Press enter to post comment">
+            <input hidden type="submit" value="Kirim" class="form-control form-control-sm">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php endforeach; ?>
+  <!-- modal diskon data -->
