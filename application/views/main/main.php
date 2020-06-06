@@ -33,7 +33,7 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img class="d-block w-100" src="http://localhost/ecommerce/assets/templates/images/924.jpg" width="100%" alt="Second slide">
-            <div class="button banner_button coklat banner-button"><a>Beli Sekarang</a></div>
+            <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $newproduk['link']; ?>">Beli Sekarang</a></div>
             <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/<?= $newproduk['gambar_produk'] ?>" width="80px">
             <h5 class="banner-title"><b>New Arrival !</b></h5>
             <p class="banner-judul" style="color: #6f472d;"><?= $newproduk['nama_produk']; ?></p>

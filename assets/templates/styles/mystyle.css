@@ -30,6 +30,10 @@
 	text-align: center;
 }
 
+.tabs_line span {
+	background: rgb(75, 48, 30) !important;
+}
+
 .kuning:hover {
 	border-color: #6F472D;
 	background: rgb(75, 48, 30);
@@ -249,6 +253,8 @@ a:hover {
 .reviews_all a {
 	color : #6F472D;
 }
+
+/* ---------------------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 575px) {
 	.footer_sociall ul {
