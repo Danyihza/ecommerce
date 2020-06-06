@@ -7,7 +7,7 @@
 			<!-- Images -->
 
 			<!-- Selected Image -->
-			<div class="col-lg-6 order-lg-2 order-1">
+			<div class="col-lg-6 order-lg-2 order-1 gambar">
 				<div class="image_selected"><img src="<?= base_url('assets/images/') . $produk['gambar_produk'] ?>" height="400px" alt=""></div>
 			</div>
 
@@ -28,7 +28,7 @@
 					<?php endif; ?>
 					<div class="order_info d-flex flex-row">
 						<form action="#">
-							<div class="clearfix" style="z-index: 1000;">
+							<div class="clearfix">
 
 								<!-- Product Quantity -->
 								<div class="product_quantity clearfix">

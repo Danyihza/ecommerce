@@ -191,7 +191,11 @@ a:hover {
 }
 
 .footer_sociall ul {
-	margin-bottom: 210px;
+	margin-bottom: 71px;
+}
+
+.logo a {
+	font-size: 27px;
 }
 
 .footer_sociall ul li {
@@ -254,6 +258,32 @@ a:hover {
 	color : #6F472D;
 }
 
+.footer_phone {
+	margin-top: 2px;
+	font-size: 17px;
+    font-weight: 100;
+}
+
+.newsletter_title {
+	text-align: right;
+}
+
+.newsletter_button {
+	right: auto;
+	width: 124px;
+}
+
+.blog_button {
+	background: #6F472D;
+}
+
+.blog_button:hover {
+	background: rgb(75, 48, 30);
+}
+
+.blog_button a:hover {
+	color : #FFF;
+}
 /* ---------------------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 575px) {
@@ -301,6 +331,10 @@ ul.gridpay li {
 
 	.search-bar {
 		display: none;
+	}
+
+	.gambar {
+		margin-top: 37px;
 	}
 
 	.menu-navigation {

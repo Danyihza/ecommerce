@@ -7,6 +7,16 @@ class Blog_model extends CI_Model
         return $this->session->userdata('id_admin');
     }
 
+    public function getAllBlog()
+    {
+        return $this->db->get('artikel')->result_array();
+    }
+
+    public function getBlogById($id)
+    {
+        return $this->db->get_where('artikel', ['id_artikel' => $id])->row_array();
+    }
+
     public function countAllProduct()
     {
         return $this->db->get('produk')->num_rows();

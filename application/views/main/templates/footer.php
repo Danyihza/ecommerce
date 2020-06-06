@@ -35,7 +35,7 @@
                 <div class="footer_column footer_contact">
                     <div class="logo_container">
                         <div class="logo_footer justify-content-start"><a href="<?= base_url(); ?>"><img src="<?= base_url('assets/templates/images/'); ?>logo.png" width="120px" alt=""></a></div>
-                        <div class="logo"><a href="#">Ar-Raihan</a></div>
+                        <div class="logo"><a href="#">Media Ar-Raihan</a></div>
                     </div>
                     <div class="footer_phone">Address : Kraksaan - Kabupaten Probolinggo</div><br>
                     <div class="footer_title">Butuh Bantuan? Hubungi kami</div>

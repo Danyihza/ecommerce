@@ -186,7 +186,7 @@
 
                                 <div class="page_menu_search">
                                     <form action="<?= base_url('main/search') ?>" method="post">
-                                        <input type="search" required="required" name="search2" class="page_menu_search_input" placeholder="Search for products...">
+                                        <input type="search" required="required" name="search2" class="page_menu_search_input" placeholder="Search for products..." autofocus>
                                         <input type="submit" class="btn btn-primary col-12 kuning" style="margin-top: 10px" value="Search">
                                     </form>
                                 </div>
@@ -194,9 +194,14 @@
                                     <li class="page_menu_item has-children">
                                         <a href="#">Kategori<i class="fa fa-angle-down"></i></a>
                                         <ul class="page_menu_selection">
-                                            <?php foreach ($kategori as $kat) : ?>
-                                                <li><a href="#"><?= $kat['nama_kategori']; ?><i class="fa fa-angle-down"></i></a></li>
-                                            <?php endforeach; ?>
+                                        <?php foreach ($kategori as $kat) : ?>
+                                            <li>
+                                                <form action="<?= base_url('main/search') ?>" method="post">
+                                                    <input type="hidden" name="form_sidebar" value="<?= $kat['id_kategori'] ?>">
+                                                    <a><input style="color: white;" class="button_kategori_sidebar" name="button_kategori" value="<?= $kat['nama_kategori']; ?>" type="submit"></a>
+                                                </form>
+                                            </li>
+                                        <?php endforeach; ?>
                                         </ul>
                                     </li>
                                     <li class="page_menu_item">

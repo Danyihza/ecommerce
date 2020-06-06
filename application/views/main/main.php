@@ -72,15 +72,15 @@
 
 <!-- END SLIDESHOW -->
 
-<hr class="batas">
+<!-- <hr class="batas"> -->
 
 <!-- Characteristics -->
 
-<div class="characteristics">
+<!-- <div class="characteristics">
     <div class="container">
         <div class="row justify-content-center">
 
-            <!-- Char. Item -->
+            Char. Item
             <div class="col-lg-3 col-md-6 char_col">
 
                 <div class="char_item d-flex  align-items-center justify-content-start">
@@ -92,7 +92,7 @@
                 </div>
             </div>
 
-            <!-- Char. Item -->
+            Char. Item
             <div class="col-lg-3 col-md-6 char_col">
 
                 <div class="char_item d-flex  align-items-center justify-content-start">
@@ -104,7 +104,7 @@
                 </div>
             </div>
 
-            <!-- Char. Item -->
+            Char. Item
             <div class="col-lg-3 col-md-6 char_col">
 
                 <div class="char_item d-flex  align-items-center justify-content-start">
@@ -116,14 +116,13 @@
                 </div>
             </div>
 
-            <!-- Char. Item -->
 
         </div>
     </div>
-</div>
+</div> -->
 
 
-<hr class="batas">
+<!-- <hr class="batas"> -->
 
 <!-- List New Produk -->
 <!-- <div class="shop_content">
