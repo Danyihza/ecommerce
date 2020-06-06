@@ -93,6 +93,7 @@ class Main extends CI_Controller
 
 		//init
 		$this->pagination->initialize($config);
+		$data['kat'] = $this->produk->getAllKategori();
 		$data['kategori'] = $this->produk->getKategori();
 		$data['start'] = $this->uri->segment(3);
 		if ($data['bykategori']) {

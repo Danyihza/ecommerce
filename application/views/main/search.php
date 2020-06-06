@@ -13,16 +13,27 @@
 						<div class="sidebar_section">
 							<div class="sidebar_title">Kategori</div>
 							<ul class="sidebar_categories">
-								<?php foreach ($kategori as $kat) : ?>
-									<li>
-										<form action="<?= base_url('main/search') ?>" method="post">
-											<input type="hidden" name="form_sidebar" value="<?= $kat['id_kategori'] ?>">
-												<div class="row">
-													<input class="button_kategori_sidebar" name="button_kategori" value="<?= $kat['nama_kategori']; ?>" type="submit"><span> 12 </span>
-												</div>
-										</form>
-									</li>
-								<?php endforeach; ?>
+								<table border=0 class="fixed">
+									<tbody>
+										<col width="50px"/>
+										<col width="150px"/>
+										<?php foreach ($kat as $kats) : ?>
+											<tr>
+												<td>
+													<li>
+														<form action="<?= base_url('main/search') ?>" method="post">
+															<input type="hidden" name="form_sidebar" value="<?= $kats['id_kategori'] ?>">
+															<input class="button_kategori_sidebar" name="button_kategori" value="<?= $kats['nama_kategori']; ?>" type="submit">
+														</form>
+													</li>
+												</td>
+												<td align="right">
+													<span class="badge badge-coklat text-white"><?= $kats['count']; ?></span>
+												</td>
+											</tr>
+										<?php endforeach; ?>
+									</tbody>
+								</table>
 							</ul>
 						</div>
 					</div>

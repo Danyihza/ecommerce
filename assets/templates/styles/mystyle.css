@@ -284,6 +284,30 @@ a:hover {
 .blog_button a:hover {
 	color : #FFF;
 }
+
+table.fixed {
+	table-layout: fixed;
+}
+
+table.fixed td {
+	overflow: hidden;
+}
+
+.badge-coklat {
+	background: #6F472D;
+}
+
+.footer {
+	background: #F8BF00;
+}
+
+.copyright {
+	background: #6F472D;
+}
+
+.copyright_content {
+	color: rgba(255, 255, 255, 0.781);
+}
 /* ---------------------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 575px) {

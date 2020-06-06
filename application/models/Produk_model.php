@@ -8,6 +8,13 @@ class Produk_model extends CI_Model
         return $this->db->get('kategori')->result_array();
     }
 
+    public function getAllKategori()
+    {
+        $sql = "SELECT COUNT(id_produk)AS count, id_kategori, nama_kategori FROM `produk` INNER JOIN kategori ON produk.kategori = kategori.id_kategori  GROUP BY kategori";
+        return $this->db->query($sql)->result_array();
+        
+    }
+
     public function getKategoriById($id)
     {
         return $this->db->get_where('kategori', ['id_kategori' => $id])->row();

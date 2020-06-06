@@ -4,7 +4,7 @@
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="<?= base_url('assets/images/4617.jpg'); ?>"></div>
 		<div class="home_overlay"></div>
 		<div class="home_content d-flex flex-column align-items-center justify-content-center">
-			<h2 class="home_title">Technological Blog</h2>
+			<h2 class="home_title">Media Ar-Raihan Blog</h2>
 		</div>
 	</div>
 
@@ -21,7 +21,7 @@
 						<div class="blog_post">
 							<div class="blog_image" style="background-image:url(<?= base_url('assets/images/blog/') . $blog['foto_artikel'] ?>)"></div>
 							<div class="blog_text"><?= $blog['judul_artikel']; ?></div>
-							<div class="blog_text" style="font-weight: 100px;"><?= substr($blog['isi_artikel'], 0, 50); ?>...</div>
+							<div class="blog_text" style="font-weight: 100px;"><?= substr($blog['isi_artikel'], 0, 100); ?>...</div>
 							<div class="blog_button"><a href="<?= base_url('blog/detail/') . $blog['id_artikel'] ?>">Continue Reading</a></div>
 						</div>
 						<?php endforeach; ?>
