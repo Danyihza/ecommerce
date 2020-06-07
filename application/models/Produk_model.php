@@ -20,12 +20,17 @@ class Produk_model extends CI_Model
         return $this->db->get_where('kategori', ['id_kategori' => $id])->row();
     }
 
+    public function getPalingBaru()
+    {
+        $this->db->order_by('id_produk', 'DESC');
+        return $this->db->get('produk', 1)->row_array();
+    }
 
     public function getNewestProduk()
     {
-        $sql = "SELECT * FROM produk ORDER BY id_produk DESC LIMIT 1";
-        $result = $this->db->query($sql)->row_array();
-        return $result;
+        
+        $this->db->order_by('id_produk', 'DESC');
+        return $this->db->get('produk', 2,1)->result_array();
     }
 
     public function getAllProduct()

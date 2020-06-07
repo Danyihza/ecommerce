@@ -73,9 +73,9 @@
                     </div>
                     <br>
                     <div class="footer_list">
-                        <form action="#" class="newsletter_form">
-                            <input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">
-                            <button class="newsletter_button coklat">Subscribe</button>
+                        <form action="<?= base_url('main/addsubs') ?>" method="post" class="newsletter_form">
+                            <input type="email" class="newsletter_input" name="emailsubs" required="required" placeholder="Enter your email address">
+                            <button type="submit" class="newsletter_button coklat">Subscribe</button>
                         </form>
                         <div class="newsletter_unsubscribe_link"><a href="#" data-toggle="modal" data-target="#uns">Unsubscribe</a></div>
                     </div>
@@ -94,10 +94,10 @@
                     </a>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post">
+                    <form action="<?= base_url('main/removesubs') ?>" method="post">
                         <div class="form-group">
                             <label for="inputem">Input your email to Unsubscribe</label>
-                            <input id="inputem" type="email" class="form-control" required="required" placeholder="Enter your email address">
+                            <input id="inputem" type="email" class="form-control" name="unsubs" required="required" placeholder="Enter your email address">
                         </div>
                         <hr>
                         <input type="submit" value="Unsubscribe" class="btn btn-primary coklat">

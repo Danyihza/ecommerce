@@ -6,8 +6,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 <head>
-    <title>Media Ar-Raihan</title>
-    <link rel="icon" href="favicon.ico">
+    <title>Media Ar-Raihan | <?= $title ?></title>
+    <link rel="icon" href="<?= base_url() ?>favicon.ico">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="OneTech shop project">

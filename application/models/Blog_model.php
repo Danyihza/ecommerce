@@ -18,6 +18,11 @@ class Blog_model extends CI_Model
         return $this->db->get('artikel')->result_array();
     }
 
+    public function getThreeNewestBlog()
+    {
+        return $this->db->get('artikel', 3)->result_array();
+    }
+
     public function getBlogById($id)
     {
         return $this->db->get_where('artikel', ['id_artikel' => $id])->row_array();

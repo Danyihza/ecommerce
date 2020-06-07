@@ -39,7 +39,29 @@
     })
 </script>
 
+<?php if ($this->session->flashdata('subscribe')) : ?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Sukses...',
+                text: '<?= $this->session->flashdata('subscribe'); ?>'
+            })
+        })
+    </script>
+<?php endif ?>
 
+<?php if ($this->session->flashdata('is_exist')) : ?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal...',
+                text: 'Email Anda Sudah Terdaftar'
+            })
+        })
+    </script>
+<?php endif ?>
 
 
 </body>

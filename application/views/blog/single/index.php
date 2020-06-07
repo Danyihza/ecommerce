@@ -11,6 +11,7 @@
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2">
 				<div class="single_post_title"><?= $artikel['judul_artikel'] ?></div>
+				<p class="font-italic">Published on <?= date("F d, Y",$artikel['tanggal_artikel']) . ' at ' . date("H:i",$artikel['tanggal_artikel']) ?></p>
 				<div class="single_post_text">
 					<?= $artikel['isi_artikel'] ?>
 				</div>
@@ -67,8 +68,8 @@
 					<?php endforeach; ?>
 				<?php endforeach; ?>
 			</div>
-			<div class="card-footer">
-				<button class="btn btn-primary btn-sm col-12 coklat" data-toggle="modal" data-target="#modaltambahkomen">Add a Comment</button>
+			<div class="card-footer d-flex flex-row-reverse">
+				<button class="btn btn-primary btn-sm coklat" data-toggle="modal" data-target="#modaltambahkomen"><i class="fas fa-plus"></i> Add a Comment</button>
 			</div>
 		</div>
 	</div>
@@ -83,26 +84,15 @@
 			<div class="col">
 				<div class="blog_posts d-flex flex-row align-items-start justify-content-between">
 
+				<?php foreach($blog as $b) :?>
 					<!-- Blog post -->
 					<div class="blog_post">
-						<div class="blog_image" style="background-image:url(<?= base_url('assets/templates/images/blog_4.jpg'); ?>)"></div>
-						<div class="blog_text">Etiam leo nibh, consectetur nec orci et, tempus tempus ex</div>
-						<div class="blog_button"><a href="blog_single.html">Continue Reading</a></div>
+						<div class="blog_image" style="background-image:url(<?= base_url('assets/images/blog/') . $b['foto_artikel'] ?>)"></div>
+						<div class="blog_text"><?= $b['judul_artikel']; ?></div>
+						<div class="blog_text"><?= substr($b['isi_artikel'], 0, 100); ?>...</div>
+						<div class="blog_button"><a href="<?= base_url('blog/detail/') . $b['id_artikel'] ?>">Continue Reading</a></div>
 					</div>
-
-					<!-- Blog post -->
-					<div class="blog_post">
-						<div class="blog_image" style="background-image:url(<?= base_url('assets/templates/images/blog_5.jpg'); ?>)"></div>
-						<div class="blog_text">Sed viverra pellentesque dictum. Aenean ligula justo, viverra in lacus porttitor</div>
-						<div class="blog_button"><a href="blog_single.html">Continue Reading</a></div>
-					</div>
-
-					<!-- Blog post -->
-					<div class="blog_post">
-						<div class="blog_image" style="background-image:url(<?= base_url('assets/templates/images/blog_6.jpg'); ?>)"></div>
-						<div class="blog_text">In nisl tortor, tempus nec ex vitae, bibendum rutrum mi. Integer tempus nisi</div>
-						<div class="blog_button"><a href="blog_single.html">Continue Reading</a></div>
-					</div>
+				<?php endforeach ?>
 
 				</div>
 			</div>
