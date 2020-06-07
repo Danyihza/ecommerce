@@ -35,7 +35,7 @@
 
 							<div class="comment-text">
 								<span class="username">
-									<?= $k->nama_kmn; ?><span class="text-muted font-italic">(<?= ($k->email_kmn != null) ? $k->email_kmn : 'Anonymous' ?>)</span>
+									<?= $k->nama_kmn; ?><span class="text-muted font-italic"><?= ($k->email_kmn != 'Administrator') ? '' : '(Administrator)' ?></span>
 									<span class="text-muted float-right"><?= time_elapsed_string($k->waktu_kmn); ?></span>
 								</span><!-- /.username -->
 								<?= $k->isi_kmn ?>
@@ -57,7 +57,7 @@
 
 								<div class="comment-text">
 									<span class="username">
-										<?= $km->nama_kmn; ?><span class="text-muted font-italic">(<?= ($km->email_kmn != null) ? $km->email_kmn : 'Anonymous' ?>)</span>
+										<?= $km->nama_kmn; ?><span class="text-muted font-italic"><?= ($km->email_kmn != 'Administrator') ? '' : '(Administrator)' ?></span>
 										<span class="text-muted float-right"><?= time_elapsed_string($km->waktu_kmn); ?></span>
 									</span><!-- /.username -->
 									<?= $km->isi_kmn; ?>

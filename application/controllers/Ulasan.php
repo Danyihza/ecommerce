@@ -19,5 +19,6 @@ public function __construct()
 		$this->load->view('ulasan/index', $data);
 		$this->load->view('main/templates/footer');
 		$this->load->view('ulasan/bottom');
+		$this->load->view('templates/cart');
 	}
 }

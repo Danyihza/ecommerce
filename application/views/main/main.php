@@ -292,7 +292,44 @@
 
 <!-- Best Sellers -->
 
+<div class="reviews blogku">
+    <div class="container">
+        <div class="row">
+            <div class="col">
 
+                <div class="reviews_title_container">
+                    <h3 class="reviews_title">Artikel Terbaru</h3>
+                    <div class="reviews_all ml-auto"><a href="<?= base_url('blog'); ?>">Lihat Semua <span>Artikel</span></a></div>
+                </div>
+
+                <div class="loop">
+                    <div class="loopGrid post">
+
+                        <?php foreach ($blog as $b) : ?>
+                            <div class="item_post">
+                                <div class="imgWrap">
+                                    <a href="<?= base_url('blog/detail/') . $b['id_artikel'] ?>"> <img src="<?= base_url('assets/images/blog/') . $b['foto_artikel'] ?>" width="100%" style="display: block" alt=""></a>
+                                </div>
+                                <div class="postGrid">
+                                    <div class="avaPost">
+                                        <img style="display: block; max-width: 100%; opacity: 1;" src="favicon.ico" class="loaded">
+                                    </div>
+                                    <div class="infoPost">
+                                        <h5><a href="<?= base_url('blog/detail/') . $b['id_artikel'] ?>"><?= ucwords(strtolower($b['judul_artikel'])); ?></a></h5>
+                                        <small>Ditulis oleh Admin • <?= time_elapsed_string($b['tanggal_artikel']); ?></small>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- Reviews -->

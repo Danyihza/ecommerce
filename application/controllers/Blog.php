@@ -20,6 +20,7 @@ class Blog extends CI_Controller
         $this->load->view('blog/index', $data);
         $this->load->view('main/templates/footer', $data);
         $this->load->view('blog/bottom', $data);
+        $this->load->view('templates/cart');
     }
 
     public function detail($id = null)
@@ -34,6 +35,7 @@ class Blog extends CI_Controller
         $this->load->view('blog/single/index', $data);
         $this->load->view('main/templates/footer', $data);
         $this->load->view('blog/single/bottom', $data);
+        $this->load->view('templates/cart');
     }
 
     // -----------------------------------------------------------------------------------------

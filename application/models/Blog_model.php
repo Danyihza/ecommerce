@@ -12,6 +12,12 @@ class Blog_model extends CI_Model
         return $this->db->get('artikel')->result_array();
     }
 
+    public function getTwoBlog()
+    {
+        $this->db->order_by('id_artikel', 'DESC');
+        return $this->db->get('artikel')->result_array();
+    }
+
     public function getBlogById($id)
     {
         return $this->db->get_where('artikel', ['id_artikel' => $id])->row_array();

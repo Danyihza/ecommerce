@@ -10,6 +10,7 @@ class Main extends CI_Controller
 		$this->load->model('Produk_model', 'produk');
 		$this->load->model('Ulasan_model', 'ulasan');
 		$this->load->model('Transaksi_model', 'transaksi');
+		$this->load->model('Blog_model', 'blog');
 	}
 
 	public function index()
@@ -21,12 +22,14 @@ class Main extends CI_Controller
 		$data['products'] = $this->produk->getNewProduct(20);
 		$data['produk'] = $this->produk->getNewProduct(8);
 		$data['diskon'] = $this->produk->getMostDiscountProduct();
+		$data['blog'] = $this->blog->getTwoBlog();
 		// var_dump($data['ulasan']); die;
 		$this->load->view('main/templates/header', $data);
 		$this->load->view('main/templates/topbar', $data);
 		$this->load->view('main/main', $data);
 		$this->load->view('main/templates/footer', $data);
 		$this->load->view('main/templates/bottom', $data);
+		$this->load->view('templates/cart');
 	}
 
 	public function search()
@@ -106,6 +109,7 @@ class Main extends CI_Controller
 		$this->load->view('main/search', $data);
 		$this->load->view('main/templates/footer');
 		$this->load->view('main/templates/bottom_search');
+		$this->load->view('templates/cart');
 	}
 
 	public function produk($link)
@@ -118,6 +122,7 @@ class Main extends CI_Controller
 		$this->load->view('main/detail', $data);
 		$this->load->view('main/templates/footer');
 		$this->load->view('main/templates/detail/bottom');
+		$this->load->view('templates/cart');
 	}
 
 	function add_to_cart()

@@ -47,7 +47,7 @@
                             <ul class="standard_dropdown main_nav_dropdown">
                                 <li><a href="<?= base_url(); ?>">Beranda<i class="fas fa-chevron-down"></i></a></li>
                                 <li><a href="<?= base_url('blog'); ?>">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="contact.html">Kontak<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a href="javascript:void(0)">Kontak<i class="fas fa-chevron-down"></i></a></li>
                             </ul>
                         </div>
 

@@ -319,46 +319,46 @@ table.fixed td {
 }
 
 .card-comments {
-    background: #f8f9fa;
+	background: #f8f9fa;
 }
 
 .card-footer {
-    padding: .75rem 1.25rem;
-    background-color: rgba(0,0,0,.03);
-    border-top: 0 solid rgba(0,0,0,.125);
+	padding: .75rem 1.25rem;
+	background-color: rgba(0, 0, 0, .03);
+	border-top: 0 solid rgba(0, 0, 0, .125);
 }
 
 .card-comments .card-comment:first-of-type {
-    padding-top: 0;
+	padding-top: 0;
 }
 
 .card-comments .card-comment {
-    border-bottom: 1px solid #e9ecef;
-    padding: 8px 0;
+	border-bottom: 1px solid #e9ecef;
+	padding: 8px 0;
 }
 
 .card-comments .comment-text {
-    color: #78838e;
-    margin-left: 40px;
+	color: #78838e;
+	margin-left: 40px;
 }
 
 .card-comments .username {
-    color: #495057;
-    display: block;
-    font-weight: 600;
+	color: #495057;
+	display: block;
+	font-weight: 600;
 }
 
 .card-comments .text-muted {
-    font-size: 12px;
-    font-weight: 400;
+	font-size: 12px;
+	font-weight: 400;
 }
 
 .text-muted {
-    color: #6c757d!important;
+	color: #6c757d !important;
 }
 
 .float-right {
-    float: right!important;
+	float: right !important;
 }
 
 .form-control {
@@ -368,6 +368,60 @@ table.fixed td {
 .card-comment .comment-child {
 	margin-left: 36px;
 	margin-top: 5px;
+}
+
+select {
+	margin-left: unset;
+}
+
+.blogku {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.loop .loopGrid.post {
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+}
+
+.loop .loopGrid {
+	display: grid;
+}
+
+.item_post {
+	position: relative;
+}
+
+.item_post img {
+	border-radius: 2px;
+}
+
+.imgWrap {
+	margin-top: 10px;
+	position: relative;
+	display: block;
+	overflow: hidden;
+}
+
+.item_post .postGrid {
+	margin-top: 15px;
+	display: grid;
+	grid-template-columns: 40px 1fr;
+	grid-gap: 15px;
+}
+
+.item_post .postGrid .avaPost img {
+	display: block;
+	border-radius: 40px;
+	background: #f2f2f2;
+	width: 40px;
+	height: 40px;
+}
+
+.item_post .postGrid .infoPost small {
+	opacity: .8;
+	display: block;
+	margin-top: 10px;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------- */
@@ -414,6 +468,15 @@ ul.gridpay li {
 }
 
 @media only screen and (max-width: 991px) {
+
+	.blogku {
+		padding-top: 30px;
+	}
+
+	.loop .loopGrid.post {
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 20px;
+	}
 
 	.search-bar {
 		display: none;
