@@ -9,6 +9,7 @@ class Produk extends CI_Controller
         parent::__construct();
         //load model admin
         $this->load->model('produk_model');
+        $this->load->model('Subs_model', 'subs');
         $this->load->helper(array('url', 'download'));
         $data['jml'] = $this->produk_model->jmlProduk()->result();
     }
@@ -103,7 +104,41 @@ class Produk extends CI_Controller
         );
 
         $this->produk_model->input_data($data, 'produk');
+        $this->_sendemail();
         redirect('produk');
+    }
+
+    private function _sendemail()
+    {
+        $this->load->library('email');
+        $config = array();
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'ssl://mail.belenjehyu.site';
+        $config['smtp_user'] = 'pendaftaran.pedagang@belenjehyu.site';
+        $config['smtp_pass'] = 'belenjehyu24?';
+        $config['smtp_port'] = 465;
+        $config['mailtype'] = 'html';
+        $config['charset'] = 'utf-8';
+        $this->email->initialize($config);
+
+        $this->email->set_newline("\r\n");
+
+        $pesan = `
+        cek
+        `;
+
+        $this->email->from('pendaftaran.pedagang@belenjehyu.site', 'BelenjehYu');
+        $email = $this->subs->getAllEmail();
+        $this->email->to($email);
+        $this->email->subject('Halo, Ada Pedagang yang ingin Daftar nih');
+        $this->email->message($pesan);
+
+        if ($this->email->send()) {
+            return true;
+        } else {
+            echo $this->email->print_debugger();
+            die;
+        }
     }
 
     public function hapus($id_produk)

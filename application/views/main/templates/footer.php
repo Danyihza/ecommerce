@@ -94,10 +94,10 @@
                     </a>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post">
+                    <form action="<?= base_url('main/removesubs') ?>" method="post">
                         <div class="form-group">
                             <label for="inputem">Input your email to Unsubscribe</label>
-                            <input id="inputem" type="email" class="form-control" required="required" placeholder="Enter your email address">
+                            <input id="inputem" type="email" class="form-control" name="unsubs" required="required" placeholder="Enter your email address">
                         </div>
                         <hr>
                         <input type="submit" value="Unsubscribe" class="btn btn-primary coklat">

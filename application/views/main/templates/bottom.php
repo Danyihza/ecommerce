@@ -45,7 +45,19 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Sukses...',
-                text: 'Nantikan Produk Terbaru Kami'
+                text: '<?= $this->session->flashdata('subscribe'); ?>'
+            })
+        })
+    </script>
+<?php endif ?>
+
+<?php if ($this->session->flashdata('is_exist')) : ?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal...',
+                text: 'Email Anda Sudah Terdaftar'
             })
         })
     </script>
