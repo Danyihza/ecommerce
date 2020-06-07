@@ -316,7 +316,7 @@
                                     </div>
                                     <div class="infoPost">
                                         <h5><a href="<?= base_url('blog/detail/') . $b['id_artikel'] ?>"><?= ucwords(strtolower($b['judul_artikel'])); ?></a></h5>
-                                        <small>Ditulis oleh Admin • <?= time_elapsed_string($b['tanggal_artikel']); ?></small>
+                                        <small>Ditulis oleh Admin • <?= time_elapsed_string( '@' .$b['tanggal_artikel']); ?></small>
                                     </div>
                                 </div>
                             </div>

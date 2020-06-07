@@ -73,9 +73,9 @@
                     </div>
                     <br>
                     <div class="footer_list">
-                        <form action="#" class="newsletter_form">
-                            <input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">
-                            <button class="newsletter_button coklat">Subscribe</button>
+                        <form action="<?= base_url('main/addsubs') ?>" method="post" class="newsletter_form">
+                            <input type="email" class="newsletter_input" name="emailsubs" required="required" placeholder="Enter your email address">
+                            <button type="submit" class="newsletter_button coklat">Subscribe</button>
                         </form>
                         <div class="newsletter_unsubscribe_link"><a href="#" data-toggle="modal" data-target="#uns">Unsubscribe</a></div>
                     </div>

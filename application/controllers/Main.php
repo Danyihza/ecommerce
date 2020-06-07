@@ -277,4 +277,16 @@ Total Harga = *Rp ' . number_format($this->cart->total(), 0, '.', '.') . '*';
 		$this->cart->destroy();
 		redirect('main');
 	}
+
+	function addsubs(){
+		$subs = $this->input->post('emailsubs');
+
+		$data = [
+			'email_subscriber' => $subs
+		];
+
+		$this->db->insert('subscriber', $data);
+		$this->session->set_flashdata('subscribe', 'ini subs');
+		redirect('main');
+	}
 }

@@ -39,7 +39,17 @@
     })
 </script>
 
-
+<?php if ($this->session->flashdata('subscribe')) : ?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Sukses...',
+                text: 'Nantikan Produk Terbaru Kami'
+            })
+        })
+    </script>
+<?php endif ?>
 
 
 </body>
