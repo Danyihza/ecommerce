@@ -424,6 +424,19 @@ select {
 	margin-top: 10px;
 }
 
+.rating_komen {
+	margin-top: 0px;
+}
+
+.rating_komen i::before {
+	font-size: 15px;
+}
+
+ select.fa {
+	font-family: "Font Awesome 5 Free", 'Rubik';
+	font-weight: 100;
+}
+
 /* ---------------------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 575px) {

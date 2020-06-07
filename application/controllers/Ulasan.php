@@ -21,4 +21,24 @@ public function __construct()
 		$this->load->view('ulasan/bottom');
 		$this->load->view('templates/cart');
 	}
+
+	public function kirimulasan()
+	{
+		$id_produk = $this->input->post('id_produk_ulasan');
+		$namaulasan = $this->input->post('namaulasan');
+		$ratingulasan = $this->input->post('ratingulasan');
+		$isiulasan = $this->input->post('isiulasan');
+
+		$data = [
+			'id_produk' => $id_produk,
+			'nama_ulasan' => $namaulasan,
+			'rating_ulasan' => $ratingulasan,
+			'isi_ulasan' => $isiulasan,
+			'timestamp' => '@' . time()
+		];
+
+		$this->ulasan->addUlasan($data);
+		$this->load->library('user_agent');
+		redirect($this->agent->referrer());
+	}
 }

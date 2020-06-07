@@ -117,6 +117,8 @@ class Main extends CI_Controller
 
 		$data['produk'] = $this->produk->getProductByLink($link);
 		$data['kategori'] = $this->produk->getKategori();
+		$data['ulasan'] = $this->ulasan->getUlasanByIdProduk($data['produk']['id_produk']);
+		$data['countulasan'] = $this->ulasan->getCount($data['produk']['id_produk']);
 		$this->load->view('main/templates/detail/header');
 		$this->load->view('main/templates/topbar', $data);
 		$this->load->view('main/detail', $data);
