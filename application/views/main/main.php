@@ -32,13 +32,22 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="<?= base_url() ?>assets/templates/images/924.jpg" width="100%" alt="Second slide">
-            <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $newproduk['link']; ?>">Beli Sekarang</a></div>
-            <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/<?= $newproduk['gambar_produk'] ?>" width="80px">
+            <img class="d-block w-100" src="<?= base_url() ?>assets/templates/images/924.jpg" width="100%" alt="Slider">
+            <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $palingbaru['link']; ?>">Beli Sekarang</a></div>
+            <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/<?= $palingbaru['gambar_produk'] ?>" width="80px">
             <h5 class="banner-title"><b>New Arrival !</b></h5>
-            <p class="banner-judul" style="color: #6f472d;"><?= $newproduk['nama_produk']; ?></p>
+            <p class="banner-judul" style="color: #6f472d;"><?= $palingbaru['nama_produk']; ?></p>
         </div>
-        <div class="carousel-item">
+        <?php foreach ($newproduk as $produk1) : ?>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="<?= base_url() ?>assets/templates/images/924.jpg" width="100%" alt="Slider">
+                <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $produk1['link']; ?>">Beli Sekarang</a></div>
+                <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/<?= $produk1['gambar_produk'] ?>" width="80px">
+                <h5 class="banner-title"><b>New Arrival !</b></h5>
+                <p class="banner-judul" style="color: #6f472d;"><?= $produk1['nama_produk']; ?></p>
+            </div>
+        <?php endforeach ?>
+        <!-- <div class="carousel-item">
             <img class="d-block w-100" src="<?= base_url() ?>assets/templates/images/924.jpg" width="100%" alt="Second slide">
             <div class="button banner_button coklat banner-button"><a>Beli Sekarang</a></div>
             <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/foto_cover.jpg" width="80px">
@@ -51,7 +60,7 @@
             <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/foto_cover.jpg" width="80px">
             <h5 class="banner-title"><b>New Arrival !</b></h5>
             <p class="banner-judul" style="color: #6f472d;">Harry Potter</p>
-        </div>
+        </div> -->
     </div>
     <!-- <div class="carousel-item">
             <img class="d-block w-100" src="http://localhost/ecommerce/assets/templates/images/924.jpg" width="90px" alt="Second slide">
@@ -316,7 +325,7 @@
                                     </div>
                                     <div class="infoPost">
                                         <h5><a href="<?= base_url('blog/detail/') . $b['id_artikel'] ?>"><?= ucwords(strtolower($b['judul_artikel'])); ?></a></h5>
-                                        <small>Ditulis oleh Admin • <?= time_elapsed_string( '@' .$b['tanggal_artikel']); ?></small>
+                                        <small>Ditulis oleh Admin • <?= time_elapsed_string('@' . $b['tanggal_artikel']); ?></small>
                                     </div>
                                 </div>
                             </div>

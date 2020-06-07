@@ -19,6 +19,7 @@ class Main extends CI_Controller
 		$data['ulasan'] = $this->ulasan->getUlasan();
 		$data['kategori'] = $this->produk->getKategori();
 		$data['newproduk'] = $this->produk->getNewestProduk();
+		$data['palingbaru'] = $this->produk->getPalingBaru();
 		$data['products'] = $this->produk->getNewProduct(20);
 		$data['produk'] = $this->produk->getNewProduct(8);
 		$data['diskon'] = $this->produk->getMostDiscountProduct();
@@ -116,10 +117,11 @@ class Main extends CI_Controller
 	{
 
 		$data['produk'] = $this->produk->getProductByLink($link);
+		$data['title'] = $data['produk']['nama_produk'];
 		$data['kategori'] = $this->produk->getKategori();
 		$data['ulasan'] = $this->ulasan->getUlasanByIdProduk($data['produk']['id_produk']);
 		$data['countulasan'] = $this->ulasan->getCount($data['produk']['id_produk']);
-		$this->load->view('main/templates/detail/header');
+		$this->load->view('main/templates/detail/header', $data);
 		$this->load->view('main/templates/topbar', $data);
 		$this->load->view('main/detail', $data);
 		$this->load->view('main/templates/footer');

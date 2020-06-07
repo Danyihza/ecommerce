@@ -30,6 +30,7 @@ class Blog extends CI_Controller
         $data['count'] = $this->blog->countCmtById($id);
         $data['kategori'] = $this->produk->getKategori();
         $data['artikel'] = $this->blog->getBlogById($id);
+        $data['title'] = $data['artikel']['judul_artikel'];
         $data['blog'] = $this->blog->getThreeNewestBlog();
         $this->load->view('blog/single/header', $data);
         $this->load->view('main/templates/topbar', $data);
