@@ -482,6 +482,23 @@ ul.gridpay li {
 
 @media only screen and (max-width: 991px) {
 
+	.newsletter_unsubscribe_link{
+		left: unset;
+		right: unset;
+	}
+
+	.newsletter_input {
+		height: 36px;
+	}
+	
+	.newsletter_button {
+		height: 37px;
+	}
+
+	.newsletter_title {
+		text-align: center;
+	}
+
 	.blogku {
 		padding-top: 30px;
 	}
