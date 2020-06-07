@@ -78,31 +78,3 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <?php
-  foreach ($ulasan as $u) {
-  ?>
-    <div class="modal fade" id="ulasan<?= $u->id_produk; ?>" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg-8" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="mediumModalLabel"><strong>Ubah Data <?= $u->id_produk; ?></strong></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <?php foreach ($ulas as $a) : ?>
-              <div class="form-group">
-                <label class=" form-control-label">Nama</label>
-                <div class="input-group">
-                  <div class="input-group-addon"><i class="fa fa-font"></i></div>
-                  <input class="form-control" name="nama_menu" value="<?= $a->isi_ulasan; ?>" required>
-                </div>
-              </div>
-            <?php endforeach; ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  <?php } ?>
-  <!-- modal edit data -->

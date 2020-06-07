@@ -66,6 +66,14 @@
                           </p>
                       </a>
                   </li>
+                  <li class="nav-item has-treeview">
+                      <a href="<?= base_url('produk/subview') ?>" class="nav-link">
+                          <i class="nav-icon far fa-user"></i>
+                          <p>
+                              Subscriber
+                          </p>
+                      </a>
+                  </li>
                   <li class="nav-header">TRANSAKSI</li>
                   <li class="nav-item">
                       <a href="<?= base_url('order') ?>" class="nav-link">

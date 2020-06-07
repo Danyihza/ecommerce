@@ -29,7 +29,7 @@
                 <div class="user-block">
                   <img class="img-circle" src="<?= base_url('assets/'); ?>images/blog/<?= $artikel['foto_artikel']; ?>" alt="User Image">
                   <span class="username"><a href="#"><?= $artikel['judul_artikel']; ?></a></span>
-                  <span class="description">Diperbaharui - <?= $artikel['tanggal_artikel']; ?></span>
+                  <span class="description">Diperbaharui - <?= time_elapsed_string($artikel['tanggal_artikel']); ?></span>
                 </div>
                 <!-- /.user-block -->
                 <div class="card-tools">
@@ -51,7 +51,7 @@
                       <span class="username">
                         <?= $k->nama_kmn; ?>
                         <span class="text-muted"><i>(<?= $k->email_kmn; ?>)</i></span>
-                        <span class="text-muted float-right"><?= $k->waktu_kmn; ?></span>
+                        <span class="text-muted float-right"><?= time_elapsed_string($k->waktu_kmn); ?></span>
                       </span><!-- /.username -->
                       <?= $k->isi_kmn; ?>
                     </div>
@@ -71,7 +71,7 @@
                         <span class="username">
                           <?= $km->nama_kmn; ?>
                           <span class="text-muted"><i>(<?= $km->email_kmn; ?>)</i></span>
-                          <span class="text-muted float-right"><?= $km->waktu_kmn; ?></span>
+                          <span class="text-muted float-right"><?= time_elapsed_string($km->waktu_kmn); ?></span>
                         </span><!-- /.username -->
                         <?= $km->isi_kmn; ?>
                       </div>
@@ -88,7 +88,6 @@
                   <input hidden type="text" name="nama_kmn" value="Media Ar-Raihan">
                   <input hidden type="text" name="email_kmn" value="Administrator">
                   <input hidden type="text" name="status_kmn" value="0">
-                  <input hidden type="date" name="waktu_kmn" value="<?= date('Y-m-d'); ?>">
                   <input hidden type="text" name="id_artikel" value="<?= $artikel['id_artikel']; ?>">
                   <input type="text" name="isi_kmn" class="form-control form-control-sm" placeholder="Press enter to post comment">
                   <input hidden type="submit" value="Kirim" class="form-control form-control-sm">
@@ -128,7 +127,6 @@
             <input hidden type="text" name="nama_kmn" value="Media Ar-Raihan">
             <input hidden type="text" name="email_kmn" value="Administrator">
             <input hidden type="text" name="status_kmn" value="<?= $id_kmn; ?>">
-            <input hidden type="date" name="waktu_kmn" value="<?= date('Y-m-d'); ?>">
             <input hidden type="text" name="id_artikel" value="<?= $artikel['id_artikel']; ?>">
             <input type="text" name="isi_kmn" class="form-control form-control-sm" placeholder="Press enter to post comment">
             <input hidden type="submit" value="Kirim" class="form-control form-control-sm">

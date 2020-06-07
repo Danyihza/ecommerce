@@ -197,7 +197,6 @@ class BlogAdmin extends CI_Controller
         $nama_kmn = $this->input->post('nama_kmn');
         $email_kmn = $this->input->post('email_kmn');
         $status_kmn = $this->input->post('status_kmn');
-        $waktu_kmn = $this->input->post('waktu_kmn');
         $isi_kmn = $this->input->post('isi_kmn');
 
         $data = array(
@@ -205,7 +204,7 @@ class BlogAdmin extends CI_Controller
             'nama_kmn' => $nama_kmn,
             'email_kmn' => $email_kmn,
             'status_kmn' => $status_kmn,
-            'waktu_kmn' => $waktu_kmn,
+            'waktu_kmn' => '@' . time(),
             'isi_kmn' => $isi_kmn
         );
 
@@ -219,7 +218,6 @@ class BlogAdmin extends CI_Controller
         $nama_kmn = $this->input->post('nama_kmn');
         $email_kmn = $this->input->post('email_kmn');
         $status_kmn = $this->input->post('status_kmn');
-        $waktu_kmn = $this->input->post('waktu_kmn');
         $isi_kmn = $this->input->post('isi_kmn');
 
         $data = array(
@@ -227,7 +225,7 @@ class BlogAdmin extends CI_Controller
             'nama_kmn' => $nama_kmn,
             'email_kmn' => $email_kmn,
             'status_kmn' => $status_kmn,
-            'waktu_kmn' => $waktu_kmn,
+            'waktu_kmn' => '@' . time(),
             'isi_kmn' => $isi_kmn
         );
 

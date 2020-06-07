@@ -103,7 +103,7 @@ class Produk extends CI_Controller
         );
 
         $this->produk_model->input_data($data, 'produk');
-        redirect('produk');
+        redirect('produk/send/');
     }
 
     public function hapus($id_produk)
@@ -380,5 +380,114 @@ class Produk extends CI_Controller
                 redirect('produk/gambarview/');
             }
         }
+    }
+
+    public function subview()
+    {
+        if ($this->produk_model->logged_id()) {
+            $data['countproduk'] = $this->produk_model->countAllProduct();
+            $data['datas'] = $this->db->query('select * from subscriber')->result();
+            $this->load->view('admin/header');
+            $this->load->view('admin/navbar');
+            $this->load->view('admin/sidebar', $data);
+            $this->load->view('admin/subscriber', $data);
+            $this->load->view('admin/footer');
+        } else {
+            redirect("auth");
+        }
+    }
+
+    public function hapusl($id_subscriber)
+    {
+        $db_debug = $this->db->db_debug; //save setting
+        $this->db->db_debug = FALSE; //disable debugging for queries
+        $where = array('id_subscriber' => $id_subscriber);
+        $this->produk_model->hapus_data($where, 'subscriber');
+        $error = $this->db->error();
+        if ($error['code'] != 0) {
+            $this->session->set_flashdata('notif', '<div class="alert alert-danger"><b>PROSES HAPUS GAGAL!</b> </div>');
+            $this->db->db_debug = $db_debug;
+            redirect('produk/subview/');
+        } else {
+            $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES HAPUS BERHASIL!</b> </div>');
+            $this->db->db_debug = $db_debug;
+            redirect('produk/subview/');
+        }
+    }
+
+    public function send()
+    {
+        // Konfigurasi email
+        $this->load->library('email');
+        $config = array();
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+        $config['smtp_user'] = 'arinimobelegen@gmail.com';
+        $config['smtp_pass'] = 'arini1608';
+        $config['smtp_port'] = 465;
+        $config['mailtype'] = 'html';
+        $config['charset'] = 'utf-8';
+        $this->email->initialize($config);
+        $this->email->set_newline("\r\n");
+
+        $data = $this->db->query('select * from subscriber')->result();
+        foreach ($data as $to) {
+            $from = "arinimobelegen@gmail.com";
+            $subject = "Halo Pelanggan Media Ar-Raihan";
+            $message = "
+            <html lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:v='urn:schemas-microsoft-com:vml' xmlns:o='urn:schemas-microsoft-com:office:office'>
+            <head>
+                <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i' rel='stylesheet'>
+                            
+            
+            </head>
+            <body width='100%' style='margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;'>
+                <center style='width: 100%; background-color: #f1f1f1;'>
+                <div style='display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;'>
+                    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+                </div>
+                <div style='max-width: 600px; margin: 0 auto;' class='email-container'>
+                    <table align='center' role='presentation' cellspacing='0' cellpadding='0' border='0' width='100%' style='margin: auto;'>
+                        <tr>
+                            <td class='bg_white logo' style='padding: 1em 2.5em; text-align: center'>
+                                <h1><a href='#'>Media Ar-Raihan</a></h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign='middle' class='hero' style='background-image: url(" . base_url('assets/templates/images/924.jpg') . "); background-size: cover; height: 400px;'>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class='text' style='padding: 0 3em; text-align: center;''>
+                                                <h2>Check Out Our New Products</h2>
+                                                <p>Halo " . $to->email_subscriber . " , Terima kasih telah berlangganan di Website kami. Klik link di bawah ini untuk melihat produk baru kami. </p>
+                                                <p><a href='" . base_url('main') . "' class='btn btn-primary'>Get Your Product Here!</a></p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+        <body>
+            ";
+
+
+            // $m = "Halo " . $to->email_subscriber . " Kami baru saja menambahkan produk baru.<br><br> Klik <strong><a class='btn btn-primary' href='" . base_url('main') . "' target='_blank' rel='noopener'>Kunjungi Website</a></strong> untuk melihat produk baru.";
+
+            // Load library email dan konfigurasinya
+            $this->email->from($from, 'Media Ar-Raihan');
+            $this->email->to($to->email_subscriber);
+            // $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+            $this->email->subject($subject);
+            $this->email->message($message);
+            if ($this->email->send()) {
+                $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>Data Tersimpan dan Email berhasil Terkirim</b></div>');
+            } else {
+                $this->session->set_flashdata('notif', '<div class="alert alert-danger"><b>Data Tersimpan dan Email gagal Terkirim</b></div>');
+            }
+        }
+        redirect('produk/');
     }
 }
