@@ -51,7 +51,7 @@
                         <li><a href="#"><img src="<?= base_url('assets/images/') ?>icon/wa.png" alt="" width=24></a></li>
                         <li><a href="#"><img src="<?= base_url('assets/images/') ?>icon/line1.png" alt="" width=24></a></li>
                         <li><a href="#"><img src="<?= base_url('assets/images/') ?>icon/shopee1.png" alt="" width=24></a></li>
-                        <li><a href="#"><img src="<?= base_url('assets/images/') ?>icon/bl1.jpg" alt="" width=24></a></li>
+                        <li><a href="#"><img src="<?= base_url('assets/images/') ?>icon/bl1.png" alt="" width=24></a></li>
                     </ul>
                 </div>
                 <div class="font">Payment & Shipping</div>
