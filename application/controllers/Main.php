@@ -281,27 +281,29 @@ Total Harga = *Rp ' . number_format($this->cart->total(), 0, '.', '.') . '*';
 		redirect('main');
 	}
 
+	function check_subs($subs)
+	{
+		if ($this->db->get_where('subscriber', ['email_subscriber' => $subs])->num_rows() > 0) {
+			$this->session->set_flashdata('is_exist', 'sudah ada bos');
+			redirect('main');
+		} else {
+			return true;
+		}
+	}
+
 	function addsubs()
 	{
 		$subs = $this->input->post('emailsubs');
+
+		$this->check_subs($subs);
 
 		$data = [
 			'email_subscriber' => $subs
 		];
 
-		$db_debug = $this->db->db_debug; //save setting
-		$this->db->db_debug = FALSE; //disable debugging for queries
 		$this->db->insert('subscriber', $data);
-		$error = $this->db->error();
-		if ($error['code'] != 0) {
-			$this->session->set_flashdata('is_exist', 'sudah ada bos');
-			$this->db->db_debug = $db_debug;
-			redirect('main');
-		} else {
-			$this->session->set_flashdata('subscribe', 'Nantikan Produk Terbaru Kami');
-			$this->db->db_debug = $db_debug;
-			redirect('main');
-		}
+		$this->session->set_flashdata('subscribe', 'Nantikan Produk Terbaru Kami');
+		redirect('main');
 	}
 
 	function removesubs()

@@ -29,7 +29,7 @@
                 <div class="user-block">
                   <img class="img-circle" src="<?= base_url('assets/'); ?>images/blog/<?= $artikel['foto_artikel']; ?>" alt="User Image">
                   <span class="username"><a href="#"><?= $artikel['judul_artikel']; ?></a></span>
-                  <span class="description">Diperbaharui - <?= time_elapsed_string($artikel['tanggal_artikel']); ?></span>
+                  <span class="description">Diperbaharui - <?= time_elapsed_string('@' . $artikel['tanggal_artikel']); ?></span>
                 </div>
                 <!-- /.user-block -->
                 <div class="card-tools">
