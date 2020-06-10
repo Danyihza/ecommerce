@@ -1,30 +1,3 @@
-<!-- Newsletter -->
-
-<!-- <div class="newsletter">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
-                    <div class="newsletter_title_container">
-                        <div class="newsletter_icon"><img src="images/send.png" alt=""></div>
-                        <div class="newsletter_title">Berlangganan Produk Terbaru</div>
-                        <div class="newsletter_text">
-                            <p>dapatkan kabar produk terbaru dari kami</p>
-                        </div>
-                    </div>
-                    <div class="newsletter_content clearfix">
-                        <form action="#" class="newsletter_form">
-                            <input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">
-                            <button class="newsletter_button coklat">Langganan</button>
-                        </form>
-                        <div class="newsletter_unsubscribe_link"><a href="#">berhenti</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
@@ -47,11 +20,11 @@
                 <div class="font">Our Social Media</div>
                 <div class="footer_sociall">
                     <ul>
-                        <li><a href="#"><img src="<?= base_url('assets/images/') ?>icon/ig1.png" alt="" width=24></a></li>
-                        <li><a href="#"><img src="<?= base_url('assets/images/') ?>icon/wa.png" alt="" width=24></a></li>
-                        <li><a href="#"><img src="<?= base_url('assets/images/') ?>icon/line1.png" alt="" width=24></a></li>
-                        <li><a href="#"><img src="<?= base_url('assets/images/') ?>icon/shopee1.png" alt="" width=24></a></li>
-                        <li><a href="#"><img src="<?= base_url('assets/images/') ?>icon/bl1.png" alt="" width=24></a></li>
+                        <li><a target="_blank" href="https://instagram.com/mediaarraihan?igshid=ykt8s03ia6lj"><img src="<?= base_url('assets/images/') ?>icon/ig1.png" alt="" width=24></a></li>
+                        <li><a target="_blank" href="https://wa.me/6285245667810"><img src="<?= base_url('assets/images/') ?>icon/wa.png" alt="" width=24></a></li>
+                        <li><a target="_blank" href="https://bit.ly/36OHhj6"><img src="<?= base_url('assets/images/') ?>icon/line1.png" alt="" width=24></a></li>
+                        <li><a target="_blank" href="http://shopee.co.id/mediaarraihan"><img src="<?= base_url('assets/images/') ?>icon/shopee1.png" alt="" width=24></a></li>
+                        <li><a target="_blank" href="https://m.bukalapak.com/u/mediaarraihan"><img src="<?= base_url('assets/images/') ?>icon/bl1.png" alt="" width=24></a></li>
                     </ul>
                 </div>
                 <div class="font">Payment & Shipping</div>

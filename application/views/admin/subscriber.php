@@ -24,7 +24,7 @@
                   <div class="col-12">
                       <div class="card">
                           <div class="card-header">
-                              <a href="<?= base_url('email/send'); ?>"><button align="right" class="btn btn-primary"><i class="fas fa-upload"></i> Kirim Email Produk Baru</button></a>
+                              <a href="<?= base_url('email/send'); ?>"><button align="right" onclick="return konfirm()" class="btn btn-primary"><i class="fas fa-upload"></i> Kirim Email Produk Baru</button></a>
                           </div>
                           <!-- /.card-header -->
                           <div class="card-body">
