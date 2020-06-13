@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>Media Ar-Raihan | Konta</title>
+    <title>Media Ar-Raihan | Contact</title>
     <link rel="icon" href="<?= base_url() ?>favicon.ico">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,3 +16,4 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/contact_styles.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/contact_responsive.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/templates/'); ?>styles/mystyle.css">

@@ -8,28 +8,30 @@
 
                     <!-- Contact Item -->
                     <div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="contact_info_image"><img src="images/contact_1.png" alt=""></div>
+                        <div class="contact_info_image"><i class="fas fa-mobile-alt"></i></div>
                         <div class="contact_info_content">
                             <div class="contact_info_title">Phone</div>
-                            <div class="contact_info_text">+38 068 005 3570</div>
+                            <div class="contact_info_text">+62 8524 5667 810</div>
                         </div>
                     </div>
 
                     <!-- Contact Item -->
                     <div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="contact_info_image"><img src="images/contact_2.png" alt=""></div>
+                        <div class="contact_info_image"><i class="far fa-envelope"></i></div>
                         <div class="contact_info_content">
                             <div class="contact_info_title">Email</div>
-                            <div class="contact_info_text">fastsales@gmail.com</div>
+                            <div class="contact_info_text">mediaarraihan@gmail.com</div>
                         </div>
                     </div>
 
                     <!-- Contact Item -->
                     <div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="contact_info_image"><img src="images/contact_3.png" alt=""></div>
+                        <div class="contact_info_image"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="contact_info_content">
+                                <a href="#google_map">
                             <div class="contact_info_title">Address</div>
-                            <div class="contact_info_text">10 Suffolk at Soho, London, UK</div>
+                            <div class="contact_info_text">Kraksaan, Kabupaten Probolinggo</div>
+                        </a>
                         </div>
                     </div>
 
@@ -46,7 +48,7 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
                 <div class="contact_form_container">
-                    <div class="contact_form_title">Get in Touch</div>
+                    <div class="contact_form_title">Critics & Advice</div>
 
                     <form action="#" id="contact_form">
                         <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
@@ -58,7 +60,7 @@
                             <textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
                         </div>
                         <div class="contact_form_button">
-                            <button type="submit" class="button contact_submit_button">Send Message</button>
+                            <button type="submit" class="button contact_submit_button coklat">Send Message</button>
                         </div>
                     </form>
 
@@ -66,15 +68,15 @@
             </div>
         </div>
     </div>
-    <div class="panel"></div>
+    <div class="panel" id="google_map"></div>
 </div>
 
 <!-- Map -->
 
-<div class="contact_map">
-    <div id="google_map" class="google_map">
+<div class="contact_map" >
+    <div class="google_map">
         <div class="map_container">
-            <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ1-Ls40QA1y0RdTCysHDlDZU&key=AIzaSyB8yh-a0Zf4l6OaJHY6WBXHMTgfJUkeIxU" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJeUNdYv8A1y0RRp8YwlJHwn8&key=AIzaSyB8yh-a0Zf4l6OaJHY6WBXHMTgfJUkeIxU" allowfullscreen></iframe>
         </div>
     </div>
 </div>

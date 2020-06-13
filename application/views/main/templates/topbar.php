@@ -44,10 +44,11 @@
                         </div>
 
                         <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right menu-navigation" style="margin-top: 60px;left: 111px;">
+    navbar.navbar
                             <ul class="standard_dropdown main_nav_dropdown">
-                                <li><a href="<?= base_url(); ?>">Beranda<i class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="<?= base_url('blog'); ?>">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="javascript:void(0)">Kontak<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a class="badge badge-warning" href="<?= base_url(); ?>">Home</a></li>
+                                <li><a href="<?= base_url('blog'); ?>">Blog</a></li>
+                                <li><a href="<?= base_url('contact'); ?>">Contact</a></li>
                             </ul>
                         </div>
 
@@ -194,14 +195,14 @@
                                     <li class="page_menu_item has-children">
                                         <a href="#">Kategori<i class="fa fa-angle-down"></i></a>
                                         <ul class="page_menu_selection">
-                                        <?php foreach ($kategori as $kat) : ?>
-                                            <li>
-                                                <form action="<?= base_url('main/search') ?>" method="post">
-                                                    <input type="hidden" name="form_sidebar" value="<?= $kat['id_kategori'] ?>">
-                                                    <a><input style="color: white;" class="button_kategori_sidebar" name="button_kategori" value="<?= $kat['nama_kategori']; ?>" type="submit"></a>
-                                                </form>
-                                            </li>
-                                        <?php endforeach; ?>
+                                            <?php foreach ($kategori as $kat) : ?>
+                                                <li>
+                                                    <form action="<?= base_url('main/search') ?>" method="post">
+                                                        <input type="hidden" name="form_sidebar" value="<?= $kat['id_kategori'] ?>">
+                                                        <a><input style="color: white;" class="button_kategori_sidebar" name="button_kategori" value="<?= $kat['nama_kategori']; ?>" type="submit"></a>
+                                                    </form>
+                                                </li>
+                                            <?php endforeach; ?>
                                         </ul>
                                     </li>
                                     <li class="page_menu_item">
