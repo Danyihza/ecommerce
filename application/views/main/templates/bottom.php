@@ -63,6 +63,33 @@
     </script>
 <?php endif ?>
 
+<script>
+    $(document).ready(function() {
+        var target = getData('email');
+        if (target.length) {
+            showModal(target);
+        } else {
+            showModal("no title");
+        }
+
+        function showModal(email) {
+            $('#uns #inputem').val(email);
+            $('#uns').modal('show');
+        }
+
+        function getData(sParam) {
+            var sPageURL = window.location.search.substring(1);
+            var sURLVariables = sPageURL.split('&');
+            for (var i = 0; i < sURLVariables.length; i++) {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam) {
+                    return sParameterName[1];
+                }
+            }
+        }
+
+    });
+</script>
 
 </body>
 
