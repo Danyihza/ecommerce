@@ -44,11 +44,12 @@
                         </div>
 
                         <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right menu-navigation" style="margin-top: 60px;left: 111px;">
-    navbar.navbar
                             <ul class="standard_dropdown main_nav_dropdown">
-                                <li><a class="badge badge-warning" href="<?= base_url(); ?>">Home</a></li>
-                                <li><a href="<?= base_url('blog'); ?>">Blog</a></li>
-                                <li><a href="<?= base_url('contact'); ?>">Contact</a></li>
+                                <navbar class="navbar navbar-light bg-light-brown">
+                                    <li><a href="<?= base_url(); ?>">Home</a></li>
+                                    <li><a href="<?= base_url('blog'); ?>">Blog</a></li>
+                                    <li><a href="<?= base_url('contact'); ?>">Contact</a></li>
+                                </navbar>
                             </ul>
                         </div>
 

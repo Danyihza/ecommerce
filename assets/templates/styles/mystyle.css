@@ -446,6 +446,19 @@ select {
 	color: rgb(75, 48, 30) ;
 }
 
+.navbar {
+	padding: .5rem 3rem;
+}
+
+.bg-light-brown {
+    background-color: #6f472d12 !important;
+    border-radius: 7px;
+}
+
+.main_nav_dropdown li a {
+	color : rgb(75, 48, 30) ;
+}
+
 html {
 	scroll-behavior: smooth;
 }
