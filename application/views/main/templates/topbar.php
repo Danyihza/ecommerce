@@ -157,7 +157,7 @@
                                 <div class="cat_menu_container">
                                     <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
                                         <div class="cat_burger"><span></span><span></span><span></span></div>
-                                        <div class="cat_menu_text">Kategori</div>
+                                        <div class="cat_menu_text">Category</div>
                                     </div>
 
                                     <ul class="cat_menu">
@@ -238,7 +238,7 @@
                                 </div>
                                 <ul class="page_menu_nav">
                                     <li class="page_menu_item has-children">
-                                        <a href="#">Kategori<i class="fa fa-angle-down"></i></a>
+                                        <a href="#">Category<i class="fa fa-angle-down"></i></a>
                                         <ul class="page_menu_selection">
                                             <?php foreach ($kategori as $kat) : ?>
                                                 <li>
@@ -251,10 +251,10 @@
                                         </ul>
                                     </li>
                                     <li class="page_menu_item">
-                                        <a href="<?= base_url(); ?>">Beranda<i class="fa fa-angle-down"></i></a>
+                                        <a href="<?= base_url(); ?>">Home<i class="fa fa-angle-down"></i></a>
                                     </li>
-                                    <li class="page_menu_item"><a href="<?= base_url('blog'); ?>">blog<i class="fa fa-angle-down"></i></a></li>
-                                    <li class="page_menu_item"><a href="<?= base_url(); ?>">contact<i class="fa fa-angle-down"></i></a></li>
+                                    <li class="page_menu_item"><a href="<?= base_url('blog'); ?>">Articles<i class="fa fa-angle-down"></i></a></li>
+                                    <li class="page_menu_item"><a href="<?= base_url('contact'); ?>">contact<i class="fa fa-angle-down"></i></a></li>
                                 </ul>
 
                                 <div class="menu_contact">
@@ -262,7 +262,7 @@
                                         <div class="menu_contact_icon"><img src="images/phone_white.png" alt=""></div><a href="tel:+6285245667810">0852 4566 7810</a>
                                     </div>
                                     <div class="menu_contact_item">
-                                        <div class="menu_contact_icon"><img src="images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>
+                                        <div class="menu_contact_icon"><img src="images/mail_white.png" alt=""></div><a href="mailto:mediaarraihan@gmail.com">mediaarraihan@gmail.com</a>
                                     </div>
                                 </div>
                             </div>

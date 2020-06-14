@@ -8,6 +8,17 @@
 <script src="<?= base_url('assets/templates/'); ?>plugins/greensock/ScrollToPlugin.min.js"></script>
 <script src="<?= base_url('assets/templates/'); ?>plugins/easing/easing.js"></script>
 <script src="<?= base_url('assets/templates/'); ?>js/contact_custom.js"></script>
+<?php if ($this->session->flashdata('contact')) : ?>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Terkirim',
+                text: '<?= $this->session->flashdata('contact'); ?>'
+            })
+        })
+    </script>
+<?php endif ?>
 </body>
 
 </html>

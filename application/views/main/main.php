@@ -33,7 +33,7 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img class="d-block w-100" src="<?= base_url() ?>assets/templates/images/924.jpg" width="100%" alt="Slider">
-            <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $palingbaru['link']; ?>">Beli Sekarang</a></div>
+            <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $palingbaru['link']; ?>">Buy Now</a></div>
             <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/<?= $palingbaru['gambar_produk'] ?>" width="80px">
             <h5 class="banner-title"><b>New Arrival !</b></h5>
             <p class="banner-judul" style="color: #6f472d;"><?= $palingbaru['nama_produk']; ?></p>
@@ -41,7 +41,7 @@
         <?php foreach ($newproduk as $produk1) : ?>
             <div class="carousel-item">
                 <img class="d-block w-100" src="<?= base_url() ?>assets/templates/images/924.jpg" width="100%" alt="Slider">
-                <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $produk1['link']; ?>">Beli Sekarang</a></div>
+                <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $produk1['link']; ?>">Buy Now</a></div>
                 <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/<?= $produk1['gambar_produk'] ?>" width="80px">
                 <h5 class="banner-title"><b>New Arrival !</b></h5>
                 <p class="banner-judul" style="color: #6f472d;"><?= $produk1['nama_produk']; ?></p>
@@ -168,14 +168,15 @@
             <div class="col">
                 <div class="tabbed_container">
                     <div class="tabs clearfix tabs-right">
-                        <div class="new_arrivals_title">Buku Terbaru</div>
+                        <div class="new_arrivals_title">New Arrival</div>
                         <ul class="clearfix">
-                            <li class="active">Sedang Diskon</li>
+                            <li class="active"><?= $diskon ? 'Now Sale' : '' ?></li>
                         </ul>
                         <div class="tabs_line"><span></span></div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-9" style="z-index:1;">
+                        
+                        <div class="col-lg-<?= $diskon ? '9' : '12' ?>" style="z-index:1;">
 
                             <!-- Product Panel -->
                             <div class="product_panel panel active">
@@ -219,29 +220,31 @@
 
                         </div>
 
-                        <div class="col-lg-3">
-                            <div class="arrivals_single clearfix">
-                                <div class="d-flex flex-column align-items-center justify-content-center">
-                                    <div class="arrivals_single_image text-center"><img src="<?= base_url('assets/images/produk/') . $diskon['gambar_produk'] ?>" width="120px" alt=""></div>
-                                    <div class="arrivals_single_content">
-                                        <div class="arrivals_single_category"><a href="#"><?= $diskon['nama_kategori']; ?></a></div>
-                                        <div class="arrivals_single_name_container clearfix">
-                                            <div class="arrivals_single_name"><a href="#"><?= $diskon['nama_produk']; ?></a></div>
-                                            <!-- <div class="arrivals_single_price text-left"></div> -->
+                        <?php if ($diskon) : ?>
+                            <div class="col-lg-3">
+                                <div class="arrivals_single clearfix">
+                                    <div class="d-flex flex-column align-items-center justify-content-center">
+                                        <div class="arrivals_single_image text-center"><img src="<?= base_url('assets/images/produk/') . $diskon['gambar_produk'] ?>" width="120px" alt=""></div>
+                                        <div class="arrivals_single_content">
+                                            <div class="arrivals_single_category"><a href="#"><?= $diskon['nama_kategori']; ?></a></div>
+                                            <div class="arrivals_single_name_container clearfix">
+                                                <div class="arrivals_single_name"><a href="#"><?= $diskon['nama_produk']; ?></a></div>
+                                                <!-- <div class="arrivals_single_price text-left"></div> -->
+                                            </div>
+                                            <div class="bestsellers_price discount">Rp. <?= number_format(($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100))), 0, '.', '.') ?><span>Rp <?= number_format($diskon['harga_produk'], 0, '.', '.') ?></span></div>
+                                            <button class="add_cart arrivals_single_button" data-id_produk="<?= $diskon['id_produk']; ?>" data-nama_produk="<?= $diskon['nama_produk'] ?>" data-harga_produk="<?php if ($diskon['diskon_produk'] == null) {
+                                                                                                                                                                                                                    echo $diskon['harga_produk'];
+                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                    echo ($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100)));
+                                                                                                                                                                                                                } ?>" data-gambar_produk="<?= $diskon['gambar_produk'] ?>">Add to Cart</button>
                                         </div>
-                                        <div class="bestsellers_price discount">Rp. <?= number_format(($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100))), 0, '.', '.') ?><span>Rp <?= number_format($diskon['harga_produk'], 0, '.', '.') ?></span></div>
-                                        <button class="add_cart arrivals_single_button" data-id_produk="<?= $diskon['id_produk']; ?>" data-nama_produk="<?= $diskon['nama_produk'] ?>" data-harga_produk="<?php if ($diskon['diskon_produk'] == null) {
-                                                                                                                                                                                                                echo $diskon['harga_produk'];
-                                                                                                                                                                                                            } else {
-                                                                                                                                                                                                                echo ($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100)));
-                                                                                                                                                                                                            } ?>" data-gambar_produk="<?= $diskon['gambar_produk'] ?>">Add to Cart</button>
+                                        <ul class="arrivals_single_marks product_marks">
+                                            <li class="arrivals_single_mark product_mark product_discount">-<?= $diskon['diskon_produk'] ?>%</li>
+                                        </ul>
                                     </div>
-                                    <ul class="arrivals_single_marks product_marks">
-                                        <li class="arrivals_single_mark product_mark product_discount">-<?= $diskon['diskon_produk'] ?>%</li>
-                                    </ul>
                                 </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
 
                     </div>
 
@@ -249,14 +252,14 @@
             </div>
         </div>
         <form action="<?= base_url('main/search'); ?>" method="POST">
-            <input name="search" type="submit" class="btn btn-primary col-12 kuning" style="color: white;height: 48px;" value="Semua Produk">
+            <input name="search" type="submit" class="btn btn-primary col-12 kuning" style="color: white;height: 48px;" value="View More">
         </form>
     </div>
 </div>
 
 
 <!-- Mobile New Product -->
-<p class="produk-baru-mobile" style="margin-top: 20px; margin-left: 25px;"><b>Produk</b> Terbaru</p>
+<p class="produk-baru-mobile" style="margin-top: 20px; margin-left: 25px;"><b>Produk</b>&nbsp;Terbaru</p>
 <div class="tabs_line produk-baru-mobile"><span></span></div>
 <div class="row produk-baru-mobile">
     <?php foreach ($produk as $product) : ?>

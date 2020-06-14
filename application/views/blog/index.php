@@ -4,7 +4,7 @@
 	<div class="home_background parallax-window" data-parallax="scroll" data-image-src="<?= base_url('assets/images/4617.jpg'); ?>"></div>
 	<div class="home_overlay"></div>
 	<div class="home_content d-flex flex-column align-items-center justify-content-center">
-		<h2 class="home_title">Media Ar-Raihan Blog</h2>
+		<h2 class="home_title">Media Ar-Raihan Articles</h2>
 	</div>
 </div>
 
@@ -32,4 +32,3 @@
 		</div>
 	</div>
 </div>
-
