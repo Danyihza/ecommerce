@@ -432,18 +432,17 @@ select {
 	font-size: 15px;
 }
 
- select.fa {
+select.fa {
 	font-family: "Font Awesome 5 Free", 'Rubik';
 	font-weight: 100;
 }
 
-.contact_info_image
-{
+.contact_info_image {
 	width: unset;
 	height: unset;
 	text-align: center;
 	font-size: 33px;
-	color: rgb(75, 48, 30) ;
+	color: rgb(75, 48, 30);
 }
 
 .navbar {
@@ -451,18 +450,49 @@ select {
 }
 
 .bg-light-brown {
-    background-color: #6f472d12 !important;
-    border-radius: 7px;
+	background-color: #6f472d12 !important;
+	border-radius: 7px;
 }
 
 .main_nav_dropdown li a {
-	color : rgb(75, 48, 30) ;
+	color: rgb(75, 48, 30);
 }
 
 html {
 	scroll-behavior: smooth;
 }
 
+.header_search_form_container {
+	width: 132%;
+	left: 114px;
+}
+
+.main_nav {
+	background: unset;
+}
+
+.bannerku {
+	top: -76px;
+}
+
+.header {
+	margin-top: 231px;
+}
+
+.fragment {
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	box-shadow: -2px 2px 20px 0px rgba(0, 0, 0, 0.11);
+	background-color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 575px) {
@@ -471,7 +501,7 @@ html {
 	}
 
 	.contact_info {
-		margin-top:165px;
+		margin-top: 165px;
 		padding-top: unset;
 	}
 
@@ -513,7 +543,7 @@ ul.gridpay li {
 
 @media only screen and (max-width: 991px) {
 
-	.newsletter_unsubscribe_link{
+	.newsletter_unsubscribe_link {
 		left: unset;
 		right: unset;
 	}
@@ -521,7 +551,7 @@ ul.gridpay li {
 	.newsletter_input {
 		height: 36px;
 	}
-	
+
 	.newsletter_button {
 		height: 37px;
 	}
@@ -601,7 +631,7 @@ ul.gridpay li {
 	} */
 
 	.bannerku {
-		margin-top: 108px !important;
+		margin-top: 185px !important;
 		margin-left: 0px;
 		margin-right: 0px;
 		height: unset;
@@ -696,4 +726,20 @@ ul.gridpay li {
 	.reviews_all a {
 		color: #6F472D;
 	}
+
+	.header {
+		margin-top: 73px;
+	}
+
+	img.logo-banner {
+		width: 204%
+	}
+
+	.cart{
+		margin-right: 15px;
+	}
+}
+
+@media only screen and (max-width: 1600px) {
+	
 }

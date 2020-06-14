@@ -24,9 +24,32 @@
 
         <!-- Header -->
 
-        <header class="header">
 
+
+        <div class="fragment">
             <!-- Top Bar -->
+
+            <div class="top_bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="top_bar_menu">
+                                <ul class="standard_dropdown top_bar_dropdown">
+                                    <li>
+                                        <a href="<?= base_url() ?>">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url('blog') ?>">Articles</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url('contact') ?>">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 
@@ -39,11 +62,32 @@
                         <!-- Logo -->
                         <div class="col-lg-2 col-sm-3 col-3 order-1">
                             <div class="logo_container">
-                                <div class="logo"><a href="<?= base_url(); ?>"><img src="<?= base_url('assets/templates/images/'); ?>logo.png" width="120px" alt=""></a></div>
+                                <div class="logo"><a href="<?= base_url(); ?>"><img src="<?= base_url('assets/images/'); ?>header.png" class="logo-banner" width="292px" alt=""></a></div>
                             </div>
                         </div>
 
-                        <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right menu-navigation" style="margin-top: 60px;left: 111px;">
+                        <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+                            <div class="header_search">
+                                <div class="header_search_content">
+                                    <div class="header_search_form_container">
+                                        <form action="<?= base_url('main/search') ?>" method="POST" class="header_search_form">
+                                            <input type="text" autocomplete="off" class="header_search_input" name="keyword" placeholder="Search for products...">
+
+                                            <div class="">
+                                                <div class="custom_dropdown_list">
+                                                    <span class="custom_dropdown_placeholder clc"></span>
+                                                    <ul name="kategori" class="custom_list clc">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <input type="submit" style="color:white;" class="header_search_button trans_300 coklat" value='Search' name="search">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right menu-navigation" style="margin-top: 60px;left: 111px;">
                             <ul class="standard_dropdown main_nav_dropdown">
                                 <navbar class="navbar navbar-light bg-light-brown">
                                     <li><a href="<?= base_url(); ?>">Home</a></li>
@@ -51,7 +95,7 @@
                                     <li><a href="<?= base_url('contact'); ?>">Contact</a></li>
                                 </navbar>
                             </ul>
-                        </div>
+                        </div> -->
 
                         <!-- Search -->
                         <!-- <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right">
@@ -78,6 +122,8 @@
                         <!-- Wishlist -->
                         <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
                             <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
+                                <div class="wishlist d-flex flex-row align-items-center justify-content-end">
+                                </div>
 
 
                                 <!-- Cart -->
@@ -88,10 +134,6 @@
                                                 <div class="cart_count coklat"><span><?= count($this->cart->contents()) ?></span></div>
                                             </a>
                                         </div>
-                                        <div class="cart_content">
-                                            <div class="cart_text"><a href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop">Keranjang</a></div>
-                                            <div class="cart_price">Rp. <?= number_format($this->cart->total(), 0, '.', '.') ?></div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +141,9 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <header class="header">
             <!-- Main Navigation -->
             <nav class="main_nav">
                 <div class="container">
@@ -128,7 +172,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-lg-5 col-12 text-lg-left text-right search-bar">
+                                <!-- <div class="col-lg-5 col-12 text-lg-left text-right search-bar">
                                     <div class="header_search" style="height: 60px;left: 1px;">
                                         <div class="header_search_content">
                                             <div class="header_search_form_container">
@@ -147,7 +191,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <!-- Main Nav Menu -->
 
