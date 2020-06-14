@@ -45,7 +45,8 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Sukses...',
-                text: '<?= $this->session->flashdata('subscribe'); ?>'
+                text: '<?= $this->session->flashdata('subscribe'); ?>',
+                confirmButtonColor: '#4b301e'
             })
         })
     </script>
@@ -57,7 +58,8 @@
             Swal.fire({
                 icon: 'error',
                 title: 'Gagal...',
-                text: 'Email Anda Sudah Terdaftar'
+                text: 'Email Anda Sudah Terdaftar',
+                confirmButtonColor: '#4b301e'
             })
         })
     </script>

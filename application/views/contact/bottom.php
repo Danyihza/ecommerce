@@ -14,7 +14,8 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Terkirim',
-                text: '<?= $this->session->flashdata('contact'); ?>'
+                text: '<?= $this->session->flashdata('contact'); ?>',
+                confirmButtonColor: '#4b301e'
             })
         })
     </script>
