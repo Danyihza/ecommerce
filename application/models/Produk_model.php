@@ -5,12 +5,13 @@ class Produk_model extends CI_Model
 {
     public function getKategori()
     {
+        $this->db->where('id_kategori >', 0);
         return $this->db->get('kategori')->result_array();
     }
 
     public function getAllKategori()
     {
-        $sql = "SELECT COUNT(id_produk)AS count, id_kategori, nama_kategori FROM `produk` INNER JOIN kategori ON produk.kategori = kategori.id_kategori  GROUP BY kategori";
+        $sql = "SELECT COUNT(id_produk) AS count, id_kategori, nama_kategori FROM `produk` INNER JOIN kategori ON produk.kategori = kategori.id_kategori WHERE id_kategori > 0 GROUP BY kategori";
         return $this->db->query($sql)->result_array();
         
     }
@@ -111,8 +112,19 @@ class Produk_model extends CI_Model
     //untuk menghapus data
     function hapus_data($where, $table)
     {
-        $this->db->where($where);
+        $this->db->where('id_produk', $where);
+        $this->db->delete('ulasan');
+        $this->db->where('id_produk', $where);
         $this->db->delete($table);
+    }
+
+    function hapus_kategori($where) 
+    {
+        $this->db->set('kategori', 0);
+        $this->db->where('kategori', $where);
+        $this->db->update('produk');
+        $this->db->where('id_kategori', $where);
+        $this->db->delete('kategori');
     }
 
     //untuk menampilkan data berdasarkan id

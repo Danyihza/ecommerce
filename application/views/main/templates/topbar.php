@@ -32,7 +32,7 @@
             <div class="top_bar">
                 <div class="container">
                     <div class="row">
-                        <div class="col text-center">
+                        <div class="col text-right">
                             <div class="top_bar_menu">
                                 <ul class="standard_dropdown top_bar_dropdown">
                                     <li>

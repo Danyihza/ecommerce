@@ -77,7 +77,7 @@
 							<!-- Product Item -->
 							<div class="product_item is_new">
 								<div class="product_border"></div>
-								<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?= base_url('assets/images/') . $pro['gambar_produk'] ?>" width="100px" alt="foto produk"></div>
+								<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?= base_url('assets/images/produk/') . $pro['gambar_produk'] ?>" width="80%" alt="foto produk"></div>
 								<div class="product_content">
 									<div class="product_price">Rp <?= number_format($pro['harga_produk'], '0', ',', '.'); ?></div>
 									<div class="product_name">

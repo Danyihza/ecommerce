@@ -8,7 +8,7 @@
 
 			<!-- Selected Image -->
 			<div class="col-lg-6 order-lg-2 order-1 gambar">
-				<div class="image_selected"><img src="<?= base_url('assets/images/') . $produk['gambar_produk'] ?>" height="400px" alt=""></div>
+				<div class="image_selected"><img src="<?= base_url('assets/images/produk/') . $produk['gambar_produk'] ?>" height="400px" alt=""></div>
 			</div>
 
 			<!-- Description -->

@@ -169,7 +169,6 @@
           <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>ID Kategori</th>
                 <th>Kategori</th>
                 <th>Action</th>
               </tr>
@@ -177,10 +176,9 @@
             <tbody>
               <?php foreach ($kategori as $k) { ?>
                 <tr>
-                  <td><?= $k['id_kategori']; ?></td>
                   <td><?= $k['nama_kategori']; ?></td>
                   <td>
-                    <a title="Hapus" href="<?= base_url('produk/hapuskat/' . $k['id_kategori']); ?>" type="button" class="btn btn-danger fa fa-trash"></a>
+                    <a title="Hapus" href="<?= base_url('produk/hapuskat/' . $k['id_kategori']); ?>" onclick="return confirm('Anda yakin ingin menghapus data ini?')" type="button" class="btn btn-danger fa fa-trash"></a>
                   </td>
                 </tr>
               <?php } ?>

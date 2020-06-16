@@ -34,7 +34,7 @@
         <div class="carousel-item active">
             <img class="d-block w-100" src="<?= base_url() ?>assets/templates/images/924.jpg" width="100%" alt="Slider">
             <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $palingbaru['link']; ?>">Buy Now</a></div>
-            <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/<?= $palingbaru['gambar_produk'] ?>" width="80px">
+            <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/produk/ <?= $palingbaru['gambar_produk'] ?>" width="80px">
             <h5 class="banner-title"><b>New Arrival !</b></h5>
             <p class="banner-judul" style="color: #6f472d;"><?= $palingbaru['nama_produk']; ?></p>
         </div>
@@ -42,7 +42,7 @@
             <div class="carousel-item">
                 <img class="d-block w-100" src="<?= base_url() ?>assets/templates/images/924.jpg" width="100%" alt="Slider">
                 <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $produk1['link']; ?>">Buy Now</a></div>
-                <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/<?= $produk1['gambar_produk'] ?>" width="80px">
+                <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/produk/<?= $produk1['gambar_produk'] ?>" width="80px">
                 <h5 class="banner-title"><b>New Arrival !</b></h5>
                 <p class="banner-judul" style="color: #6f472d;"><?= $produk1['nama_produk']; ?></p>
             </div>
@@ -186,7 +186,7 @@
                                         <div class="arrivals_slider_item">
                                             <div class="border_active"></div>
                                             <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
-                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?= base_url('assets/images/produk/') . $product['gambar_produk'] ?>" width="90px" alt="cover buku"></div>
+                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?= base_url('assets/images/produk/') . $product['gambar_produk'] ?>" width="81%" alt="cover buku"></div>
                                                 <div class="product_content">
                                                     <?php if ($product['diskon_produk'] > 0) : ?>
                                                         <div class="product_price">Rp. <?= number_format(($product['harga_produk'] - ($product['harga_produk'] * ($product['diskon_produk'] / 100))), '0', ',', '.'); ?><span><s>Rp <?= number_format($product['harga_produk'], '0', ',', '.'); ?></s></span></div>

@@ -147,9 +147,9 @@
 
 .banner-gambar {
 	position: absolute;
-	top: 18%;
-	width: 20%;
-	left: 66%;
+    top: 24%;
+    width: 53%;
+    left: 43%;
 }
 
 .banner-judul {
@@ -476,7 +476,7 @@ html {
 }
 
 .header {
-	margin-top: 231px;
+	margin-top: 177px;
 }
 
 .fragment {
@@ -488,11 +488,17 @@ html {
 }
 
 .input_field {
-	color : rgb(75, 48, 30);
+	color: rgb(75, 48, 30);
 }
 
 .text_field {
-	color : #4b301e;
+	color: #4b301e;
+}
+
+.top_bar{
+	height: 0px;
+	border-bottom: unset;
+	background: #FFFFFF;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------- */
@@ -608,7 +614,7 @@ ul.gridpay li {
 	.banner-gambar {
 		position: absolute;
 		top: 26%;
-		left: 63%;
+		left: 45%;
 	}
 
 	.banner-judul {
@@ -743,11 +749,9 @@ ul.gridpay li {
 		width: 204%
 	}
 
-	.cart{
+	.cart {
 		margin-right: 15px;
 	}
 }
 
-@media only screen and (max-width: 1600px) {
-	
-}
+@media only screen and (max-width: 1600px) {}

@@ -142,18 +142,19 @@ class Produk extends CI_Controller
 
     public function hapus($id_produk)
     {
-        $db_debug = $this->db->db_debug; //save setting
-        $this->db->db_debug = FALSE; //disable debugging for queries
+        // $db_debug = $this->db->db_debug; //save setting
+        // $this->db->db_debug = FALSE; //disable debugging for queries
         $where = array('id_produk' => $id_produk);
-        $this->produk_model->hapus_data($where, 'produk');
+        $this->produk_model->hapus_data($id_produk, 'produk');
         $error = $this->db->error();
+        // var_dump($error); die;
         if ($error['code'] != 0) {
             $this->session->set_flashdata('notif', '<div class="alert alert-danger"><b>PROSES HAPUS GAGAL!</b> </div>');
-            $this->db->db_debug = $db_debug;
+            // $this->db->db_debug = $db_debug;
             redirect('produk/');
         } else {
             $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES HAPUS BERHASIL!</b> </div>');
-            $this->db->db_debug = $db_debug;
+            // $this->db->db_debug = $db_debug;
             redirect('produk/');
         }
     }
@@ -200,6 +201,7 @@ class Produk extends CI_Controller
             'id_produk' => $id_produk
         );
         $this->produk_model->update_data($where, $data, 'produk');
+        $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>'. strtoupper($nama_produk) .' BERHASIL DIUPDATE!</b> </div>');
         redirect('produk');
     }
 
@@ -245,8 +247,8 @@ class Produk extends CI_Controller
     }
     public function hapuskat($id_kategori)
     {
-        $where = array('id_kategori' => $id_kategori);
-        $this->produk_model->hapus_data($where, 'kategori');
+        $this->produk_model->hapus_kategori($id_kategori);
+        $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES HAPUS BERHASIL!</b> </div>');
         redirect('produk');
     }
 
