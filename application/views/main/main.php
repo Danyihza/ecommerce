@@ -34,7 +34,7 @@
         <div class="carousel-item active">
             <img class="d-block w-100" src="<?= base_url() ?>assets/templates/images/924.jpg" width="100%" alt="Slider">
             <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $palingbaru['link']; ?>">Buy Now</a></div>
-            <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/produk/ <?= $palingbaru['gambar_produk'] ?>" width="80px">
+            <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/produk/<?= $palingbaru['gambar_produk'] ?>" width="80px">
             <h5 class="banner-title"><b>New Arrival !</b></h5>
             <p class="banner-judul" style="color: #6f472d;"><?= $palingbaru['nama_produk']; ?></p>
         </div>

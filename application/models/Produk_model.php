@@ -113,6 +113,8 @@ class Produk_model extends CI_Model
     function hapus_data($where, $table)
     {
         $this->db->where('id_produk', $where);
+        $this->db->delete('dtransaksi');
+        $this->db->where('id_produk', $where);
         $this->db->delete('ulasan');
         $this->db->where('id_produk', $where);
         $this->db->delete($table);
