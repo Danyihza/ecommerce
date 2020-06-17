@@ -32,19 +32,13 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="<?= base_url() ?>assets/templates/images/924.jpg" width="100%" alt="Slider">
+            <img class="d-block w-100" src="<?= base_url() ?>assets/images/produk/<?= $palingbaru['gambar_produk'] ?>" width="100%" alt="Slider">
             <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $palingbaru['link']; ?>">Buy Now</a></div>
-            <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/produk/<?= $palingbaru['gambar_produk'] ?>" width="80px">
-            <h5 class="banner-title"><b>New Arrival !</b></h5>
-            <p class="banner-judul" style="color: #6f472d;"><?= $palingbaru['nama_produk']; ?></p>
         </div>
         <?php foreach ($newproduk as $produk1) : ?>
             <div class="carousel-item">
-                <img class="d-block w-100" src="<?= base_url() ?>assets/templates/images/924.jpg" width="100%" alt="Slider">
+                <img class="d-block w-100" src="<?= base_url() ?>assets/images/produk/<?= $produk1['gambar_produk'] ?>" width="100%" alt="Slider">
                 <div class="button banner_button coklat banner-button"><a href="<?= base_url('main/produk/') . $produk1['link']; ?>">Buy Now</a></div>
-                <img class="produk_banner banner-gambar" src="<?= base_url() ?>assets/images/produk/<?= $produk1['gambar_produk'] ?>" width="80px">
-                <h5 class="banner-title"><b>New Arrival !</b></h5>
-                <p class="banner-judul" style="color: #6f472d;"><?= $produk1['nama_produk']; ?></p>
             </div>
         <?php endforeach ?>
         <!-- <div class="carousel-item">
@@ -175,8 +169,8 @@
                         <div class="tabs_line"><span></span></div>
                     </div>
                     <div class="row">
-                        
-                        <div class="col-lg-<?= $diskon ? '9' : '12' ?>" style="z-index:1;">
+
+                        <div class="col-lg-<?= $diskon['diskon_produk'] > 0 ? '9' : '12' ?>" style="z-index:1;">
 
                             <!-- Product Panel -->
                             <div class="product_panel panel active">
@@ -219,8 +213,7 @@
                             </div>
 
                         </div>
-
-                        <?php if ($diskon) : ?>
+                        <?php if ($diskon['diskon_produk'] > 0) : ?>
                             <div class="col-lg-3">
                                 <div class="arrivals_single clearfix">
                                     <div class="d-flex flex-column align-items-center justify-content-center">
@@ -228,7 +221,7 @@
                                         <div class="arrivals_single_content">
                                             <div class="arrivals_single_category"><a href="#"><?= $diskon['nama_kategori']; ?></a></div>
                                             <div class="arrivals_single_name_container clearfix">
-                                                <div class="arrivals_single_name"><a href="#"><?= $diskon['nama_produk']; ?></a></div>
+                                                <div class="arrivals_single_name"><a href="<?= base_url('main/produk/') . $diskon['link'] ?>"><?= $diskon['nama_produk']; ?></a></div>
                                                 <!-- <div class="arrivals_single_price text-left"></div> -->
                                             </div>
                                             <div class="bestsellers_price discount">Rp. <?= number_format(($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100))), 0, '.', '.') ?><span>Rp <?= number_format($diskon['harga_produk'], 0, '.', '.') ?></span></div>

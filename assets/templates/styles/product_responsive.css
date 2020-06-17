@@ -90,7 +90,7 @@
 	}
 	.image_selected
 	{
-		height: 420px;
+		height: 381px;
 	}
 	.product_quantity,
 	.product_color
@@ -567,7 +567,7 @@
 	}
 	.image_selected
 	{
-		height: calc(100vw - 30px);
+		height: 207px;
 	}
 	.image_list li
 	{

@@ -163,7 +163,7 @@ class Main extends CI_Controller
 			$output .= '
                 <tr>
                     <td>' . $no . '</td>
-                    <td><img src="' . base_url('assets/images/') . $items['image'] . '" width="60px"></td>
+                    <td><img src="' . base_url('assets/images/produk/') . $items['image'] . '" width="60px"></td>
                     <td>' . $items['name'] . '</td>
                     <td>Rp. ' . number_format($items['price']) . '</td>
 					<td>
