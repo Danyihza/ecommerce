@@ -164,7 +164,7 @@
                     <div class="tabs clearfix tabs-right">
                         <div class="new_arrivals_title">New Arrival</div>
                         <ul class="clearfix">
-                            <li class="active"><?= $diskon ? 'Now Sale' : '' ?></li>
+                            <li class="active"><?= $diskon['diskon_produk'] > 0 ? 'Now Sale' : '' ?></li>
                         </ul>
                         <div class="tabs_line"><span></span></div>
                     </div>
