@@ -737,7 +737,7 @@ ul.gridpay li {
 
 	.product_item {
 		width: 150px;
-		padding-left: 25px;
+		/* padding-left: 25px; */
 		margin-left: auto;
 		margin-right: auto;
 	}

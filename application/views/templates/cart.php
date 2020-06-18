@@ -23,6 +23,32 @@
 <?php endif; ?>
 
 <script>
+    $(document).ready(function(){
+        $('.product_fav').click(function(){
+            var produk_id = $(this).data("id_produk");
+            var produk_nama = $(this).data("nama_produk");
+            var produk_harga = $(this).data("harga_produk");
+            var produk_gambar = $(this).data("gambar_produk");
+            $.ajax({
+                url: "<?php echo base_url(); ?>main/add_to_cart",
+                method: "POST",
+                data: {
+                    produk_id: produk_id,
+                    produk_nama: produk_nama,
+                    produk_harga: produk_harga,
+                    produk_gambar: produk_gambar,
+                    quantity: 1
+                },
+                success: function(data) {
+                    $('#detail_cart').html(data);
+                    location.reload();
+                }
+            });
+        })
+    })
+</script>
+
+<script>
     $(document).ready(function() {
         $('.add_cart').click(function() {
             var produk_id = $(this).data("id_produk");
