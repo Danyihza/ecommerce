@@ -100,7 +100,7 @@ class Produk extends CI_Controller
             'diskon_produk' => $diskon_produk,
             'desk_produk' => $desk_produk,
             'kategori' => $kategori,
-            'link' => strtolower(str_replace(' ', '-', $nama_produk))
+            'link' => to_link($nama_produk)
         );
 
         $this->produk_model->input_data($data, 'produk');
@@ -194,7 +194,7 @@ class Produk extends CI_Controller
             'diskon_produk' => $diskon_produk,
             'desk_produk' => $desk_produk,
             'kategori' => $kategori,
-            'link' => strtolower(str_replace(' ', '-', $nama_produk))
+            'link' => to_link($nama_produk)
         );
 
         $where = array(
