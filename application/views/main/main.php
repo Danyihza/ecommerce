@@ -261,7 +261,7 @@
             <!-- <div class="arrivals_slider_item"> -->
             <div class="border_active"></div>
             <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
-                <div class="product_image d-flex flex-column align-items-center justify-content-center"><a href="<?= base_url('main/produk/') . $product['link'] ?>"><img src="<?= base_url('assets/images/produk/') . $product['gambar_produk'] ?>" width="90px" alt="cover buku"></div>
+                <div class="product_image d-flex flex-column align-items-center justify-content-center"><a href="<?= base_url('main/produk/') . $product['link'] ?>"><img src="<?= base_url('assets/images/produk/') . $product['gambar_produk'] ?>" width="130px" alt="cover buku"></div>
                 <div class="product_content">
                     <?php if ($product['diskon_produk'] > 0) : ?>
                         <div class="product_price">Rp. <?= number_format(($product['harga_produk'] - ($product['harga_produk'] * ($product['diskon_produk'] / 100))), '0', ',', '.'); ?><span><s>Rp <?= number_format($product['harga_produk'], '0', ',', '.'); ?></s></span></div>
