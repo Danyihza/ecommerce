@@ -29,11 +29,24 @@
         <div class="fragment">
             <!-- Top Bar -->
 
-            <div class="top_bar">
+
+            <!-- Header Main -->
+
+            <div class="header_main">
                 <div class="container">
                     <div class="row">
-                        <div class="col text-right">
-                            <div class="top_bar_menu">
+
+                        <!-- Logo -->
+                        <div class="col-lg-3 col-sm-3 col-3 order-1">
+                            <div class="logo_container">
+                                <div class="logo"><a href="<?= base_url(); ?>"><img src="<?= base_url('assets/images/'); ?>header.png" class="logo-banner" width="292px" alt=""></a></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8 col-12 order-lg-2 order-3 text-lg-left text-right">
+                            <div class="header_search">
+                                <div class="header_search_content">
+                                <div class="top_bar_menu">
                                 <ul class="standard_dropdown top_bar_dropdown">
                                     <li>
                                         <a href="<?= base_url() ?>">Home</a>
@@ -46,29 +59,6 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!-- Header Main -->
-
-            <div class="header_main">
-                <div class="container">
-                    <div class="row">
-
-                        <!-- Logo -->
-                        <div class="col-lg-2 col-sm-3 col-3 order-1">
-                            <div class="logo_container">
-                                <div class="logo"><a href="<?= base_url(); ?>"><img src="<?= base_url('assets/images/'); ?>header.png" class="logo-banner" width="292px" alt=""></a></div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
-                            <div class="header_search">
-                                <div class="header_search_content">
                                     <div class="header_search_form_container">
                                         <form action="<?= base_url('main/search') ?>" method="POST" class="header_search_form">
                                             <input type="text" autocomplete="off" class="header_search_input" name="keyword" placeholder="Search for products...">
@@ -87,43 +77,10 @@
                             </div>
                         </div>
 
-                        <!-- <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right menu-navigation" style="margin-top: 60px;left: 111px;">
-                            <ul class="standard_dropdown main_nav_dropdown">
-                                <navbar class="navbar navbar-light bg-light-brown">
-                                    <li><a href="<?= base_url(); ?>">Home</a></li>
-                                    <li><a href="<?= base_url('blog'); ?>">Blog</a></li>
-                                    <li><a href="<?= base_url('contact'); ?>">Contact</a></li>
-                                </navbar>
-                            </ul>
-                        </div> -->
-
-                        <!-- Search -->
-                        <!-- <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right">
-                            <div class="header_search">
-                                <div class="header_search_content">
-                                    <div class="header_search_form_container">
-                                        <form action="<?= base_url('main/search') ?>" method="POST" class="header_search_form">
-                                            <input type="text" autocomplete="off" class="header_search_input" name="keyword" placeholder="Search for products...">
-
-                                            <div class="">
-                                                <div class="custom_dropdown_list">
-                                                    <span class="custom_dropdown_placeholder clc"></span>
-                                                    <ul name="kategori" class="custom_list clc">
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <input type="submit" style="color:white;" class="header_search_button trans_300 coklat" value='Cari' name="search">
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
 
                         <!-- Wishlist -->
-                        <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+                        <div class="col-lg-1 col-9 order-lg-3 order-2 text-lg-left text-right">
                             <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-                                <div class="wishlist d-flex flex-row align-items-center justify-content-end">
-                                </div>
 
 
                                 <!-- Cart -->

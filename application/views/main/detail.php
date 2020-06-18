@@ -23,13 +23,6 @@
 							<p>-/-</p>
 						<?php endif ?>
 					</div>
-					<?php if ($produk['desk_produk']) : ?>
-						<div class="product_text"><?= $produk['desk_produk']; ?></div>
-					<?php else : ?>
-						<div class="product_text">
-							<p>-</p>
-						</div>
-					<?php endif; ?>
 					<div class="order_info d-flex flex-row">
 						<form action="#">
 							<div class="clearfix">
@@ -67,7 +60,22 @@
 
 		</div>
 	</div>
-	<div class="single_product">
+	<div class="mypanel">
+		<div class="container">
+			<div class="card-footer card-comments">
+				<p class="font-weight-bold">Deskripsi Produk</p>
+
+				<?php if ($produk['desk_produk']) : ?>
+					<div class="product_text"><?= $produk['desk_produk']; ?></div>
+				<?php else : ?>
+					<div class="product_text">
+						<p>-</p>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+	<div class="mypanel1">
 		<div class="container">
 			<div class="card-footer card-comments">
 				<?php if ($ulasan) : ?>
