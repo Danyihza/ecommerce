@@ -39,7 +39,7 @@
 							<p>Tersisa <?= $produk['stok_produk']; ?></p>
 
 							<?php if ($produk['diskon_produk']) : ?>
-								<div class="product_price" style="color:red;">Rp. <?= number_format(($produk['harga_produk'] - ($produk['harga_produk'] * ($produk['diskon_produk'] / 100))), '0', ',', '.'); ?><br><span style="font-size:16px;color:black;"><s>Rp. 525.000</s></span></div>
+								<div class="product_price" style="color:red;">Rp. <?= number_format(($produk['harga_produk'] - ($produk['harga_produk'] * ($produk['diskon_produk'] / 100))), '0', ',', '.'); ?><br><span style="font-size:16px;color:black;"><s>Rp.  <?= number_format($produk['harga_produk'], '0', ',', '.'); ?></s></span></div>
 							<?php else : ?>
 								<div class="product_price" style="color:red;">Rp. <?= number_format($produk['harga_produk'], '0', ',', '.'); ?></div>
 							<?php endif; ?>
