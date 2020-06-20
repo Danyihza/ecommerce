@@ -300,7 +300,14 @@
     <p class="produk-baru-mobile" style="margin-top: 20px; margin-left: 25px;"><b>Produk</b>&nbsp;Terbaru</p>
     <div class="tabs_line produk-baru-mobile"><span></span></div>
     <div class="row produk-baru-mobile">
-        <?php foreach ($produk as $product) : ?>
+        <?php foreach ($produk as $product) : 
+            $nama = '';
+            if (strlen($diskon['nama_produk']) > 15) {
+                $nama .= substr($diskon['nama_produk'], 0, 15) . '...';
+            } else {
+                $nama .= $diskon['nama_produk'];
+            }
+            ?>
             <!-- Slider Item -->
             <!-- <div class="arrivals_slider_item"> -->
             <div class="border_active"></div>
@@ -313,7 +320,7 @@
                         <div class="product_price">Rp. <?= number_format($product['harga_produk'], '0', ',', '.'); ?></div>
                     <?php endif; ?>
                     <div class="product_name">
-                        <div><a href="<?= base_url('main/produk/') . $product['link'] ?>"><?= $product['nama_produk']; ?></a></div>
+                        <div><a href="<?= base_url('main/produk/') . $product['link'] ?>"><?= $nama ?></a></div>
                     </div>
                     <div class="product_extras">
                         <button class="add_cart product_cart_button" data-id_produk="<?= $product['id_produk']; ?>" data-nama_produk="<?= to_link($product['nama_produk']) ?>" data-harga_produk="<?php if ($product['diskon_produk'] == 0) {
@@ -354,8 +361,8 @@
 
                             <?php foreach ($listdiskon as $diskon) :
                                 $nama = '';
-                                if (strlen($diskon['nama_produk']) > 30) {
-                                    $nama .= substr($diskon['nama_produk'], 0, 30) . '...';
+                                if (strlen($diskon['nama_produk']) > 25) {
+                                    $nama .= substr($diskon['nama_produk'], 0, 25) . '...';
                                 } else {
                                     $nama .= $diskon['nama_produk'];
                                 }
