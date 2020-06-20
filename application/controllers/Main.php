@@ -24,7 +24,8 @@ class Main extends CI_Controller
 		$data['produk'] = $this->produk->getNewProduct(8);
 		$data['diskon'] = $this->produk->getMostDiscountProduct();
 		$data['blog'] = $this->blog->getTwoBlog();
-		// var_dump($data['ulasan']); die;
+		$data['listdiskon'] = $this->produk->getProductDiscount();
+		// var_dump($data['listdiskon']); die;
 		$this->load->view('main/templates/header', $data);
 		$this->load->view('main/templates/topbar', $data);
 		$this->load->view('main/main', $data);
@@ -164,7 +165,7 @@ class Main extends CI_Controller
                 <tr>
                     <td>' . $no . '</td>
                     <td><img src="' . base_url('assets/images/produk/') . $items['image'] . '" width="60px"></td>
-                    <td>' . $items['name'] . '</td>
+                    <td>' . $max_qty['nama_produk'] . '</td>
                     <td>Rp. ' . number_format($items['price']) . '</td>
 					<td>
 						<input class="kuantitas" id="' . $items['rowid'] . '" type="number" min="1" max="' . $max_qty['stok_produk'] . '" value="' . $items['qty'] . '">

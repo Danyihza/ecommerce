@@ -24,6 +24,7 @@
 
 <script>
     $(document).ready(function(){
+        //add to cart (search)
         $('.product_fav').click(function(){
             var produk_id = $(this).data("id_produk");
             var produk_nama = $(this).data("nama_produk");
@@ -50,6 +51,7 @@
 
 <script>
     $(document).ready(function() {
+        //add_to_cart
         $('.add_cart').click(function() {
             var produk_id = $(this).data("id_produk");
             var produk_nama = $(this).data("nama_produk");

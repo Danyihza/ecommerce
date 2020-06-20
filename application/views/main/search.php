@@ -84,7 +84,7 @@
 										<div><a href="<?= base_url('main/produk/') . $pro['link'] ?>" tabindex="0"><?= $pro['nama_produk']; ?></a></div>
 									</div>
 								</div>
-								<div class="product_fav" data-id_produk="<?= $pro['id_produk']; ?>" data-nama_produk="<?= $pro['nama_produk'] ?>" data-harga_produk="<?php if ($pro['diskon_produk'] == 0) {
+								<div class="product_fav" data-id_produk="<?= $pro['id_produk']; ?>" data-nama_produk="<?= to_link($pro['nama_produk']) ?>" data-harga_produk="<?php if ($pro['diskon_produk'] == 0) {
                                                                                                                                                                                                 echo $pro['harga_produk'];
                                                                                                                                                                                             } else {
                                                                                                                                                                                                 echo ($pro['harga_produk'] - ($pro['harga_produk'] * ($pro['diskon_produk'] / 100)));

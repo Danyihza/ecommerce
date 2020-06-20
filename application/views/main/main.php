@@ -164,13 +164,13 @@
                     <div class="tabs clearfix tabs-right">
                         <div class="new_arrivals_title">New Arrival</div>
                         <ul class="clearfix">
-                            <li class="active"><?= $diskon['diskon_produk'] > 0 ? 'Now Sale' : '' ?></li>
+                            <li class="active"></li>
                         </ul>
                         <div class="tabs_line"><span></span></div>
                     </div>
                     <div class="row">
 
-                        <div class="col-lg-<?= $diskon['diskon_produk'] > 0 ? '9' : '12' ?>" style="z-index:1;">
+                        <div class="col-lg-12" style="z-index:1;">
 
                             <!-- Product Panel -->
                             <div class="product_panel panel active">
@@ -191,11 +191,11 @@
                                                         <div><a href="<?= base_url('main/produk/') . $product['link'] ?>"><?= $product['nama_produk']; ?></a></div>
                                                     </div>
                                                     <div class="product_extras">
-                                                        <button class="add_cart product_cart_button" data-id_produk="<?= $product['id_produk']; ?>" data-nama_produk="<?= $product['nama_produk'] ?>" data-harga_produk="<?php if ($product['diskon_produk'] == 0) {
-                                                                                                                                                                                                                                echo $product['harga_produk'];
-                                                                                                                                                                                                                            } else {
-                                                                                                                                                                                                                                echo ($product['harga_produk'] - ($product['harga_produk'] * ($product['diskon_produk'] / 100)));
-                                                                                                                                                                                                                            } ?>" data-gambar_produk="<?= $product['gambar_produk'] ?>">Add to Cart</button>
+                                                        <button class="add_cart product_cart_button" data-id_produk="<?= $product['id_produk']; ?>" data-nama_produk="<?= to_link($product['nama_produk']) ?>" data-harga_produk="<?php if ($product['diskon_produk'] == 0) {
+                                                                                                                                                                                                                                        echo $product['harga_produk'];
+                                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                                        echo ($product['harga_produk'] - ($product['harga_produk'] * ($product['diskon_produk'] / 100)));
+                                                                                                                                                                                                                                    } ?>" data-gambar_produk="<?= $product['gambar_produk'] ?>">Add to Cart</button>
                                                     </div>
                                                 </div>
                                                 <ul class="product_marks">
@@ -213,8 +213,9 @@
                             </div>
 
                         </div>
+
                         <?php if ($diskon['diskon_produk'] > 0) : ?>
-                            <div class="col-lg-3">
+                            <!-- <div class="col-lg-3">
                                 <div class="arrivals_single clearfix">
                                     <div class="d-flex flex-column align-items-center justify-content-center">
                                         <div class="arrivals_single_image text-center"><img src="<?= base_url('assets/images/produk/') . $diskon['gambar_produk'] ?>" width="120px" alt=""></div>
@@ -222,21 +223,20 @@
                                             <div class="arrivals_single_category"><a href="#"><?= $diskon['nama_kategori']; ?></a></div>
                                             <div class="arrivals_single_name_container clearfix">
                                                 <div class="arrivals_single_name"><a href="<?= base_url('main/produk/') . $diskon['link'] ?>"><?= $diskon['nama_produk']; ?></a></div>
-                                                <!-- <div class="arrivals_single_price text-left"></div> -->
                                             </div>
                                             <div class="bestsellers_price discount">Rp. <?= number_format(($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100))), 0, '.', '.') ?><span>Rp <?= number_format($diskon['harga_produk'], 0, '.', '.') ?></span></div>
-                                            <button class="add_cart arrivals_single_button" data-id_produk="<?= $diskon['id_produk']; ?>" data-nama_produk="<?= $diskon['nama_produk'] ?>" data-harga_produk="<?php if ($diskon['diskon_produk'] == null) {
-                                                                                                                                                                                                                    echo $diskon['harga_produk'];
-                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                    echo ($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100)));
-                                                                                                                                                                                                                } ?>" data-gambar_produk="<?= $diskon['gambar_produk'] ?>">Add to Cart</button>
+                                            <button class="add_cart arrivals_single_button" data-id_produk="<?= $diskon['id_produk']; ?>" data-nama_produk="<?= to_link($diskon['nama_produk']) ?>" data-harga_produk="<?php if ($diskon['diskon_produk'] == null) {
+                                                                                                                                                                                                                            echo $diskon['harga_produk'];
+                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                            echo ($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100)));
+                                                                                                                                                                                                                        } ?>" data-gambar_produk="<?= $diskon['gambar_produk'] ?>">Add to Cart</button>
                                         </div>
                                         <ul class="arrivals_single_marks product_marks">
                                             <li class="arrivals_single_mark product_mark product_discount">-<?= $diskon['diskon_produk'] ?>%</li>
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         <?php endif; ?>
 
                     </div>
@@ -247,7 +247,44 @@
         <form action="<?= base_url('main/search'); ?>" method="POST">
             <input name="search" type="submit" class="btn btn-primary col-12 kuning" style="color: white;height: 48px;" value="View More">
         </form>
+
+        <div class="deals mt-3 mb-3" style="width:100%; height:843px;">
+            <div class="deals_title">Now Sale</div>
+            <div class="deals_slider_container">
+
+                <!-- Deals Slider -->
+                <div class="owl-carousel owl-theme deals_slider">
+
+                    <?php foreach ($listdiskon as $diskon) : ?>
+                        <!-- Deals Item -->
+                        <div class="owl-item deals_item">
+                            <div class="deals_image"><a href="<?= base_url('main/produk/') . $diskon['link'] ?>"><img src="<?= base_url('assets/images/produk/') . $diskon['gambar_produk'] ?>" alt=""></a></div>
+                            <div class="deals_content">
+                                <div class="deals_info_line d-flex flex-row justify-content-start">
+                                    <div class="deals_item_category"><a href="#"><?= $diskon['nama_kategori']; ?></a></div>
+                                    <div class="deals_item_price_a ml-auto"><b>-<?= $diskon['diskon_produk'] ?>%</b>&nbsp;<s>Rp <?= number_format($diskon['harga_produk'], '0', ',', '.'); ?></s></div>
+                                </div>
+                                <div class="deals_info_line d-flex flex-row justify-content-start">
+                                    <div class="deals_item_name"><?= $diskon['nama_produk']; ?></div>
+                                    <div class="deals_item_price ml-auto">Rp <?= number_format(($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100))), '0', ',', '.'); ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+
+                </div>
+
+            </div>
+
+            <div class="deals_slider_nav_container">
+                <div class="deals_slider_prev deals_slider_nav"><i class="fas fa-chevron-left ml-auto"></i></div>
+                <div class="deals_slider_next deals_slider_nav"><i class="fas fa-chevron-right ml-auto"></i></div>
+            </div>
+        </div>
+
+
     </div>
+
 </div>
 
 
@@ -272,11 +309,11 @@
                         <div><a href="<?= base_url('main/produk/') . $product['link'] ?>"><?= $product['nama_produk']; ?></a></div>
                     </div>
                     <div class="product_extras">
-                        <button class="add_cart product_cart_button" data-id_produk="<?= $product['id_produk']; ?>" data-nama_produk="<?= $product['nama_produk'] ?>" data-harga_produk="<?php if ($product['diskon_produk'] == 0) {
-                                                                                                                                                                                                echo $product['harga_produk'];
-                                                                                                                                                                                            } else {
-                                                                                                                                                                                                echo ($product['harga_produk'] - ($product['harga_produk'] * ($product['diskon_produk'] / 100)));
-                                                                                                                                                                                            } ?>" data-gambar_produk="<?= $product['gambar_produk'] ?>">Add to Cart</button>
+                        <button class="add_cart product_cart_button" data-id_produk="<?= $product['id_produk']; ?>" data-nama_produk="<?= to_link($product['nama_produk']) ?>" data-harga_produk="<?php if ($product['diskon_produk'] == 0) {
+                                                                                                                                                                                                        echo $product['harga_produk'];
+                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                        echo ($product['harga_produk'] - ($product['harga_produk'] * ($product['diskon_produk'] / 100)));
+                                                                                                                                                                                                    } ?>" data-gambar_produk="<?= $product['gambar_produk'] ?>">Add to Cart</button>
                     </div>
                 </div>
                 <ul class="product_marks">
@@ -296,6 +333,55 @@
 </form>
 
 <!-- End Mobile New Product -->
+
+<div class="produk-baru-mobile">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="deals">
+                    <div class="deals_title">Now Sale</div>
+                    <div class="deals_slider_container">
+
+                        <!-- Deals Slider -->
+                        <div class="owl-carousel owl-theme deals_slider">
+
+                            <?php foreach ($listdiskon as $diskon) :
+                                $nama = '';
+                                if (strlen($diskon['nama_produk']) > 30) {
+                                    $nama .= substr($diskon['nama_produk'], 0, 30) . '...';
+                                } else {
+                                    $nama .= $diskon['nama_produk'];
+                                }
+                            ?>
+                                <!-- Deals Item -->
+                                <div class="owl-item deals_item">
+                                    <div class="deals_image"><a href="<?= base_url('main/produk/') . $diskon['link'] ?>"><img src="<?= base_url('assets/images/produk/') . $diskon['gambar_produk'] ?>" alt=""></a></div>
+                                    <div class="deals_content">
+                                        <div class="deals_info_line d-flex flex-row justify-content-start">
+                                            <div class="deals_item_category"><a href="#"><?= $diskon['nama_kategori']; ?></a></div>
+                                            <div class="deals_item_price_a ml-auto"><b>-<?= $diskon['diskon_produk'] ?>%</b>&nbsp;<s>Rp <?= number_format($diskon['harga_produk'], '0', ',', '.'); ?></s></div>
+                                        </div>
+                                        <div class="deals_info_line d-flex flex-row justify-content-start">
+                                            <div class="deals_item_name"><?= $nama ?></div>
+                                            <div class="deals_item_price ml-auto">Rp <?= number_format(($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100))), '0', ',', '.'); ?></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+
+                        </div>
+
+                    </div>
+
+                    <div class="deals_slider_nav_container">
+                        <div class="deals_slider_prev deals_slider_nav"><i class="fas fa-chevron-left ml-auto"></i></div>
+                        <div class="deals_slider_next deals_slider_nav"><i class="fas fa-chevron-right ml-auto"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Best Sellers -->
 

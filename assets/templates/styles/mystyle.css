@@ -147,9 +147,9 @@
 
 .banner-gambar {
 	position: absolute;
-    top: 24%;
-    width: 53%;
-    left: 43%;
+	top: 24%;
+	width: 53%;
+	left: 43%;
 }
 
 .banner-judul {
@@ -298,7 +298,7 @@ table.fixed td {
 
 .footer {
 	padding-top: 15px;
-    padding-bottom: 15px;
+	padding-bottom: 15px;
 	background: #F8BF00;
 }
 
@@ -497,7 +497,7 @@ html {
 	color: #4b301e;
 }
 
-.top_bar{
+.top_bar {
 	height: 0px;
 	border-bottom: unset;
 	background: #FFFFFF;
@@ -518,7 +518,7 @@ html {
 }
 
 .product_price {
-	margin-top : 13px;
+	margin-top: 13px;
 }
 
 .single_product {
@@ -526,14 +526,14 @@ html {
 	padding-bottom: unset;
 }
 
-.product_text > ul {
-	margin-left : 20px;
+.product_text>ul {
+	margin-left: 20px;
 	list-style: unset;
 }
 
 .standard_dropdown li {
 	width: 33%;
-    text-align: left;
+	text-align: left;
 }
 
 .top_bar_menu {
@@ -541,8 +541,8 @@ html {
 }
 
 .header_search {
-    height: 145px;
-    margin-left: 10px;
+	height: 145px;
+	margin-left: 10px;
 }
 
 .logo_container {
@@ -550,7 +550,7 @@ html {
 }
 
 .wishlist_cart {
-    height: 145px;
+	height: 145px;
 }
 
 .new_arrivals {
@@ -617,14 +617,19 @@ ul.gridpay li {
 
 @media only screen and (max-width: 991px) {
 
+	.deals_item_name,
+	.deals_item_price {
+		font-size: 16px;
+	}
+
 	.header_search {
 		height: 72px;
 	}
-	
+
 	.logo_container {
 		height: 72px;
 	}
-	
+
 	.wishlist_cart {
 		height: 72px;
 	}

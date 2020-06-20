@@ -44,7 +44,7 @@
 								<div class="product_price" style="color:red;">Rp. <?= number_format($produk['harga_produk'], '0', ',', '.'); ?></div>
 							<?php endif; ?>
 							<div class="button_container">
-								<button type="button" onclick="toast()" class="button cart_button add_cart coklat" data-id_produk="<?= $produk['id_produk']; ?>" data-nama_produk="<?= $produk['nama_produk'] ?>" data-harga_produk="<?php if ($produk['diskon_produk'] == null) {
+								<button type="button" onclick="toast()" class="button cart_button add_cart coklat" data-id_produk="<?= $produk['id_produk']; ?>" data-nama_produk="<?= to_link($produk['nama_produk']) ?>" data-harga_produk="<?php if ($produk['diskon_produk'] == null) {
 																																																											echo $produk['harga_produk'];
 																																																										} else {
 																																																											echo ($produk['harga_produk'] - ($produk['harga_produk'] * ($produk['diskon_produk'] / 100)));

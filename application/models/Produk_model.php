@@ -80,6 +80,15 @@ class Produk_model extends CI_Model
         }
     }
 
+    public function getProductDiscount()
+    {
+        $this->db->select('*');
+        $this->db->from('produk');
+        $this->db->join('kategori', 'kategori.id_kategori = produk.kategori');
+        $this->db->order_by('diskon_produk', 'DESC');
+        return $this->db->get_where('',['diskon_produk >' => 0])->result_array();
+    }
+
     public function getProductByLink($link)
     {
         $this->db->select('*');
