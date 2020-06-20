@@ -272,7 +272,7 @@
                                     <div class="deals_item_price_a ml-auto"><b>-<?= $diskon['diskon_produk'] ?>%</b>&nbsp;<s>Rp <?= number_format($diskon['harga_produk'], '0', ',', '.'); ?></s></div>
                                 </div>
                                 <div class="deals_info_line d-flex flex-row justify-content-start">
-                                    <div class="deals_item_name"><?= $diskon['nama_produk']; ?></div>
+                                    <div class="deals_item_name"><a href="<?= base_url('main/produk/') . $diskon['link'] ?>"><?= $diskon['nama_produk']; ?></a></div>
                                     <div class="deals_item_price ml-auto">Rp <?= number_format(($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100))), '0', ',', '.'); ?></div>
                                 </div>
                             </div>
@@ -369,7 +369,7 @@
                                             <div class="deals_item_price_a ml-auto"><b>-<?= $diskon['diskon_produk'] ?>%</b>&nbsp;<s>Rp <?= number_format($diskon['harga_produk'], '0', ',', '.'); ?></s></div>
                                         </div>
                                         <div class="deals_info_line d-flex flex-row justify-content-start">
-                                            <div class="deals_item_name"><?= $nama ?></div>
+                                        <div class="deals_item_name"><a href="<?= base_url('main/produk/') . $diskon['link'] ?>"><?= $nama ?></a></div>
                                             <div class="deals_item_price ml-auto">Rp <?= number_format(($diskon['harga_produk'] - ($diskon['harga_produk'] * ($diskon['diskon_produk'] / 100))), '0', ',', '.'); ?></div>
                                         </div>
                                     </div>
