@@ -175,7 +175,14 @@
                             <!-- Product Panel -->
                             <div class="product_panel panel active">
                                 <div class="arrivals_slider slider">
-                                    <?php foreach ($products as $product) : ?>
+                                    <?php foreach ($products as $product) :
+                                        $nama = '';
+                                        if (strlen($product['nama_produk']) > 15) {
+                                            $nama .= substr($product['nama_produk'], 0, 15) . '...';
+                                        } else {
+                                            $nama .= $product['nama_produk'];
+                                        }
+                                    ?>
                                         <!-- Slider Item -->
                                         <div class="arrivals_slider_item">
                                             <div class="border_active"></div>
@@ -188,7 +195,7 @@
                                                         <div class="product_price">Rp. <?= number_format($product['harga_produk'], '0', ',', '.'); ?></div>
                                                     <?php endif; ?>
                                                     <div class="product_name">
-                                                        <div><a href="<?= base_url('main/produk/') . $product['link'] ?>"><?= $product['nama_produk']; ?></a></div>
+                                                        <div><a href="<?= base_url('main/produk/') . $product['link'] ?>"><?= $nama ?></a></div>
                                                     </div>
                                                     <div class="product_extras">
                                                         <button class="add_cart product_cart_button" data-id_produk="<?= $product['id_produk']; ?>" data-nama_produk="<?= to_link($product['nama_produk']) ?>" data-harga_produk="<?php if ($product['diskon_produk'] == 0) {

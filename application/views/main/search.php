@@ -15,8 +15,8 @@
 							<ul class="sidebar_categories">
 								<table border=0 class="fixed">
 									<tbody>
-										<col width="50px"/>
-										<col width="150px"/>
+										<col width="50px" />
+										<col width="150px" />
 										<?php foreach ($kat as $kats) : ?>
 											<tr>
 												<td>
@@ -73,24 +73,37 @@
 					<div class="product_grid">
 						<div class="product_grid_border"></div>
 
-						<?php foreach ($produk as $pro) : ?>
+						<?php foreach ($produk as $pro) :
+							$nama = '';
+							if (strlen($pro['nama_produk']) > 15) {
+								$nama .= substr($pro['nama_produk'], 0, 15) . '...';
+							} else {
+								$nama .= $pro['nama_produk'];
+							}
+						?>
 							<!-- Product Item -->
 							<div class="product_item is_new">
 								<div class="product_border"></div>
 								<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?= base_url('assets/images/produk/') . $pro['gambar_produk'] ?>" width="80%" alt="foto produk"></div>
 								<div class="product_content">
-									<div class="product_price">Rp <?= number_format($pro['harga_produk'], '0', ',', '.'); ?></div>
+									<?php if ($pro['diskon_produk'] > 0) : ?>
+										<div class="product_price" style="color:red;">Rp <?= number_format(($pro['harga_produk'] - ($pro['harga_produk'] * ($pro['diskon_produk'] / 100))), '0', ',', '.'); ?></div>
+									<?php else : ?>
+										<div class="product_price">Rp <?= number_format($pro['harga_produk'], '0', ',', '.'); ?></div>
+									<?php endif; ?>
 									<div class="product_name">
-										<div><a href="<?= base_url('main/produk/') . $pro['link'] ?>" tabindex="0"><?= $pro['nama_produk']; ?></a></div>
+										<div><a href="<?= base_url('main/produk/') . $pro['link'] ?>" tabindex="0"><?= $nama ?></a></div>
 									</div>
 								</div>
 								<div class="product_fav" data-id_produk="<?= $pro['id_produk']; ?>" data-nama_produk="<?= to_link($pro['nama_produk']) ?>" data-harga_produk="<?php if ($pro['diskon_produk'] == 0) {
-                                                                                                                                                                                                echo $pro['harga_produk'];
-                                                                                                                                                                                            } else {
-                                                                                                                                                                                                echo ($pro['harga_produk'] - ($pro['harga_produk'] * ($pro['diskon_produk'] / 100)));
-                                                                                                                                                                                            } ?>" data-gambar_produk="<?= $pro['gambar_produk'] ?>"><i class="fas fa-cart-plus"></i></div>
+																																													echo $pro['harga_produk'];
+																																												} else {
+																																													echo ($pro['harga_produk'] - ($pro['harga_produk'] * ($pro['diskon_produk'] / 100)));
+																																												} ?>" data-gambar_produk="<?= $pro['gambar_produk'] ?>"><i class="fas fa-cart-plus"></i></div>
 								<ul class="product_marks">
-									<li class="product_mark product_new">new</li>
+									<?php if ($pro['diskon_produk'] > 0) : ?>
+										<li class="product_mark product_new" style="background: #df3b3b">-<?= $pro['diskon_produk'] ?>%</li>
+									<?php endif; ?>
 								</ul>
 							</div>
 						<?php endforeach; ?>

@@ -21,17 +21,10 @@
 <body>
 
     <div class="super_container">
-
         <!-- Header -->
-
-
-
         <div class="fragment">
             <!-- Top Bar -->
-
-
             <!-- Header Main -->
-
             <div class="header_main">
                 <div class="container">
                     <div class="row">
@@ -50,6 +43,9 @@
                                 <ul class="standard_dropdown top_bar_dropdown">
                                     <li>
                                         <a href="<?= base_url() ?>">Home</a>
+                                    </li>
+                                    <li>
+                                        <a class="font-weight-bold" href="<?= base_url('sale') ?>">SALE</a>
                                     </li>
                                     <li>
                                         <a href="<?= base_url('blog') ?>">Articles</a>
