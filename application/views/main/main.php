@@ -302,10 +302,10 @@
     <div class="row produk-baru-mobile">
         <?php foreach ($produk as $product) : 
             $nama = '';
-            if (strlen($diskon['nama_produk']) > 15) {
-                $nama .= substr($diskon['nama_produk'], 0, 15) . '...';
+            if (strlen($product['nama_produk']) > 15) {
+                $nama .= substr($product['nama_produk'], 0, 15) . '...';
             } else {
-                $nama .= $diskon['nama_produk'];
+                $nama .= $product['nama_produk'];
             }
             ?>
             <!-- Slider Item -->
