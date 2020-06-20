@@ -397,7 +397,7 @@
     </div>
 </div>
 
-<!-- Best Sellers -->
+<!-- Article -->
 
 <div class="reviews blogku">
     <div class="container">
