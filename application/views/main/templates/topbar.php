@@ -206,6 +206,7 @@
                                     <li class="page_menu_item">
                                         <a href="<?= base_url(); ?>">Home<i class="fa fa-angle-down"></i></a>
                                     </li>
+                                    <li class="page_menu_item font-weight-bold"><a href="<?= base_url('sale'); ?>">SALE<i class="fa fa-angle-down"></i></a></li>
                                     <li class="page_menu_item"><a href="<?= base_url('blog'); ?>">Articles<i class="fa fa-angle-down"></i></a></li>
                                     <li class="page_menu_item"><a href="<?= base_url('contact'); ?>">contact<i class="fa fa-angle-down"></i></a></li>
                                 </ul>
