@@ -84,7 +84,7 @@
 							<!-- Product Item -->
 							<div class="product_item is_new">
 								<div class="product_border"></div>
-								<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?= base_url('assets/images/produk/') . $pro['gambar_produk'] ?>" width="80%" alt="foto produk"></div>
+								<div class="product_image d-flex flex-column align-items-center justify-content-center"><a href="<?= base_url('main/produk/') . $pro['link'] ?>" tabindex="0"><img src="<?= base_url('assets/images/produk/') . $pro['gambar_produk'] ?>" width="80%" alt="foto produk"></a></div>
 								<div class="product_content">
 									<?php if ($pro['diskon_produk'] > 0) : ?>
 										<div class="product_price" style="color:red;">Rp <?= number_format(($pro['harga_produk'] - ($pro['harga_produk'] * ($pro['diskon_produk'] / 100))), '0', ',', '.'); ?></div>
