@@ -42,7 +42,7 @@ class BlogAdmin extends CI_Controller
     public function simpan()
     {
         $judul_artikel = $this->input->post('judul_artikel');
-        $tanggal_artikel = $this->input->post('tanggal_artikel');
+        $tanggal_artikel = time();
         $status_artikel = 1;
         $isi_artikel = $this->input->post('isi_artikel');
 
@@ -94,7 +94,7 @@ class BlogAdmin extends CI_Controller
     {
         $id_artikel = $this->input->post('id_artikel');
         $judul_artikel = $this->input->post('judul_artikel');
-        $tanggal_artikel = $this->input->post('tanggal_artikel');
+        $tanggal_artikel = time();
         $status_artikel = 1;
         $isi_artikel = $this->input->post('isi_artikel');
 

@@ -532,7 +532,7 @@ html {
 }
 
 .standard_dropdown li {
-	width: 13%;
+	width: 19%;
 	text-align: center;
 }
 
@@ -573,6 +573,18 @@ html {
 .product_quantity input {
 	font-weight: 500;
 	color: rgb(0, 0, 0);
+}
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
 }
 
 /* ---------------------------------------------------------------------------------------------------------------- */

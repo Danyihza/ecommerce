@@ -52,7 +52,7 @@
                         <td><?= $a->id_artikel ?></td>
                         <td align="center"><img src="<?= base_url('assets/'); ?>images/blog/<?= $a->foto_artikel; ?>" width="32" /></td>
                         <td><?= $a->judul_artikel ?></td>
-                        <td><?= $a->tanggal_artikel ?></td>
+                        <td><?= date("d/m/Y",$a->tanggal_artikel) ?></td>
                         <td>
                           <?php if ($a->status_artikel == 0) { ?>
                             <a title="Aktifkan?" href="<?= base_url('BlogAdmin/aktif/' . $a->id_artikel); ?>" type="button" class="btn btn-sm btn-danger">Nonaktif</a>

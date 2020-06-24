@@ -187,6 +187,7 @@
                                         <div class="arrivals_slider_item">
                                             <div class="border_active"></div>
                                             <div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
+                                                <a href="<?= base_url('main/produk/') . $product['link'] ?>">
                                                 <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?= base_url('assets/images/produk/') . $product['gambar_produk'] ?>" width="81%" alt="cover buku"></div>
                                                 <div class="product_content">
                                                     <?php if ($product['diskon_produk'] > 0) : ?>
@@ -196,7 +197,7 @@
                                                     <?php endif; ?>
                                                     <div class="product_name">
                                                         <div><a href="<?= base_url('main/produk/') . $product['link'] ?>"><?= $nama ?></a></div>
-                                                    </div>
+                                                    </div></a>
                                                     <div class="product_extras">
                                                         <button class="add_cart product_cart_button" data-id_produk="<?= $product['id_produk']; ?>" data-nama_produk="<?= to_link($product['nama_produk']) ?>" data-harga_produk="<?php if ($product['diskon_produk'] == 0) {
                                                                                                                                                                                                                                         echo $product['harga_produk'];
@@ -414,8 +415,11 @@
 
                         <?php foreach ($blog as $b) : ?>
                             <div class="item_post">
-                                <div class="imgWrap">
-                                    <a href="<?= base_url('blog/detail/') . $b['id_artikel'] ?>"> <img src="<?= base_url('assets/images/blog/') . $b['foto_artikel'] ?>" width="100%" style="display: block" alt=""></a>
+                                <div class="imgWrap" >
+                                    <div class="fill" style="width:560px; height:280px">
+                                        <a href="<?= base_url('blog/detail/') . $b['id_artikel'] ?>"> <img src="<?= base_url('assets/images/blog/') . $b['foto_artikel'] ?>" alt=""></a>
+
+                                    </div>
                                 </div>
                                 <div class="postGrid">
                                     <div class="avaPost">

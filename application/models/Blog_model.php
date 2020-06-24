@@ -15,7 +15,7 @@ class Blog_model extends CI_Model
     public function getTwoBlog()
     {
         $this->db->order_by('id_artikel', 'DESC');
-        return $this->db->get('artikel')->result_array();
+        return $this->db->get('artikel', 2)->result_array();
     }
 
     public function getThreeNewestBlog()
