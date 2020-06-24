@@ -416,9 +416,8 @@
                         <?php foreach ($blog as $b) : ?>
                             <div class="item_post">
                                 <div class="imgWrap" >
-                                    <div class="fill" style="width:560px; height:280px">
+                                    <div class="fill">
                                         <a href="<?= base_url('blog/detail/') . $b['id_artikel'] ?>"> <img src="<?= base_url('assets/images/blog/') . $b['foto_artikel'] ?>" alt=""></a>
-
                                     </div>
                                 </div>
                                 <div class="postGrid">

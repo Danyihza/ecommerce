@@ -579,7 +579,9 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+	overflow: hidden;
+	width:560px; 
+	height:280px;
 }
 .fill img {
     flex-shrink: 0;
@@ -642,6 +644,10 @@ ul.gridpay li {
 }
 
 @media only screen and (max-width: 991px) {
+
+	.fill{
+		width: 26%;
+	}
 
 	.deals_item_name,
 	.deals_item_price {
