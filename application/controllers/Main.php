@@ -272,7 +272,7 @@ Total Harga = *Rp ' . number_format($this->cart->total(), 0, '.', '.') . '*';
 		$this->db->insert_batch('dtransaksi', $data2);
 
 		$this->cart->destroy();
-		redirect("https://wa.me/6282331147549?text=$message");
+		redirect("https://wa.me/6285245667810?text=$message");
 	}
 
 	function destroy()
