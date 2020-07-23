@@ -6,7 +6,7 @@ class Order extends CI_Controller
 
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct(); 
         //load model admin
         $this->load->model('order_model');
         //$this->load->helper(array('url', 'download'));
@@ -25,6 +25,12 @@ class Order extends CI_Controller
             redirect("auth");
         }
     } 
+
+    public function hapus($id_transaksi)
+    {
+        $this->order_model->hapus_data($id_transaksi, 'transaksi');
+        redirect('order/');
+    }
 
     public function lihatdetail($id_transaksi)
     {

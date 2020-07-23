@@ -60,6 +60,14 @@ class Order_model extends CI_Model
       ->group_by('produk.id_produk')->get()->result();
   }
 
+  function hapus_data($where, $table)
+  {
+    $this->db->where('id_transaksi', $where);
+    $this->db->delete('dtransaksi');
+    $this->db->where('id_transaksi', $where);
+    $this->db->delete($table);
+  }
+
   function logged_id()
   {
     return $this->session->userdata('id_admin');
