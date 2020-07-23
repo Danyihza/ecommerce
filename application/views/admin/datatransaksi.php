@@ -32,6 +32,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr>
+                      <th>Aksi</th>
                       <th>No Transaksi</th>
                       <th>Tanggal</th>
                       <th>Nama</th>
@@ -47,6 +48,9 @@
                   <tbody>
                     <?php foreach ($transaksi as $a) { ?>
                       <tr>
+                        <td>
+                          <a title="Hapus" href="<?= base_url('order/hapus/' . $a->id_transaksi); ?>" onclick="return confirm('Anda yakin ingin menghapus data ini?')" type="button" class="btn btn-danger fa fa-trash"></a>
+                        </td>
                         <td><?= $a->id_transaksi ?></td>
                         <td><?= $a->tanggal_transaksi ?></td>
                         <td><?= $a->nama_pembeli ?></td>
@@ -74,6 +78,7 @@
                   </tbody>
                   <tfoot>
                     <tr>
+                      <th>Aksi</th>
                       <th>No Transaksi</th>
                       <th>Tanggal</th>
                       <th>Nama</th>
